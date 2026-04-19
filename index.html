@@ -157,13 +157,13 @@ const jeux2025 = [
     { nom: "rematch", img: "https://i.postimg.cc/zBb0xsSn/image.png", twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr99eVZWzjiUDZ-qzH0N3BE3j&si=bs5OczyjJawrKU-q" },
     { nom: "60 seconds!", img: "https://i.postimg.cc/qv1PSdnj/image.png", twitch:"https://youtu.be/YsSifJAGVDQ?si=V8GwHC8leUpSEYuX" },
     { nom: "Pokémon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv"},
-    { nom: "peak", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BY2NkZTAxNTQtNDg0YS00ZDdhLTk4OTgtZWQyMzJmODJlYmVkXkEyXkFqcGc._V1_FMjpg_UX1000__zlf8kq",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
+    { nom: "peak", img: "https://i.postimg.cc/WbFqh2pJ/image.png",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
     { nom: "road 96", img: "https://i.postimg.cc/8crkPzd5/image.png", twitch: "https://youtu.be/WXGRzsggjkA?si=4CVUhNIjfdsG_O0m" },
-    { nom: "mario kart world", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/mario-kart-world-jaquette_hmwlps",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
+    { nom: "mario kart world", img: "https://i.postimg.cc/Gm32vdd5/image.png",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
     { nom: "forza horizon 5", img: "https://i.postimg.cc/0Q11d0Dh/image.png",  twitch: "https://youtu.be/VPJUGylxsjQ?si=v6_BRemBiKaXKQ6S"},
     { nom: "euro truck simulator 2", img: "https://i.postimg.cc/bJCkzzXr/image.png",  twitch: "https://twitchtracker.com/femimarss/games/75467"},
-    { nom: "BeamNG.drive ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BNmQyNTY1MDgtZWIyYi00MTg1LWIwNDktZmNkMjMzNTZlNzJkXkEyXkFqcGc._V1_FMjpg_UX1000__sihvjo",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
-    { nom: "Taxi Life: A City Driving Simulator", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BZTE4ZWE0ZjctZGI2Ny00MDk5LThjOWUtNDM5OTRmNTQzZWZkXkEyXkFqcGc._V1__fd1xxe",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
+    { nom: "BeamNG.drive ", img: "https://i.postimg.cc/Nf3D0CcW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
+    { nom: "Taxi Life: A City Driving Simulator", img: "https://i.postimg.cc/Z0tNJgdP/image.pngy5.pn",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
     { nom: "Drive Beyond Horizons", img: "https://i.postimg.cc/zfBFtsS0/image.png", twitch: "https://youtu.be/_lPhgj4mjS8?si=Fz5umMYLm7UWRMT2" },
   
 ];
@@ -280,7 +280,7 @@ let hoveredObject = null;
 
 
 
-renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5)); 
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 const progressBar = document.getElementById('progress-bar');
@@ -558,24 +558,27 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(canvas);
 let expansion = 0.1;
+
+observer.observe(canvas);
+
 function animate() {
     requestAnimationFrame(animate);
 
+    // --- OPTIMISATION MOBILE : On s'arrête si caché ou pas visible ---
+    if (document.hidden || !isVisible) return; 
 
-    if (document.hidden) return;
     const scrollY = window.scrollY;
     const waitScroll = 620;
     const progress = scrollY > waitScroll ? (scrollY - waitScroll) / 500 : 0;
-
-  
+    
     const baseRadius = (4 + (progress * 15)) * expansion;
-
 
     if (group) group.rotation.y += 0.002;
 
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(group.children);
 
+    // Gestion du curseur simplifiée
     if (intersects.length > 0) {
         if (hoveredObject !== intersects[0].object) {
             canvas.style.cursor = 'pointer';
@@ -588,14 +591,13 @@ function animate() {
         }
     }
 
-   for (let i = 0; i < group.children.length; i++) {
+    for (let i = 0; i < group.children.length; i++) {
         const obj = group.children[i];
         const data = obj.userData;
         
         let targetRadius = baseRadius;
         if (hoveredObject === obj) targetRadius += 0.8; 
 
-       
         if (obj.currentRadius === undefined) obj.currentRadius = targetRadius;
         const diff = targetRadius - obj.currentRadius;
         
@@ -606,27 +608,24 @@ function animate() {
             const theta = data.theta;
             const r = obj.currentRadius;
 
-            // Conversion coordonnées sphériques 3D
+            // Correction mathématique pour Three.js (Y est l'axe vertical)
             obj.position.set(
-                r * Math.cos(theta) * Math.sin(phi),
-                r * Math.sin(theta) * Math.sin(phi),
-                r * Math.cos(phi)
+                r * Math.sin(phi) * Math.cos(theta),
+                r * Math.cos(phi),
+                r * Math.sin(phi) * Math.sin(theta)
             );
             obj.lookAt(0, 0, 0);
         }
     }
 
-
     if (expansion < 1) {
         expansion += (1 - expansion) * 0.03; 
     }
 
-    
     renderer.render(scene, camera);
 }
 
 animate();
-
 function decodeEffect(elementId, targetText, speed = 1) {
     return new Promise((resolve) => {
         const element = document.getElementById(elementId);
