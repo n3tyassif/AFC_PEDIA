@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFC_PEDIA</title>
+    <link rel="stylesheet" href="femi.css">
+    <link rel="shortcut icon" href="./assets/img/wiki/logofemi.png">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+   <div id="loader-wrapper">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <p>Chargement de l'univers...</p>
+        <div class="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+</div>
+  <div id="game-overlay" class="overlay">
+    <div class="overlay-content">
+        <img id="overlay-img" src="" alt="">
+        <h2 id="overlay-title"></h2>
+        <p>Cliquez à nouveau pour voir les stats Twitch</p>
+    </div>
+</div>
+    <nav class="navbar">
+        <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">
+            <img src="./assets/img/wiki/output-onlinegiftools.gif" alt="logo" class="nav-icon">
+           <a href="#"> <span>AFC</span> </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://youtu.be/rkaosr6rsc4?si=01a2GFSP_rzuWH8b" target="_blank" class="manga">MANGA</a></li>
+            <li><a href="#jeu">jeux</a></li>
+            <li><a href="#">anime</a></li>
+            <li><a href="#">SÉRIES</a></li>
+            <li><a href="#">recaps</a></li>
+            <li><a href="#">episode 1</a></li>
+            <li><a href="#">tier lists</a></li>
+
+        </ul>
+    </nav>
+<header class="head" id="header-anim">
+    <div class="main">
+        <div class="title">
+            <h1 id="text-wiki" class="decode-text">LE WIKI</h1> 
+            <h2 id="text-femi" class="decode-text">de <span class="femimarss"><a href="https://www.twitch.tv/femimarss" target="_blank">femimarss</a></span></h2>
+        </div>
+    </div>
+</header>
+            <!-- la c un lien clicable -->
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">124</span>
+                    <span class="stat-label">ANIMÉS</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">303</span>
+                    <span class="stat-label">JEUX</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">FILMS</span>
+                </div>
+            </div>
+
+            <div class="search-container">
+    <div class="search">
+        <input type="text" id="recherche" placeholder="rechercher un anime, film, jeux..." size="60">
+        <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+    </div>
+    <div id="results"></div> 
+</div>
+        </div>
+    </header>
+ <div id="planete-container" style="width:100%; height:500px;">
+    <canvas id="world-3d"></canvas>
+</div>
+  <section id="jeu">
+    <div class="category-header">
+        <div class="jeu-icon">
+          <img src="https://i.postimg.cc/g25BPYMn/df9qfmp-557b5546-a96a-4cf6-ad95-7d579cedbc62.gif" 
+         alt="logo malenia" class="jeu-icon">
+       
+         <div class="jeux"> <h2>JEUX</h2> </div>
+        </div>
+        <div class="category-line"></div>
+    </div>
+
+   <section class="year-section">
+    <h2 class="year-title">2026</h2>
+    <div id="grid-2026" class="game-grid"></div> 
+</section>
+
+<section class="year-section">
+    <h2 class="year-title">2025</h2>
+    <div id="grid-2025" class="game-grid"></div> 
+    <section class="year-section">
+    <h2 class="year-title">2024</h2>
+    <div id="grid-2024" class="game-grid"></div>
+</section>
+ </section>
+ <section id="anime">
+    <div class="category-header">
+        <div class="jeu-icon">
+          <img src="https://i.postimg.cc/g25BPYMn/df9qfmp-557b5546-a96a-4cf6-ad95-7d579cedbc62.gif" 
+         alt="logo malenia" class="jeu-icon">
+       
+         <div class="anime"> <h2>anime</h2> </div>
+        </div>
+        <div class="category-line"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        
+const jeux2026 = [
+    { nom: "crimson desert", img: "https://i.postimg.cc/wMt6m1HD/image.png", twitch: "https://youtu.be/TmnKSnxcAJ0?si=re8zazorMh8I3oho"},
+    { nom: "MONSTER HUNTER STORIES 3: TWISTED REFLECTION", img: "./assets/img/wiki/jeu/monster.png", twitch: "https://youtu.be/LJCZtwlJkbs?si=Z1YXGPtGrDC4Z433" },
+    { nom: "pokopia", img: "./assets/img/jeux/pokopia.png", twitch: "https://youtu.be/fFn9sVc6YAU?si=JUnFJR1XBOmiEXeW" },
+    { nom: "RESIDENT EVIL: requiem", img: "./assets/img/jeux/re9.png", twitch: "https://youtu.be/mWamIj7_Pik?si=6wv8bP_xRAg7xmDn" },
+    { nom: "reanimal", img: "./assets/img/jeux/reanimal.png", twitch: "https://youtu.be/CiH4KSuScFM?si=VYC3lxDEBSvBWZps" },
+    { nom: "poppy playtime chapter 5", img: "./assets/img/jeux/poppy5.png", twitch: "https://youtu.be/bJ2QgCJW7sA?si=QzH605kXE8lpiM8x"},
+    { nom: "hytale", img: "https://i.postimg.cc/D0CzMGw3/cobbwu.png",twitch: "https://twitchtracker.com/femimarss/streams/315784254180" },
+    { nom: "league of legends", img: "https://i.postimg.cc/wvj5yhZJ/image.png",twitch: "https://twitchtracker.com/femimarss/games/21779"  },
+    { nom: "Roadside Research", img: "https://i.postimg.cc/Y2QHdZSm/image.png", twitch: "https://twitchtracker.com/femimarss/games/121660419" },
+    { nom: "yapyap", img: "https://i.postimg.cc/dtWS6jGT/image.png", twitch: "https://twitchtracker.com/femimarss/games/121660419" }, 
+    { nom: "Five Hearts Under One Roof 2", img: "https://i.postimg.cc/xdMqxM32/image.png", twitch: "https://twitchtracker.com/femimarss/streams/315929352035" }, 
+  ]
+
+const jeux2025 = [
+    { nom: "dispatch", img: "https://i.postimg.cc/rpmCz1vW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/602959317"},
+    { nom: "inazuma: victory road", img: "https://i.postimg.cc/jj9mZSTR/inazuma-eleven-victory-road-828353-10.webp",  twitch: "https://youtube.com/playlist?list=PLmGhvPN6RD4WEl88xH5RsbCq8PG9gjxJM&si=HAwkOpYEpQ9XgJMX"},
+    { nom: "the Seven Deadly Sins: Origin", img: "https://i.postimg.cc/c4H74MYX/image.png", twitch: "https://twitchtracker.com/femimarss/streams/315037506146" },
+    { nom: "Pokémon Legends: Z-A", img: "https://i.postimg.cc/J4Hh7G61/image.png", twitch: "https://youtu.be/q7FZ7baPvIE?si=ZrSXcp7kwa4VgUhZ" },
+    { nom: "minecraft rp: obscuria", img: "https://i.postimg.cc/MpPxywr7/image.png", twitch: "https://youtube.com/playlist?list=PLmGhvPN6RD4X_OUqXQ9qTQIMUEWfJ0y9v&si=v7mFh1e9EHM10H2C" },
+    { nom: "little nightmare III", img: "https://i.postimg.cc/kGXfN0Hg/image.png", twitch: "https://youtu.be/7WcpDSzvvic?si=9Kkyir1sUyv4PzCh" },
+    { nom: "gta rp", img: "https://i.postimg.cc/bN1R5HXn/image.png", twitch: "https://twitchtracker.com/femimarss/games/32982" },
+    { nom: "no, im not a human", img: "https://i.postimg.cc/qRXkY5Gx/image.png", twitch: "https://youtu.be/PeJc-WWTQAY?si=UQE95CdEbcugMlXL" },
+    { nom: "Clair Obscur: Expedition 33", img: "https://i.postimg.cc/T1KTw3xx/image.png",  twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr9_MOBo2T6roVcNUti-DXtYV&si=_FCICVzB4kmYS7q8"},
+    { nom: "mimesis", img: "https://i.postimg.cc/mr4MF0hV/image.png",  twitch: "https://youtu.be/xtxxJO9KFRQ?si=yjOAMi3ec0-gsIlB"},
+    { nom: "baby steps", img: "https://i.postimg.cc/g00hD3qP/image.png",  twitch: "https://youtu.be/zthoXD641ck?si=KneHh1Max9zkIVZQ"},
+    { nom: "Kukoro: Stream Chat Games", img: "https://i.postimg.cc/Nf4Lz50D/image.png",  twitch: "https://twitchtracker.com/femimarss/games/518764"},
+    { nom: "marbles on stream", img: "https://i.postimg.cc/FzFXdsQ4/image.png",  twitch: "https://twitchtracker.com/femimarss/games/509511"},
+    { nom: "rematch", img: "https://i.postimg.cc/zBb0xsSn/image.png", twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr99eVZWzjiUDZ-qzH0N3BE3j&si=bs5OczyjJawrKU-q" },
+    { nom: "60 seconds!", img: "https://i.postimg.cc/qv1PSdnj/image.png", twitch:"https://youtu.be/YsSifJAGVDQ?si=V8GwHC8leUpSEYuX" },
+    { nom: "Pokémon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv"},
+    { nom: "peak", img: "https://i.postimg.cc/WbFqh2pJ/image.png",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
+    { nom: "road 96", img: "https://i.postimg.cc/8crkPzd5/image.png", twitch: "https://youtu.be/WXGRzsggjkA?si=4CVUhNIjfdsG_O0m" },
+    { nom: "mario kart world", img: "https://i.postimg.cc/Gm32vdd5/image.png",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
+    { nom: "forza horizon 5", img: "https://i.postimg.cc/0Q11d0Dh/image.png",  twitch: "https://youtu.be/VPJUGylxsjQ?si=v6_BRemBiKaXKQ6S"},
+    { nom: "euro truck simulator 2", img: "https://i.postimg.cc/bJCkzzXr/image.png",  twitch: "https://twitchtracker.com/femimarss/games/75467"},
+    { nom: "BeamNG.drive ", img: "https://i.postimg.cc/Nf3D0CcW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
+    { nom: "Taxi Life: A City Driving Simulator", img: "https://i.postimg.cc/Z0tNJgdP/image.pngy5.pn",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
+    { nom: "Drive Beyond Horizons", img: "https://i.postimg.cc/zfBFtsS0/image.png", twitch: "https://youtu.be/_lPhgj4mjS8?si=Fz5umMYLm7UWRMT2" },
+  
+];
+const jeux2024 = [
+    
+]
+
+
+let currentTwitch = ""; 
+
+
+function remplirGrille(listeDeJeux, idDeLaGrille) {
+    const grille = document.getElementById(idDeLaGrille);
+    if (!grille) return; 
+
+  
+    grille.innerHTML = ""; 
+
+    listeDeJeux.forEach(jeu => {
+       
+        const carte = document.createElement('div');
+        carte.className = 'game-card';
+        carte.onclick = () => ouvrirCarte(jeu.img, jeu.nom, jeu.twitch || "");
+
+        carte.innerHTML = `
+            <div class="image-container">
+                <img src="${jeu.img}" alt="${jeu.nom}">
+            </div>
+            <p class="game-title">${jeu.nom}</p>
+        `;
+        grille.appendChild(carte);
+    });
+}
+
+function ouvrirCarte(img, titre, twitch) {
+    const overlay = document.getElementById('game-overlay');
+    document.getElementById('overlay-img').src = img;
+    document.getElementById('overlay-title').innerText = titre;
+    currentTwitch = twitch; 
+    overlay.style.display = 'flex';
+}
+
+
+document.getElementById('game-overlay').onclick = function() {
+    this.style.display = 'none';
+};
+
+
+document.querySelector('.overlay-content').onclick = function(event) {
+    event.stopPropagation(); 
+    
+    if (currentTwitch) {
+        let lienFinal = currentTwitch.includes("http") ? 
+            currentTwitch : 
+            "https://twitchtracker.com/games/" + currentTwitch;
+            
+        window.open(lienFinal, "_blank");
+    }
+};
+
+remplirGrille(jeux2026, 'grid-2026');
+remplirGrille(jeux2025, 'grid-2025');
+const toutesLesListes = [...jeux2026, ...jeux2025];
+
+
+const fuse = new Fuse(toutesLesListes, {
+    keys: ['nom'],
+    threshold: 0.3,
+    distance: 100
+});
+
+</script>
+
+<script type="module">
+        import * as THREE from 'three';
+
+        const canvas = document.querySelector('#world-3d');
+        const univers = [
+          
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0256_sde1jg',titre: "la profondeur d'esprit"},
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_4479_i8y8jl',titre: "morning routine"},
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_4305_ttteux',titre: "l'elegance" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Screenshot_20250829-1909022_ut48t3' ,titre: "la gollumisation." },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3747_vbt1wx',titre: "abasourdissant" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Snapchat-1544530563_cipcvm ',titre: "gamberge" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/image-112_e2mrjs' ,titre: "l'amour sans frontiere " },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/F_JeKZoWUAAPntE_ydjb1a',titre: "epstein" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/samples/sea-turtle.mp4' }
+        ];
+
+        // --- SCÈNE ET CAMÉRA ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 700, 0.1, 1000);
+        camera.position.z = 8;
+
+const isMobile = window.innerWidth < 768;
+
+const renderer = new THREE.WebGLRenderer({ 
+    canvas, 
+    alpha: true, 
+    antialias: false,
+    powerPreference: "high-performance"
+});
+
+const manager = new THREE.LoadingManager();
+
+const textureLoader = new THREE.TextureLoader(manager);
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const group = new THREE.Group();
+
+
+let hoveredObject = null;
+
+
+
+renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5)); 
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+const progressBar = document.getElementById('progress-bar');
+
+manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+    if (progressBar) {
+        const progress = (itemsLoaded / itemsTotal) * 100;
+        progressBar.style.width = progress + '%';
+    }
+};
+
+manager.onLoad = function () {
+    setTimeout(() => {
+        const loaderWrapper = document.getElementById('loader-wrapper');
+        if (loaderWrapper) {
+            loaderWrapper.style.opacity = '0';
+            setTimeout(() => { loaderWrapper.style.display = 'none'; }, 500);
+        }
+    }, 200); 
+};
+
+univers.forEach((item, index) => {
+    let texture;
+
+    const isVideo = item.type === 'video' || item.url.includes('.mp4');
+
+    if (isVideo) {
+        const video = document.createElement('video');
+        video.src = item.url; 
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.crossOrigin = "anonymous";
+        
+        video.play().catch(e => console.log("Vidéo en attente d'interaction"));
+
+        texture = new THREE.VideoTexture(video);
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.colorSpace = THREE.SRGBColorSpace;
+    } else {
+        texture = textureLoader.load(item.url);
+        texture.colorSpace = THREE.SRGBColorSpace;
+    }
+
+    const geometry = new THREE.PlaneGeometry(1.5, 2);
+    const material = new THREE.MeshBasicMaterial({ 
+        map: texture, 
+        side: THREE.DoubleSide,
+        transparent: true 
+    });
+    
+    const mesh = new THREE.Mesh(geometry, material);
+
+
+    const total = univers.length;
+    const phi = Math.acos(-1 + (2 * index) / total);
+    const theta = Math.sqrt(total * Math.PI) * phi;
+
+    mesh.position.setFromSphericalCoords(4, phi, theta);
+    mesh.lookAt(0, 0, 0);
+
+    mesh.userData = { 
+        titre: item.titre || "Vidéo", 
+        url: item.url, 
+        type: isVideo ? 'video' : 'image', 
+        phi: phi,
+        theta: theta 
+    };
+
+    group.add(mesh);
+});
+
+scene.add(group);
+
+window.showFromSearch = (index) => {
+    const barre = document.getElementById('input-recherche');
+    const value = barre ? barre.value : "";
+    const hits = fuse.search(value);
+
+    if (hits[index]) {
+        const item = hits[index].item;
+        const modal = document.getElementById("modal-univers");
+        const modalMedia = document.getElementById("modal-media");
+        const modalTitre = document.getElementById("modal-titre");
+
+        modalTitre.innerText = ""; 
+        modalMedia.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; min-height: 80vh;">
+                <div style="position: relative; width: fit-content;">
+                    <a href="${item.twitch || '#'}" target="_blank">
+                        <img src="${item.img}" style="max-width: 90vw; max-height: 80vh; border-radius: 15px;">
+                    </a>
+                    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; color: white; font-family: 'Inter', sans-serif; font-size: 2.2em; text-shadow: 0 4px 15px rgba(0,0,0,0.9); pointer-events: none;">
+                        ${item.nom || ""}
+                    </div>
+                </div>
+            </div>
+        `;
+        modal.style.display = "block";
+    }
+};
+window.ouvrirOverlay3D = (d) => {
+    const modal = document.getElementById("modal-univers");
+    const modalMedia = document.getElementById("modal-media");
+    const modalTitre = document.getElementById("modal-titre");
+
+    modalTitre.innerText = d.titre;
+    modalMedia.innerHTML = d.type === 'video' ? 
+        `<video src="${d.url}" controls autoplay loop muted style="max-width:100%; border-radius:10px;"></video>` :
+        `<img src="${d.url}" style="max-width:100%; border-radius:10px;">`;
+    
+    modal.style.display = "block";
+};
+
+window.addEventListener('mousemove', (event) => {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+});
+
+window.addEventListener('click', () => {
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(group.children);
+
+    if (intersects.length > 0) {
+        const d = intersects[0].object.userData;
+        
+        const modal = document.getElementById("modal-univers");
+        const modalMedia = document.getElementById("modal-media");
+        const modalTitre = document.getElementById("modal-titre");
+
+        if (modal && modalMedia && modalTitre) {     
+            modalTitre.innerText = d.titre || "Sans titre"; 
+            modalMedia.innerHTML = d.type === 'video' ? 
+                `<video src="${d.url}" controls autoplay loop muted playsinline style="max-width:100%; border-radius:10px;"></video>` : 
+                `<img src="${d.url}" style="max-width:100%; border-radius:10px;">`;
+                
+            modal.style.display = "block";
+        }
+    }
+});
+
+document.querySelector(".close-modal").onclick = () => { 
+    const modal = document.getElementById("modal-univers");
+    const modalMedia = document.getElementById("modal-media");
+    modal.style.display = "none"; 
+    modalMedia.innerHTML = ""; 
+};
+
+
+const inputRecherche = document.getElementById('recherche'); 
+const resultsDiv = document.getElementById('results');
+
+if (inputRecherche && resultsDiv) {
+    inputRecherche.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+
+        if (value.length > 0) {
+            const hits = fuse.search(value);
+            if (hits.length > 0) {
+                resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
+                    const item = hit.item;
+                    const safeNom = item.nom.replace(/'/g, "\\'");
+                    
+                    return `
+                        <div class="result-item" onclick="showFromSearchDirect('${safeNom}')">
+                            <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
+                            <div class="res-info">
+                                <div style="color: white; font-size: 1.1em;margin-left: 9px;">${item.nom}</div>
+                                <div style="color: #888; font-size: 0.9em;">Jeu</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                resultsDiv.style.display = 'block';
+            } else {
+                resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat...</div>';
+                resultsDiv.style.display = 'block';
+            }
+        } else {
+            resultsDiv.style.display = 'none';
+        }
+    });
+}
+
+
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+        resultsDiv.style.display = 'none';
+    }
+});
+
+window.showFromSearchDirect = (nomDuJeu) => {
+    const toutesLesDonnees = [...jeux2026, ...jeux2025];
+    const item = toutesLesDonnees.find(j => j.nom === nomDuJeu);
+
+    if (item) {
+        const modal = document.getElementById("modal-univers");
+        const modalMedia = document.getElementById("modal-media");
+        const modalTitre = document.getElementById("modal-titre");
+
+        modalTitre.innerText = item.nom;
+
+        const imageHTML = `<img src="${item.img}" style="width:100%; border-radius:15px; display:block;" onerror="this.src='https://via.placeholder.com/300x450?text=Image+Introuvable'">`;
+        
+
+modalTitre.innerText = ""; 
+
+modalMedia.innerHTML = `
+    <div style="position: relative; width: fit-content; margin: 0 auto; display: block;">
+        <a href="${item.twitch || '#'}" target="_blank" style="display: block;">
+            <img src="${item.img}" style="
+                display: block; 
+                width: 100%; 
+                max-width: 450px; 
+                height: auto; 
+                border-radius: 20px; 
+                border: none;
+                margin-top: 185px;
+                font-family: "fjalla", sans-serif;
+            ">
+        </a>
+        
+        <div style="
+            position: absolute; 
+            bottom: 20px; 
+            left: 20px; 
+            color: white; 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            pointer-events: none; /* Pour que le clic passe à travers vers le lien */
+            font-family: 'lexend', sans-serif; /* Ou ta police habituelle */
+        ">
+            ${item.nom}
+        </div>
+    </div>
+`;
+        modal.style.display = "block";
+
+        const resultsDiv = document.getElementById('results');
+        if(resultsDiv) resultsDiv.style.display = 'none';
+        
+        const barre = document.getElementById('input-recherche');
+        if(barre) barre.value = '';
+    }
+};
+
+
+window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+});
+
+
+document.addEventListener('mouseleave', () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+
+    if (hoveredObject) {
+        hoveredObject.scale.set(1, 1, 1);
+        hoveredObject = null;
+    }
+    canvas.style.cursor = 'default';
+});
+    let isVisible = true;
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        isVisible = entry.isIntersecting; 
+    });
+}, { threshold: 0.1 });
+
+observer.observe(canvas);
+let expansion = 0.1;
+function animate() {
+    requestAnimationFrame(animate);
+
+
+    if (document.hidden) return;
+    const scrollY = window.scrollY;
+    const waitScroll = 620;
+    const progress = scrollY > waitScroll ? (scrollY - waitScroll) / 500 : 0;
+
+  
+    const baseRadius = (4 + (progress * 15)) * expansion;
+
+
+    if (group) group.rotation.y += 0.002;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(group.children);
+
+    if (intersects.length > 0) {
+        if (hoveredObject !== intersects[0].object) {
+            canvas.style.cursor = 'pointer';
+            hoveredObject = intersects[0].object;
+        }
+    } else {
+        if (hoveredObject !== null) {
+            canvas.style.cursor = 'default';
+            hoveredObject = null;
+        }
+    }
+
+   for (let i = 0; i < group.children.length; i++) {
+        const obj = group.children[i];
+        const data = obj.userData;
+        
+        let targetRadius = baseRadius;
+        if (hoveredObject === obj) targetRadius += 0.8; 
+
+       
+        if (obj.currentRadius === undefined) obj.currentRadius = targetRadius;
+        const diff = targetRadius - obj.currentRadius;
+        
+        if (Math.abs(diff) > 0.001) {
+            obj.currentRadius += diff * 0.1;
+            
+            const phi = data.phi;
+            const theta = data.theta;
+            const r = obj.currentRadius;
+
+            // Conversion coordonnées sphériques 3D
+            obj.position.set(
+                r * Math.cos(theta) * Math.sin(phi),
+                r * Math.sin(theta) * Math.sin(phi),
+                r * Math.cos(phi)
+            );
+            obj.lookAt(0, 0, 0);
+        }
+    }
+
+
+    if (expansion < 1) {
+        expansion += (1 - expansion) * 0.03; 
+    }
+
+    
+    renderer.render(scene, camera);
+}
+
+animate();
+
+const targetText = "LE WIKI";
+const japanese = "フェミマースアーカイブ";
+
+
+function decodeEffect(elementId, targetText, speed = 0.6) {
+    return new Promise((resolve) => {
+        const element = document.getElementById(elementId);
+        let iteration = 0;
+        
+       
+        const isLink = element.querySelector('a');
+        const textToDisplay = isLink ? isLink.innerText : targetText;
+
+        const interval = setInterval(() => {
+            const result = textToDisplay.split("")
+                .map((letter, index) => {
+                    if(index < iteration) return textToDisplay[index];
+                    return japanese[Math.floor(Math.random() * japanese.length)];
+                })
+                .join("");
+            
+            if (isLink) {
+                isLink.innerText = result;
+            } else {
+                element.innerText = result;
+            }
+
+            if(iteration >= textToDisplay.length) {
+                clearInterval(interval);
+                resolve();
+            }
+            
+            iteration += speed; 
+        }, 60);
+    });
+}
+
+
+window.addEventListener('load', async () => {
+    
+    await decodeEffect('text-wiki', 'LE WIKI');
+
+    await decodeEffect('text-femi', 'femimarss');
+    
+   
+    document.getElementById('header-anim').classList.add('reveal');
+});
+</script>
+
+<div id="modal-univers" class="modal">
+    <span class="close-modal" onclick="document.getElementById('modal-univers').style.display='none'">&times;</span>
+    <div class="modal-content">
+        <h2 id="modal-titre"></h2>
+        <div id="modal-media"></div>
+    </div>
+</div>
+
+</body>
+</html>
