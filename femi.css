@@ -590,6 +590,7 @@ html, body {
     .search-container {
         margin: 20px auto !important; 
         width: 90%;
+        margin-right: 30px;
     }
 
     /* On réduit la taille des titres pour qu'ils ne débordent pas */
