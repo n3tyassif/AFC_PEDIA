@@ -143,6 +143,7 @@ html, body {
     width: auto;
     max-width: 600px;
     margin: -260px auto 0 auto; 
+     z-index: 999
 }
 
 .search {
