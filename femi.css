@@ -640,9 +640,10 @@ html, body {
     }
 
     .jeu-icon img {
-        height: 35px !important; /* Taille ajustée pour mobile */
+        height: 40px !important; /* Taille ajustée pour mobile */
         margin: 0 !important; /* On annule tes marges négatives PC */
         position: static !important; /* On le remet dans le flux normal */
+        margin-bottom: 50px;
     }
 
     /* 4. GRILLE DE JEUX : 2 colonnes propres */
@@ -676,7 +677,7 @@ html, body {
 @media (max-width: 768px) {
     .title {
         text-align: center; /* On garde le centrage de base */
-        padding-left: 20px; /* Ajuste ce chiffre (30px, 40px...) pour décaler plus ou moins */
+        padding-left: 100px; /* Ajuste ce chiffre (30px, 40px...) pour décaler plus ou moins */
         box-sizing: border-box; /* Important pour que le padding ne fasse pas déborder le site */
     }
 }
