@@ -578,3 +578,74 @@ html, body {
 .decoding {
     visibility: visible !important;
 }
+
+
+/* =======================================================
+   2. LA PARTIE MOBILE (À AJOUTER À LA FIN)
+   Ces règles ne s'activent QUE sur les petits écrans
+   ======================================================= */
+@media (max-width: 768px) {
+    
+    /* On annule le margin négatif qui fait bugger le clic sur mobile */
+    .search-container {
+        margin: 20px auto !important; 
+        width: 90%;
+    }
+
+    /* On réduit la taille des titres pour qu'ils ne débordent pas */
+    .title h1 {
+        font-size: 2.8rem !important;
+        text-align: center;
+    }
+
+    /* On force la grille à n'avoir que 2 colonnes (plus lisible) */
+    #grid-jeux, .game-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* On ajuste les affiches pour qu'elles rentrent bien */
+    .image-container img {
+        height: 200px !important;
+    }
+
+    /* On centre les résultats de recherche */
+    #results {
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+    }
+}
+@media (max-width: 768px) {
+/* 1. On empêche le titre et les stats de se chevaucher */
+    .head {
+        display: flex;
+        flex-direction: column; /* Force l'empilement vertical */
+        align-items: center;
+        text-align: center;
+        gap: 20px; /* Crée un espace automatique entre le titre et les stats */
+    }
+
+    /* 2. On ajuste le bloc qui contient "WIKI DE FEMIMARSS" */
+    .title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* 3. On décale les stats vers le bas si elles flottent encore */
+    .jeux {
+        margin-left: 0 !important; /* On enlève le décalage de la version PC */
+        transform: none !important; /* On annule le translateY qui fait monter les stats */
+        position: relative;
+        display: block;
+    }
+
+    /* 4. On ajuste l'icône si elle est trop grosse */
+    .jeu-icon img {
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 10px; /* On remet une marge normale */
+    }
+}
