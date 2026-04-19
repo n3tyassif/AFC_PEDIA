@@ -579,74 +579,95 @@ html, body {
     visibility: visible !important;
 }
 
-
 /* =======================================================
-   2. LA PARTIE MOBILE (À AJOUTER À LA FIN)
-   Ces règles ne s'activent QUE sur les petits écrans
+   VERSION MOBILE OPTIMISÉE (FUSIONNÉE)
    ======================================================= */
 @media (max-width: 768px) {
-    
-    /* On annule le margin négatif qui fait bugger le clic sur mobile */
+
+    /* 1. NAVBAR : Scroll horizontal pour voir toutes les catégories */
+    .navbar {
+        display: flex !important;
+        overflow-x: auto !important; /* Permet de slider avec le doigt */
+        white-space: nowrap !important;
+        gap: 15px;
+        padding: 10px 20px;
+        justify-content: flex-start !important; /* Aligne au début pour le scroll */
+        -webkit-overflow-scrolling: touch; /* Scroll fluide sur iPhone */
+    }
+
+    .navbar a {
+        flex: 0 0 auto; /* Empêche les liens de rétrécir */
+        font-size: 0.9rem;
+    }
+
+    /* 2. RECHERCHE : On remet de l'ordre */
     .search-container {
         margin: 20px auto !important; 
-        width: 90%;
-        margin-right: 30px;
+        width: 90% !important;
+        z-index: 1000;
     }
 
-    /* On réduit la taille des titres pour qu'ils ne débordent pas */
-    .title h1 {
-        font-size: 2.8rem !important;
-        text-align: center;
-    }
-
-    /* On force la grille à n'avoir que 2 colonnes (plus lisible) */
-    #grid-jeux, .game-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    /* On ajuste les affiches pour qu'elles rentrent bien */
-    .image-container img {
-        height: 200px !important;
-    }
-
-    /* On centre les résultats de recherche */
     #results {
         width: 100%;
         left: 0;
         margin-left: 0;
     }
-}
-@media (max-width: 768px) {
-/* 1. On empêche le titre et les stats de se chevaucher */
+
+    /* 3. TITRES ET LOGO : On réaligne tout */
     .head {
         display: flex;
-        flex-direction: column; /* Force l'empilement vertical */
+        flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+
+    .title h1 {
+        font-size: 2.5rem !important;
         text-align: center;
-        gap: 20px; /* Crée un espace automatique entre le titre et les stats */
+        margin-bottom: 5px;
     }
 
-    /* 2. On ajuste le bloc qui contient "WIKI DE FEMIMARSS" */
-    .title {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    /* 3. On décale les stats vers le bas si elles flottent encore */
+    /* Le bloc "Jeux" + Logo */
     .jeux {
-        margin-left: 0 !important; /* On enlève le décalage de la version PC */
-        transform: none !important; /* On annule le translateY qui fait monter les stats */
-        position: relative;
-        display: block;
+        margin: 0 !important;
+        transform: none !important;
+        display: flex !important; /* Flex pour mettre logo et texte côte à côte */
+        flex-direction: row !important; /* Force l'alignement horizontal */
+        align-items: center !important;
+        justify-content: center;
+        gap: 8px; /* Espace entre le logo et le mot Jeux */
     }
 
-    /* 4. On ajuste l'icône si elle est trop grosse */
     .jeu-icon img {
-        height: 60px;
-        margin: 0 auto;
-        display: block;
-        margin-bottom: 10px; /* On remet une marge normale */
+        height: 35px !important; /* Taille ajustée pour mobile */
+        margin: 0 !important; /* On annule tes marges négatives PC */
+        position: static !important; /* On le remet dans le flux normal */
+    }
+
+    /* 4. GRILLE DE JEUX : 2 colonnes propres */
+    #grid-jeux, .game-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 10px !important;
+        width: 100% !important;
+    }
+
+    .image-container img {
+        height: 180px !important; /* Moins haut sur tel */
+    }
+
+    .game-title {
+        font-size: 0.85rem !important;
+    }
+
+    /* 5. PLANÈTE 3D : On réduit pour le lag */
+    #planete-container {
+        height: 300px !important;
+        margin: 20px 0 !important;
+    }
+
+    #world-3d {
+        height: 300px !important;
+        margin-bottom: 0 !important; /* On vire ton margin-bottom de 570px */
     }
 }
