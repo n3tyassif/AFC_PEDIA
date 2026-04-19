@@ -662,7 +662,7 @@ html, body {
 
     /* 5. PLANÈTE 3D : On réduit pour le lag */
     #planete-container {
-        height: 300px !important;
+        height: 500px !important;
         margin: 20px 0 !important;
     }
 
