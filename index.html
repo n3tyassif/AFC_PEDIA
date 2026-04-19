@@ -52,7 +52,9 @@
     <div class="main">
         <div class="title">
             <h1 id="text-wiki" class="decode-text">LE WIKI</h1> 
-            <h2 id="text-femi" class="decode-text">de <span class="femimarss"><a href="https://www.twitch.tv/femimarss" target="_blank">femimarss</a></span></h2>
+            <h2 id="text-femi" class="decode-text">
+                de <span class="femimarss"><a href="https://www.twitch.tv/femimarss" target="_blank">femimarss</a></span>
+            </h2>
         </div>
     </div>
 </header>
@@ -140,7 +142,7 @@ const jeux2026 = [
 
 const jeux2025 = [
     { nom: "dispatch", img: "https://i.postimg.cc/rpmCz1vW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/602959317"},
-    { nom: "inazuma: victory road", img: "https://i.postimg.cc/jj9mZSTR/inazuma-eleven-victory-road-828353-10.webp",  twitch: "https://youtube.com/playlist?list=PLmGhvPN6RD4WEl88xH5RsbCq8PG9gjxJM&si=HAwkOpYEpQ9XgJMX"},
+    { nom: "inazuma eleven: victory road", img: "https://i.postimg.cc/jj9mZSTR/inazuma-eleven-victory-road-828353-10.webp",  twitch: "https://youtube.com/playlist?list=PLmGhvPN6RD4WEl88xH5RsbCq8PG9gjxJM&si=HAwkOpYEpQ9XgJMX"},
     { nom: "the Seven Deadly Sins: Origin", img: "https://i.postimg.cc/c4H74MYX/image.png", twitch: "https://twitchtracker.com/femimarss/streams/315037506146" },
     { nom: "Pokémon Legends: Z-A", img: "https://i.postimg.cc/J4Hh7G61/image.png", twitch: "https://youtu.be/q7FZ7baPvIE?si=ZrSXcp7kwa4VgUhZ" },
     { nom: "minecraft rp: obscuria", img: "https://i.postimg.cc/MpPxywr7/image.png", twitch: "https://youtube.com/playlist?list=PLmGhvPN6RD4X_OUqXQ9qTQIMUEWfJ0y9v&si=v7mFh1e9EHM10H2C" },
@@ -627,49 +629,49 @@ animate();
 
 const targetText = "LE WIKI";
 const japanese = "フェミマースアーカイブ";
-
-
 function decodeEffect(elementId, targetText, speed = 0.6) {
     return new Promise((resolve) => {
         const element = document.getElementById(elementId);
+        if (!element) return resolve();
+
         let iteration = 0;
+        const japanese = "フェミマースアーカイブ"; 
         
-       
-        const isLink = element.querySelector('a');
-        const textToDisplay = isLink ? isLink.innerText : targetText;
+        const link = element.querySelector('a');
+        const displayTarget = link ? link : element;
+
+        // ÉTAPE CLÉ : On rend l'élément visible seulement maintenant
+        element.classList.add('decoding');
+        if(link) link.classList.add('decoding');
 
         const interval = setInterval(() => {
-            const result = textToDisplay.split("")
+            displayTarget.innerText = targetText
+                .split("")
                 .map((letter, index) => {
-                    if(index < iteration) return textToDisplay[index];
+                    if(index < iteration) return targetText[index];
                     return japanese[Math.floor(Math.random() * japanese.length)];
                 })
                 .join("");
-            
-            if (isLink) {
-                isLink.innerText = result;
-            } else {
-                element.innerText = result;
-            }
 
-            if(iteration >= textToDisplay.length) {
+            if(iteration >= targetText.length) {
                 clearInterval(interval);
                 resolve();
             }
-            
-            iteration += speed; 
-        }, 60);
+
+            iteration += speed / 3; 
+        }, 50);
     });
 }
 
-
 window.addEventListener('load', async () => {
+    // Au début, RIEN n'est visible.
     
-    await decodeEffect('text-wiki', 'LE WIKI');
+    // 1. "LE WIKI" apparaît et se décode
+    await decodeEffect('text-wiki', 'LE WIKI', 1); 
 
-    await decodeEffect('text-femi', 'femimarss');
+    // 2. SEULEMENT QUAND LE WIKI EST FINI, "femimarss" apparaît et se décode
+    await decodeEffect('text-femi', 'femimarss', 1); 
     
-   
     document.getElementById('header-anim').classList.add('reveal');
 });
 </script>
