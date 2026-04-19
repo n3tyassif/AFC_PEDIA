@@ -602,9 +602,10 @@ html, body {
 
     /* 2. RECHERCHE : On remet de l'ordre */
     .search-container {
-        margin: 20px auto !important; 
+        margin: 0px auto !important; 
         width: 90% !important;
         z-index: 1000;
+        
     }
 
     #results {
