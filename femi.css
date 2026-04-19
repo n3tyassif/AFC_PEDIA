@@ -602,7 +602,7 @@ html, body {
 
     /* 2. RECHERCHE : On remet de l'ordre */
     .search-container {
-        margin: -50px auto !important; 
+        margin: -120px auto !important; 
         width: 90% !important;
         z-index: 1000;
         
@@ -670,5 +670,13 @@ html, body {
     #world-3d {
         height: 400px !important;
         margin-bottom: 0 !important; /* On vire ton margin-bottom de 570px */
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        text-align: center; /* On garde le centrage de base */
+        padding-left: 20px; /* Ajuste ce chiffre (30px, 40px...) pour décaler plus ou moins */
+        box-sizing: border-box; /* Important pour que le padding ne fasse pas déborder le site */
     }
 }
