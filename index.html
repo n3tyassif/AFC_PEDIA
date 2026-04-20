@@ -157,13 +157,13 @@ const jeux2025 = [
     { nom: "rematch", img: "https://i.postimg.cc/zBb0xsSn/image.png", twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr99eVZWzjiUDZ-qzH0N3BE3j&si=bs5OczyjJawrKU-q" },
     { nom: "60 seconds!", img: "https://i.postimg.cc/qv1PSdnj/image.png", twitch:"https://youtu.be/YsSifJAGVDQ?si=V8GwHC8leUpSEYuX" },
     { nom: "Pokémon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv"},
-    { nom: "peak", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BY2NkZTAxNTQtNDg0YS00ZDdhLTk4OTgtZWQyMzJmODJlYmVkXkEyXkFqcGc._V1_FMjpg_UX1000__zlf8kq",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
+    { nom: "peak", img: "https://i.postimg.cc/WbFqh2pJ/image.png",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
     { nom: "road 96", img: "https://i.postimg.cc/8crkPzd5/image.png", twitch: "https://youtu.be/WXGRzsggjkA?si=4CVUhNIjfdsG_O0m" },
-    { nom: "mario kart world", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/mario-kart-world-jaquette_hmwlps",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
+    { nom: "mario kart world", img: "https://i.postimg.cc/Gm32vdd5/image.png",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
     { nom: "forza horizon 5", img: "https://i.postimg.cc/0Q11d0Dh/image.png",  twitch: "https://youtu.be/VPJUGylxsjQ?si=v6_BRemBiKaXKQ6S"},
     { nom: "euro truck simulator 2", img: "https://i.postimg.cc/bJCkzzXr/image.png",  twitch: "https://twitchtracker.com/femimarss/games/75467"},
-    { nom: "BeamNG.drive ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BNmQyNTY1MDgtZWIyYi00MTg1LWIwNDktZmNkMjMzNTZlNzJkXkEyXkFqcGc._V1_FMjpg_UX1000__sihvjo",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
-    { nom: "Taxi Life: A City Driving Simulator", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BZTE4ZWE0ZjctZGI2Ny00MDk5LThjOWUtNDM5OTRmNTQzZWZkXkEyXkFqcGc._V1__fd1xxe",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
+    { nom: "BeamNG.drive ", img: "https://i.postimg.cc/Nf3D0CcW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
+    { nom: "Taxi Life: A City Driving Simulator", img: "https://i.postimg.cc/Z0tNJgdP/image.pngy5.pn",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
     { nom: "Drive Beyond Horizons", img: "https://i.postimg.cc/zfBFtsS0/image.png", twitch: "https://youtu.be/_lPhgj4mjS8?si=Fz5umMYLm7UWRMT2" },
   
 ];
@@ -265,9 +265,10 @@ const renderer = new THREE.WebGLRenderer({
     canvas, 
     alpha: true, 
     antialias: false,
-    powerPreference: "high-performance"
+    powerPreference: "high-performance",
+    precision: isMobile ? "lowp" : "mediump"
 });
-
+renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
 const manager = new THREE.LoadingManager();
 
 const textureLoader = new THREE.TextureLoader(manager);
@@ -325,7 +326,23 @@ univers.forEach((item, index) => {
         texture = textureLoader.load(item.url);
         texture.colorSpace = THREE.SRGBColorSpace;
     }
+if (isVideo && !isMobile) { 
+        const video = document.createElement('video');
+        video.src = item.url; 
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.crossOrigin = "anonymous";
+        video.play().catch(e => {});
 
+        texture = new THREE.VideoTexture(video);
+     texture.colorSpace = THREE.SRGBColorSpace;
+    } else {
+        // Sur mobile, on utilise une image fixe (item.poster ou item.url)
+        // Assure-toi d'avoir une image de secours pour chaque vidéo
+        const textureUrl = isVideo ? item.poster || "fallback-image.jpg" : item.url;
+        texture = textureLoader.load(textureUrl);
+     texture.colorSpace = THREE.SRGBColorSpace;}
     const geometry = new THREE.PlaneGeometry(1.5, 2);
     const material = new THREE.MeshBasicMaterial({ 
         map: texture, 
@@ -419,6 +436,23 @@ window.addEventListener('click', () => {
                 `<img src="${d.url}" style="max-width:100%; border-radius:10px;">`;
                 
             modal.style.display = "block";
+        }
+    }
+
+    if (!isMobile) {
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(group.children);
+
+        if (intersects.length > 0) {
+            if (hoveredObject !== intersects[0].object) {
+                canvas.style.cursor = 'pointer';
+                hoveredObject = intersects[0].object;
+            }
+        } else {
+            if (hoveredObject !== null) {
+                canvas.style.cursor = 'default';
+                hoveredObject = null;
+            }
         }
     }
 });
@@ -591,32 +625,40 @@ function animate() {
         }
     }
 
-    for (let i = 0; i < group.children.length; i++) {
-        const obj = group.children[i];
-        const data = obj.userData;
-        
-        let targetRadius = baseRadius;
-        if (hoveredObject === obj) targetRadius += 0.8; 
+  for (let i = 0; i < group.children.length; i++) {
+    const obj = group.children[i];
+    const data = obj.userData;
+    
+    // 1. On définit la cible
+    let targetRadius = baseRadius;
+    if (hoveredObject === obj) targetRadius += 0.8; 
 
-        if (obj.currentRadius === undefined) obj.currentRadius = targetRadius;
-        const diff = targetRadius - obj.currentRadius;
+    // 2. Initialisation au premier tour
+    if (obj.currentRadius === undefined) obj.currentRadius = targetRadius;
+    
+    const diff = targetRadius - obj.currentRadius;
+    
+    // 3. OPTI : On ne calcule la position QUE si la différence est visible
+    // Si diff est minuscule, on ne fait rien (gain de CPU énorme sur mobile)
+    if (Math.abs(diff) > 0.001) {
+        obj.currentRadius += diff * 0.1;
         
-        if (Math.abs(diff) > 0.001) {
-            obj.currentRadius += diff * 0.1;
-            
-            const phi = data.phi;
-            const theta = data.theta;
-            const r = obj.currentRadius;
+        const phi = data.phi;
+        const theta = data.theta;
+        const r = obj.currentRadius;
 
-            // Correction mathématique pour Three.js (Y est l'axe vertical)
-            obj.position.set(
-                r * Math.sin(phi) * Math.cos(theta),
-                r * Math.cos(phi),
-                r * Math.sin(phi) * Math.sin(theta)
-            );
-            obj.lookAt(0, 0, 0);
-        }
+        // Positionnement 3D
+        obj.position.set(
+            r * Math.sin(phi) * Math.cos(theta),
+            r * Math.cos(phi),
+            r * Math.sin(phi) * Math.sin(theta)
+        );
+        obj.lookAt(0, 0, 0);
+        
+        // 4. Force la mise à jour sur mobile si besoin
+        obj.matrixWorldNeedsUpdate = true;
     }
+}
 
     if (expansion < 1) {
         expansion += (1 - expansion) * 0.03; 
@@ -664,15 +706,13 @@ function decodeEffect(elementId, targetText, speed = 1) {
     });
 }
 
-// L'ordre d'apparition
+
 window.addEventListener('load', async () => {
-    // 1. On attend que LE WIKI se décode
+   
     await decodeEffect('text-wiki', 'LE WIKI', 1); 
 
-    // 2. SEULEMENT APRÈS, le bloc "de femimarss" apparaît et se décode
     await decodeEffect('text-femi', 'femimarss', 1); 
     
-    // 3. Petit bonus : on active une classe sur le header si besoin
     const header = document.getElementById('header-anim');
     if(header) header.classList.add('reveal');
 });
