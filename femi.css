@@ -93,17 +93,6 @@ html, body {
     text-shadow: 0 0 5px #00d2ff; 
 }
 
-.nav-links a.manga {
-    color: #ffcc00 !important; 
-    transition: 0.3s;
-    
-
-}
-
-
-.nav-links a.manga:hover {
-    text-shadow: 0 0 20px #ffffff; 
-}
 
 
 .head {
@@ -436,10 +425,9 @@ html, body {
     background: transparent;
 }
 
-/* --- LE FIX POUR MOBILE --- */
 @media (max-width: 768px) {
     #planete-container, #world-3d {
-        height: 350px !important; /* On divise la hauteur par 2 sur tel */
+        height: 350px !important; 
         margin: 20px 0 !important;
     }
 }
@@ -586,35 +574,33 @@ html, body {
     visibility: visible !important;
 }
 
-
 @media (max-width: 768px) {
     
-   
+    
     .search-container {
         margin: 20px auto !important; 
         width: 90%;
         margin-right: 30px;
     }
 
-    
+   
     .title h1 {
         font-size: 2.8rem !important;
         text-align: center;
     }
 
-    
     #grid-jeux, .game-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px;
         padding: 10px;
     }
 
-
+   
     .image-container img {
         height: 200px !important;
     }
 
-
+  
     #results {
         width: 100%;
         left: 0;
@@ -622,7 +608,6 @@ html, body {
     }
 }
 @media (max-width: 768px) {
-
     .head {
         display: flex;
         flex-direction: column;
@@ -631,7 +616,7 @@ html, body {
         gap: 20px; 
     }
 
-
+    
     .title {
         width: 100%;
         margin-bottom: 20px;
@@ -644,10 +629,11 @@ html, body {
         display: block;
     }
 
+   
     .jeu-icon img {
         height: 60px;
         margin: 0 auto;
         display: block;
-        margin-bottom: 10px; /* On remet une marge normale */
+        margin-bottom: 10px;
     }
 }
