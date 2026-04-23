@@ -136,7 +136,7 @@ const jeux2026 = [
     { nom: "hytale", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/cobbwu_lt9j59",twitch: "https://twitchtracker.com/femimarss/streams/315784254180" },
     { nom: "league of legends", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/EGS_LeagueofLegends_RiotGames_S2_1200x1600-112729f9da450fe377e11d40029c4831_bu2mge",twitch: "https://twitchtracker.com/femimarss/games/21779"  },
     { nom: "Roadside Research", img: "https://i.postimg.cc/Y2QHdZSm/image.png", twitch: "https://twitchtracker.com/femimarss/games/121660419" },
-    { nom: "yapyap", img: "https://i.postimg.cc/dtWS6jGT/image.png", twitch: "https://twitchtracker.com/femimarss/games/121660419" }, 
+    { nom: "yapyap", img: "https://i.postimg.cc/dtWS6jGT/image.png", twitch: "https://twitchtracker.com/femimarss/games/976777994" }, 
     { nom: "Five Hearts Under One Roof 2", img: "https://i.postimg.cc/xdMqxM32/image.png", twitch: "https://twitchtracker.com/femimarss/streams/315929352035" }, 
   ]
 
@@ -157,12 +157,12 @@ const jeux2025 = [
     { nom: "rematch", img: "https://i.postimg.cc/zBb0xsSn/image.png", twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr99eVZWzjiUDZ-qzH0N3BE3j&si=bs5OczyjJawrKU-q" },
     { nom: "60 seconds!", img: "https://i.postimg.cc/qv1PSdnj/image.png", twitch:"https://youtu.be/YsSifJAGVDQ?si=V8GwHC8leUpSEYuX" },
     { nom: "Pokémon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv"},
-    { nom: "peak", img: "https://i.postimg.cc/WbFqh2pJ/image.png",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
+    { nom: "peak", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BY2NkZTAxNTQtNDg0YS00ZDdhLTk4OTgtZWQyMzJmODJlYmVkXkEyXkFqcGc._V1_FMjpg_UX1000__zlf8kq",  twitch: "https://twitchtracker.com/femimarss/streams/323618633209"},
     { nom: "road 96", img: "https://i.postimg.cc/8crkPzd5/image.png", twitch: "https://youtu.be/WXGRzsggjkA?si=4CVUhNIjfdsG_O0m" },
-    { nom: "mario kart world", img: "https://i.postimg.cc/Gm32vdd5/image.png",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
+    { nom: "mario kart world", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/mario-kart-world-jaquette_hmwlps",  twitch: "https://youtu.be/k4OedRRtZVo?si=b_6F-rnEbi5p8S4x"},
     { nom: "forza horizon 5", img: "https://i.postimg.cc/0Q11d0Dh/image.png",  twitch: "https://youtu.be/VPJUGylxsjQ?si=v6_BRemBiKaXKQ6S"},
     { nom: "euro truck simulator 2", img: "https://i.postimg.cc/bJCkzzXr/image.png",  twitch: "https://twitchtracker.com/femimarss/games/75467"},
-    { nom: "BeamNG.drive ", img: "https://i.postimg.cc/Nf3D0CcW/image.png",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
+    { nom: "BeamNG.drive ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BNmQyNTY1MDgtZWIyYi00MTg1LWIwNDktZmNkMjMzNTZlNzJkXkEyXkFqcGc._V1_FMjpg_UX1000__sihvjo",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
     { nom: "Taxi Life: A City Driving Simulator", img: "https://i.postimg.cc/Z0tNJgdP/image.pngy5.pn",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
     { nom: "Drive Beyond Horizons", img: "https://i.postimg.cc/zfBFtsS0/image.png", twitch: "https://youtu.be/_lPhgj4mjS8?si=Fz5umMYLm7UWRMT2" },
   
@@ -254,20 +254,18 @@ const fuse = new Fuse(toutesLesListes, {
             { type: 'video', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/samples/sea-turtle.mp4' }
         ];
 
-    // --- SCÈNE ET CAMÉRA ---
-// 1. On définit d'abord isMobile
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
 
-// 2. Maintenant on peut calculer la hauteur sans erreur
+
 const displayHeight = isMobile ? 350 : 700;
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / displayHeight, 0.1, 1000);
 
-// 3. On règle la position de la caméra
+
 camera.position.z = isMobile ? 10 : 8;
 
-// 4. On configure le renderer
+
 const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
@@ -276,7 +274,6 @@ const renderer = new THREE.WebGLRenderer({
     precision: isMobile ? "lowp" : "mediump"
 });
 
-// 5. On applique les réglages au renderer
 renderer.setSize(window.innerWidth, displayHeight);
 renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -569,7 +566,6 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 function animate() {
     requestAnimationFrame(animate);
 
-    // --- OPTIMISATION MOBILE : On s'arrête si caché ou pas visible ---
     if (document.hidden || !isVisible) return; 
 
     const scrollY = window.scrollY;
@@ -600,25 +596,19 @@ function animate() {
     const obj = group.children[i];
     const data = obj.userData;
     
-    // 1. On définit la cible
     let targetRadius = baseRadius;
     if (hoveredObject === obj) targetRadius += 0.8; 
 
-    // 2. Initialisation au premier tour
     if (obj.currentRadius === undefined) obj.currentRadius = targetRadius;
     
     const diff = targetRadius - obj.currentRadius;
     
-    // 3. OPTI : On ne calcule la position QUE si la différence est visible
-    // Si diff est minuscule, on ne fait rien (gain de CPU énorme sur mobile)
     if (Math.abs(diff) > 0.001) {
         obj.currentRadius += diff * 0.1;
         
         const phi = data.phi;
         const theta = data.theta;
         const r = obj.currentRadius;
-
-        // Positionnement 3D
         obj.position.set(
             r * Math.sin(phi) * Math.cos(theta),
             r * Math.cos(phi),
@@ -626,7 +616,7 @@ function animate() {
         );
         obj.lookAt(0, 0, 0);
         
-        // 4. Force la mise à jour sur mobile si besoin
+       
         obj.matrixWorldNeedsUpdate = true;
     }
 }
@@ -647,12 +637,8 @@ function decodeEffect(elementId, targetText, speed = 1) {
 
         let iteration = 0;
         const japaneseChars = "フェミマースアーカイブ"; 
-        
-        // On cible le lien <a> s'il existe, sinon l'élément lui-même
         const link = element.querySelector('a');
         const displayTarget = link ? link : element;
-
-        // --- ACTION : On rend l'élément visible au moment où l'animation démarre ---
         element.style.visibility = 'visible';
         element.classList.add('decoding');
 
@@ -661,9 +647,8 @@ function decodeEffect(elementId, targetText, speed = 1) {
                 .split("")
                 .map((letter, index) => {
                     if(index < iteration) {
-                        return targetText[index]; // Lettre finale fixée
+                        return targetText[index]; 
                     }
-                    // Caractère japonais aléatoire pendant le "décodage"
                     return japaneseChars[Math.floor(Math.random() * japaneseChars.length)];
                 })
                 .join("");
@@ -678,12 +663,11 @@ function decodeEffect(elementId, targetText, speed = 1) {
     });
 }
 
-window.addEventListener('load', async () => {
 
+window.addEventListener('load', async () => {
     await decodeEffect('text-wiki', 'LE WIKI', 1); 
 
     await decodeEffect('text-femi', 'femimarss', 1); 
-    
     const header = document.getElementById('header-anim');
     if(header) header.classList.add('reveal');
 });
