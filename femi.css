@@ -109,12 +109,14 @@ html, body {
     font-size: 5rem;
     margin: 0 0 10px 0;
     line-height: 1;
+    margin-left: 10px;
 }
 
 .title h2 {
     font-family: "sekuya";
     font-size: 2rem;
     margin: 0; 
+    margin-left: 15px;
 }
 
 .femimarss a {
