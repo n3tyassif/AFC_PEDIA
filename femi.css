@@ -722,5 +722,17 @@ html, body {
     }
 }
 
+/* Cible les tablettes (entre 769px et 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        /* On remet le fond bien en haut à gauche comme tu voulais */
+        background-position: 0% 0% !important;
+        
+        /* Très important : le mode 'fixed' bug souvent sur tablette */
+        background-attachment: scroll !important;
+        
+        /* On s'assure que l'image couvre tout sans s'étirer bizarrement */
+        background-size: cover !important;
+    }
 
-
+}
