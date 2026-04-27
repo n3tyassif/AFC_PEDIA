@@ -53,7 +53,7 @@ html, body {
         background: 
             radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
             linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url("./assets/img/wiki/femi.png") no-repeat center top;
+            url("./assets/img/wiki/mur.png") no-repeat center top;
         
         /* On gère le zoom ici */
         background-size: cover; 
