@@ -344,7 +344,7 @@ html, body {
 }
 
 .game-card:hover img {
-    box-shadow: 0 0 15px #00c8ff8d;
+     box-shadow: 0 0 15px #037dff8d;
 }
 
 .overlay {
