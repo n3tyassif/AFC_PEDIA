@@ -28,44 +28,35 @@ html, body {
     position: relative;
     width: 100%;
 }
+/* --- 2. VERSION TABLETTE (Le correctif pour iPad/Brave) --- */
 @media only screen and (max-width: 1024px) {
-    /* 1. On met le noir sur le HTML (la couche la plus profonde) */
     html {
         background-color: black !important;
     }
 
-    /* 2. On rend le body TRANSPARENT pour voir à travers */
     body {
         background: transparent !important;
         background-image: none !important;
+        /* Empêche les bugs de superposition */
+        isolation: isolate; 
     }
 
-    /* 3. Le faux fond fixe (L'astuce pour iPad) */
     body::before {
         content: "";
-        position: fixed; /* Il reste collé à la vitre */
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
-        
-        /* On remet EXACTEMENT ton image et tes dégradés */
+        width: 100%;
+        height: 100%;
         background: 
             radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
             linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url("./assets/img/wiki/mur.png") no-repeat center top;
-        
-        /* On gère le zoom ici */
-        background-size: cover; 
-        
-        /* On le place derrière le texte mais devant le fond noir du HTML */
-        z-index: -1; 
-        
-        /* Important pour pouvoir cliquer sur tes boutons/liens */
+            url("https://res.cloudinary.com/dyhcasitx/image/upload/v1777323663/c562af_6c7555bbdad54d969e73f1df015b2680_mv2_w6yd7q.avif") no-repeat center top;
+        background-size: cover;
+        z-index: -1;
         pointer-events: none;
     }
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
