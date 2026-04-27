@@ -448,7 +448,6 @@ html, body {
     border: none;
     outline: none;
     background: transparent;
-    touch-action: none;
     height: auto !important; /* Garde les proportions */
 }
 
