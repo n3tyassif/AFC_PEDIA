@@ -36,9 +36,16 @@ html, body {
     padding: 0 40px;
     z-index: 1000;
     box-sizing: border-box;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    
 }
 
-
+.navbar::-webkit-scrollbar {
+    display: none; 
+}
 .nav-logo { 
     display: flex; 
     align-items: center; 
@@ -344,7 +351,7 @@ html, body {
 }
 
 .game-card:hover img {
-     box-shadow: 0 0 15px #037dff8d;
+    box-shadow: 0 0 15px #037dff8d;
 }
 
 .overlay {
@@ -426,6 +433,7 @@ html, body {
     border: none;
     outline: none;
     background: transparent;
+    touch-action: none;
 }
 
 @media (max-width: 768px) {
