@@ -293,7 +293,8 @@ html, body {
     width: 45%; 
     height: 2px; 
     background: linear-gradient(90deg, #00fbff, transparent); 
-    margin-bottom: 20px;
+    margin-top: 120px;
+    margin-left: -135px;
 }
 
 .jeux {
@@ -674,22 +675,39 @@ html, body {
     }
 
     .search-container {
-    margin-top: -200px !important;
+    margin-top: -200px !important; /* Ajuste le chiffre jusqu'à ce que ce soit parfait */
     position: relative;
-    z-index: 100;
+    z-index: 100; /* Pour passer au-dessus d'éventuels éléments invisibles */
 }
-
+/* On rapetisse les images de résultats */
 #results img {
-    width: 90px !important; 
+    width: 90px !important; /* Taille fixe plus petite */
     height: auto;
     border-radius: 8px;
 }
 
-
+/* On réduit la police du texte à côté */
 #results div {
     font-size: 1em !important;
     padding: 10px !important;
 }
+.category-line{
+  width: 95%; 
+    height: 2px; 
+    background: linear-gradient(90deg, #00fbff, transparent); 
+    margin-top: 120px;
+    margin-left: -135px;
+}
 
+.jeu-icon img {
+    height: 75px;
+    margin-left: -10px;
+    margin-bottom: -100px; 
+    margin-top: 40px;
+}
+.jeux {
+    transform: translate(50px, 40px) !important; 
+    /* 20px = vers la droite | -10px = vers le haut */
+}
 }
 
