@@ -724,17 +724,11 @@ html, body {
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     body {
-        /* On utilise cover pour remplir l'écran, mais avec un scroll fixe */
-        background-size: cover !important; 
-        
-        /* On le colle en haut à gauche comme tu voulais au début */
+        background-size: 100% auto !important; 
         background-position: left top !important;
-        
         background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
         
-        /* C'est CA qui empêche l'image d'être coupée quand tu scrolles */
-        background-attachment: fixed !important;
-
-        background-color: #000 !important; 
-    }
 }
+}
+    
