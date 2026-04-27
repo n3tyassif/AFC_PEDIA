@@ -124,6 +124,7 @@ html, body {
     margin: 0 0 10px 0;
     line-height: 1;
     margin-left: 10px;
+    text-align:center ;
 }
 
 .title h2 {
@@ -264,7 +265,7 @@ html, body {
     display: flex;
     justify-content: center;
     gap: 50px;
-    margin-top: 30px;
+    margin-top: 55px;
    
 }
 
@@ -722,17 +723,22 @@ html, body {
     }
 }
 
-/* Cible les tablettes (entre 769px et 1024px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     body {
-        /* On remet le fond bien en haut à gauche comme tu voulais */
-        background-position: 0% 0% !important;
+        /* On utilise cover pour remplir l'écran, mais avec un scroll fixe */
+        background-size: cover !important; 
         
-        /* Très important : le mode 'fixed' bug souvent sur tablette */
-        background-attachment: scroll !important;
+        /* On le colle en haut à gauche comme tu voulais au début */
+        background-position: left top !important;
         
-        /* On s'assure que l'image couvre tout sans s'étirer bizarrement */
-        background-size: cover !important;
-    }
+        background-repeat: no-repeat !important;
+        
+        /* C'est CA qui empêche l'image d'être coupée quand tu scrolles */
+        background-attachment: fixed !important;
 
+        background-color: #000 !important; 
+    }
+.category-header{
+    margin-top: -500px;
+}
 }
