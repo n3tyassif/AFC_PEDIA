@@ -709,5 +709,19 @@ html, body {
     transform: translate(50px, 40px) !important; 
     /* 20px = vers la droite | -10px = vers le haut */
 }
+#modal-media img{
+  margin-top: 240px;}
+
+  #modal-titre{
+    margin-top: 110px;
+
+  }
+
+    body {
+        /* background-position: [Horizontal] [Vertical] */
+        background-position: right center !important; 
+    }
 }
+
+
 
