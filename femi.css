@@ -51,7 +51,7 @@ html, body {
         background: 
             radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
             linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url("https://res.cloudinary.com/dyhcasitx/image/upload/v1777323663/c562af_6c7555bbdad54d969e73f1df015b2680_mv2_w6yd7q.avif") no-repeat center top;
+            url("./assets/img/wiki/femi.png") no-repeat center top;
         background-size: cover;
         z-index: -1;
         pointer-events: none;
