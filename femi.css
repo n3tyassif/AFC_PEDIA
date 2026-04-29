@@ -28,35 +28,7 @@ html, body {
     position: relative;
     width: 100%;
 }
-/* --- 2. VERSION TABLETTE (Le correctif pour iPad/Brave) --- */
-@media only screen and (max-width: 1024px) {
-    html {
-        background-color: black !important;
-    }
 
-    body {
-        background: transparent !important;
-        background-image: none !important;
-        /* Empêche les bugs de superposition */
-        isolation: isolate; 
-    }
-
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: 
-            radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
-            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url("./assets/img/wiki/femi.png") no-repeat center top;
-        background-size: cover;
-        z-index: -1;
-        pointer-events: none;
-    }
-}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -747,5 +719,40 @@ html, body {
     body {
         /* background-position: [Horizontal] [Vertical] */
         background-position: right center !important; 
+    }
+}
+
+
+/* Correction pour le mode paysage (quand l'écran est plus large que haut) */
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+    
+    /* 1. On réduit la hauteur du header pour laisser respirer les éléments */
+    .head {
+        min-height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* 2. On réduit la taille du titre "LE WIKI" pour qu'il ne prenne pas toute la place */
+    .head h1, .head .title-wiki { 
+        font-size: 3rem !important; /* Ajuste selon ton nom de classe réel */
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. On réduit l'espace des stats (124, 303, 15) */
+    .stats-container {
+        margin-top: 250px !important;
+        margin-bottom: 10px !important;
+        transform: scale(0.8); /* Astuce rapide pour tout rétrécir d'un coup */
+    }
+
+    /* 4. On s'assure que la barre de recherche ne colle pas au reste */
+    .search-container {
+        margin-top: -250px !important;
+    }
+
+    /* 5. Si ton Canvas 3D (la planète) cache tout, on le réduit ou on le masque */
+    #planete-container {
+        height: 300px !important; /* Au lieu de 750px */
     }
 }
