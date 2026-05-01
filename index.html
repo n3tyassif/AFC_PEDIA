@@ -211,15 +211,14 @@ document.getElementById('game-overlay').onclick = function() {
     this.style.display = 'none';
 };
 
-
-document.querySelector('.overlay-content').onclick = function(event) {
-    event.stopPropagation(); 
+document.querySelector('#overlay-img').onclick = function(event) {
+    event.stopPropagation();
     
     if (currentTwitch) {
         let lienFinal = currentTwitch.includes("http") ? 
             currentTwitch : 
             "https://twitchtracker.com/games/" + currentTwitch;
-            
+        
         window.open(lienFinal, "_blank");
     }
 };
@@ -359,7 +358,7 @@ window.showFromSearch = (index) => {
             
             // On peut aussi remplir le média ici si besoin
             
-            modal.style.display = "block";
+            modal.style.display = "flex";
         }
     }
 };
@@ -370,8 +369,8 @@ window.ouvrirOverlay3D = (d) => {
 
     modalTitre.innerText = d.titre;
     modalMedia.innerHTML = d.type === 'video' ? 
-        `<video src="${d.url}" controls autoplay loop muted style="max-width:100%; border-radius:10px;"></video>` :
-        `<img src="${d.url}" style="max-width:100%; border-radius:10px;">`;
+        `<video src="${d.url}" controls autoplay loop muted ></video>` :
+        `<img src="${d.url}">`;
     
     modal.style.display = "block";
 };
@@ -394,8 +393,8 @@ window.addEventListener('click', (event) => {
         if (modal && modalMedia && modalTitre) {     
             modalTitre.innerText = d.titre || "Sans titre"; 
             modalMedia.innerHTML = d.type === 'video' ? 
-                `<video src="${d.url}" controls autoplay loop muted playsinline style="max-width:100%; border-radius:10px;"></video>` : 
-                `<img src="${d.url}" style="max-width:100%; border-radius:10px;">`;
+                `<video src="${d.url}" controls autoplay loop muted playsinline ></video>` : 
+                `<img src="${d.url}" ">`;
                 
             modal.style.display = "block";
         }
