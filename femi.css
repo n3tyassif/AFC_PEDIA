@@ -1001,20 +1001,11 @@ html, body {
         width: auto !important;
         height: auto !important;
         object-fit: contain !important;
-        margin-top: 80px !important; /* Pour laisser de la place au titre descendu */
         display: block !important;
         border-radius: 10px !important;
     }
 
-    #modal-titre-recherche {
-        position: absolute;
-        top: 110px !important; /* Bien descendu sous la navbar */
-        font-size: 1.3rem !important;
-        margin-top: 0 !important; /* Nettoyage de l'ancien margin négatif */
-        width: 100%;
-        text-align: center;
-    }
-
+   
 
 
     /* --- OVERLAY CONTENT (RECHERCHE) --- */
@@ -1042,5 +1033,36 @@ html, body {
         font-size: 1.1rem !important;
         margin-left: -15px;
     }
+
+    #recherche {
+        margin-top:-500px;
+    }
+
+    .icon {
+    margin-top: -4px;
 }
-    
+
+    .stat-label {
+    font-size: 1.2rem;
+}
+   
+#modal-media-planete img {
+    margin-left: 0px;
+    margin-right: 170px;
+   
+   
+}
+
+#modal-titre-planete{
+    margin-left: -70px;
+    margin-top: 5px;
+
+
+}
+#modal-recherche img {
+    align-items: center;
+    margin-right: 125px;
+    margin-top: -5px;
+}
+
+}
