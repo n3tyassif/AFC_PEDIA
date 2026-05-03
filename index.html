@@ -25,12 +25,13 @@
         </div>
     </div>
 </div>
-  <div id="game-overlay" class="overlay">
+<div id="game-overlay" class="overlay">
     <div class="overlay-content">
-        <img id="overlay-img" src="" alt="">
+        <div class="overlay-image-container" style="position: relative;"> <img id="overlay-img" src="" alt="Image de l'anime">
+            </div>
         <h2 id="overlay-title"></h2>
-        <p>Cliquez à nouveau pour voir les stats Twitch</p>
     </div>
+</div>
 </div>
     <nav class="navbar">
         <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="cursor: pointer;">
@@ -113,14 +114,15 @@
  </section>
  <section id="anime">
     <div class="category-header">
-        <div class="jeu-icon">
-          <img src="https://i.postimg.cc/g25BPYMn/df9qfmp-557b5546-a96a-4cf6-ad95-7d579cedbc62.gif" 
-         alt="logo malenia" class="jeu-icon">
-       
-         <div class="anime"> <h2>anime</h2> </div>
+        <div class="anime-icon">
+          <img src="./assets/img/wiki/itachi.gif" alt="logo mitachi" class="anime-icon">
+          <div class="anime-title"> <h2>anime</h2> </div>
         </div>
         <div class="category-line"></div>
     </div>
+
+    <div id="grid-animes" class="game-grid"></div> 
+</section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -172,24 +174,42 @@ const jeux2024 = [
 ]
 
 
-let currentTwitch = ""; 
+const animesList = [
+    { nom: "ONE PIECE", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/what-would-happend-if-the-maw-appeared-in-the-one-piece-v0-qyn1vvzyr7pg1_camrmr", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2NkzSZd0vgtLTBuZlw4_Hr&si=-ReWaRCtqFXWQgh5", statut: "encours" },
+    { nom: "naruto", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/435vbgdmi76f1_hqrdhm", twitch: "https://www.patreon.com/collection/857629?view=expanded", statut: "termine"},
+    { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/81Zj-BWityL._AC_UF1000_1000_QL80__adwiix", twitch: "https://www.patreon.com/collection/857628" },
+    { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641" },
+    { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/4402230_emlacw", twitch: "https://www.patreon.com/collection/1322813" },
+    { nom: "blue lock saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813" },
+    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
+    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
+    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
+    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
+    
+];
 
+let currentTwitch = ""; 
 
 function remplirGrille(listeDeJeux, idDeLaGrille) {
     const grille = document.getElementById(idDeLaGrille);
     if (!grille) return; 
 
-  
     grille.innerHTML = ""; 
 
     listeDeJeux.forEach(jeu => {
-       
         const carte = document.createElement('div');
         carte.className = 'game-card';
-        carte.onclick = () => ouvrirCarte(jeu.img, jeu.nom, jeu.twitch || "");
+       carte.onclick = () => ouvrirCarte(jeu.img, jeu.nom, jeu.twitch || "", jeu.statut || "");
 
+        let badgeHTML = "";
+        if (jeu.statut) {
+            badgeHTML = `<div class="badge-statut ${jeu.statut}"></div>`;
+        }
+
+        // CORRECTION ICI : Utilise bien les backticks ` du début à la fin
         carte.innerHTML = `
             <div class="image-container">
+                ${badgeHTML}
                 <img src="${jeu.img}" alt="${jeu.nom}">
             </div>
             <p class="game-title">${jeu.nom}</p>
@@ -197,16 +217,39 @@ function remplirGrille(listeDeJeux, idDeLaGrille) {
         grille.appendChild(carte);
     });
 }
-
-function ouvrirCarte(img, titre, twitch) {
+function ouvrirCarte(img, titre, twitch, statut) {
     const overlay = document.getElementById('game-overlay');
-    document.getElementById('overlay-img').src = img;
-    document.getElementById('overlay-title').innerText = titre;
-    currentTwitch = twitch; 
+    const imgElement = document.getElementById('overlay-img');
+    const titleElement = document.getElementById('overlay-title');
+
+    imgElement.src = img;
+    titleElement.innerText = titre;
+    currentTwitch = twitch;
+
+    // Gestion du Badge
+    // On cherche s'il y a déjà un badge et on le supprime
+    const existingBadge = overlay.querySelector('.badge-modal');
+    if (existingBadge) existingBadge.remove();
+
+    // Si un statut existe, on crée le nouveau badge
+    if (statut && statut !== "") {
+        const badge = document.createElement('div');
+        badge.className = `badge-modal ${statut}`;
+        
+        // On rend le texte joli (ex: "encours" -> "EN COURS")
+        badge.innerText = statut.toUpperCase().replace("ENCOURS", "EN COURS");
+        
+        // On l'ajoute dans le container de l'image
+        const container = overlay.querySelector('.overlay-image-container');
+        if (container) {
+            container.appendChild(badge);
+        } else {
+            overlay.appendChild(badge); // Fallback si le container n'existe pas
+        }
+    }
+
     overlay.style.display = 'flex';
 }
-
-
 document.getElementById('game-overlay').onclick = function() {
     this.style.display = 'none';
 };
@@ -225,8 +268,9 @@ document.querySelector('#overlay-img').onclick = function(event) {
 
 remplirGrille(jeux2026, 'grid-2026');
 remplirGrille(jeux2025, 'grid-2025');
-const toutesLesListes = [...jeux2026, ...jeux2025];
+const toutesLesListes = [...jeux2026, ...jeux2025, ...animesList];
 
+remplirGrille(animesList, 'grid-animes');
 
 const fuse = new Fuse(toutesLesListes, {
     keys: ['nom'],
