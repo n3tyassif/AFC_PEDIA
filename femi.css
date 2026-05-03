@@ -897,25 +897,14 @@ html, body {
 }
 }
 
-/* ==========================================================
-   1. IPAD / TABLETTE PORTRAIT (Debout)
-   ========================================================== */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .overlay-content img {
-        max-height: 65vh !important; /* On réduit pour voir le titre */
-        width: auto !important;      /* AUTO, pas 100% */
-    }
-    .category-header {
-        margin-top: -300px !important; /* Ajusté pour éviter de trop monter */
-    }
-}
 
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     
     .overlay-content img {
-        max-height: 60vh !important; /* Encore plus petit car l'écran est plat */
-        width: auto !important;
+        max-height: 80vh !important; /* Encore plus petit car l'écran est plat */
+        width: 90% !important;
         margin-top: 20px !important;
     }
 
@@ -928,8 +917,35 @@ html, body {
     }
 
     #overlay-title {
-        font-size: 1.5rem !important;
+        font-size: 1.2rem !important;
         margin-top: 10px !important;
+        margin-right: 25px !important;
+    }
+
+    
+   .title h1 {
+        margin-top:85px;
+    }
+
+    #modal-titre-planete {
+        margin-top: 20px;
+    }
+
+    .category-header {
+        margin-top: -500px ; 
+    }
+
+    .overlay-content img {
+        width:40%;
+    }
+
+    #modal-recherche img {
+        margin-left: 100px;
+    }
+
+    .titre-jeu-recherche {
+        font-size: 1.2rem ;
+        margin-left: 90px;
     }
 }
 
@@ -1014,8 +1030,7 @@ html, body {
         width: auto !important;
     }
 
-    .overlay-content img {
-        width: auto !important;
+    .overlay-content img { 
         max-width: 100% !important;
         max-height: 77vh !important; /* Dernière version demandée */
         margin-top: 75px !important;
@@ -1059,10 +1074,13 @@ html, body {
 
 
 }
-#modal-recherche img {
+    #modal-recherche img {
     align-items: center;
     margin-right: 125px;
     margin-top: -5px;
+    
 }
 
 }
+
+
