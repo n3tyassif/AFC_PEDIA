@@ -41,7 +41,7 @@
         <ul class="nav-links">
             <li><a href="https://youtu.be/rkaosr6rsc4?si=01a2GFSP_rzuWH8b" target="_blank" class="manga">MANGA</a></li>
             <li><a href="#jeu">jeux</a></li>
-            <li><a href="#">anime</a></li>
+            <li><a href="#anime">anime</a></li>
             <li><a href="#">SÉRIES</a></li>
             <li><a href="#">recaps</a></li>
             <li><a href="#">episode 1</a></li>
@@ -177,10 +177,10 @@ const jeux2024 = [
 const animesList = [
     { nom: "ONE PIECE", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/what-would-happend-if-the-maw-appeared-in-the-one-piece-v0-qyn1vvzyr7pg1_camrmr", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2NkzSZd0vgtLTBuZlw4_Hr&si=-ReWaRCtqFXWQgh5", statut: "encours" },
     { nom: "naruto", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/435vbgdmi76f1_hqrdhm", twitch: "https://www.patreon.com/collection/857629?view=expanded", statut: "termine"},
-    { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/81Zj-BWityL._AC_UF1000_1000_QL80__adwiix", twitch: "https://www.patreon.com/collection/857628" },
-    { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641" },
-    { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/4402230_emlacw", twitch: "https://www.patreon.com/collection/1322813" },
-    { nom: "blue lock saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813" },
+    { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/81Zj-BWityL._AC_UF1000_1000_QL80__adwiix", twitch: "https://www.patreon.com/collection/857628", statut: "termine" },
+    { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641", statut: "termine" },
+    { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/4402230_emlacw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine"},
+    { nom: "blue lock saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine" },
     { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
     { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
     { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
@@ -477,7 +477,6 @@ window.addEventListener('click', (event) => {
 
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
-
 if (inputRecherche && resultsDiv) {
     inputRecherche.addEventListener('input', (e) => {
         const value = e.target.value.toLowerCase();
@@ -485,20 +484,23 @@ if (inputRecherche && resultsDiv) {
         if (value.length > 0) {
             const hits = fuse.search(value);
             if (hits.length > 0) {
+                // On génère les résultats
                 resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
                     const item = hit.item;
                     const safeNom = item.nom.replace(/'/g, "\\'");
-                    
+                    const typeTexte = item.statut ? "Anime" : "Jeu";
+
                     return `
-                        <div class="result-item" onclick="showFromSearchDirect('${safeNom}')">
+                        <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
                             <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
                             <div class="res-info">
-                                <div style="color: white; font-size: 1.1em;margin-left: 9px;">${item.nom}</div>
-                                <div style="color: #888; font-size: 0.9em;">Jeu</div>
+                                <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
+                                <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
                             </div>
                         </div>
                     `;
-                }).join('');
+                }).join(''); // On ferme le .map() et on joint le tout ici
+                
                 resultsDiv.style.display = 'block';
             } else {
                 resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat...</div>';
@@ -511,15 +513,14 @@ if (inputRecherche && resultsDiv) {
 }
 
 
-
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-container')) {
         resultsDiv.style.display = 'none';
     }
 });
-
 window.showFromSearchDirect = (nomDuJeu) => {
-    const toutesLesDonnees = [...jeux2026, ...jeux2025];
+    // On regroupe toutes les listes pour que la recherche trouve tout
+    const toutesLesDonnees = [...jeux2026, ...jeux2025, ...animesList]; 
     const item = toutesLesDonnees.find(j => j.nom === nomDuJeu);
 
     if (item) {
@@ -528,28 +529,26 @@ window.showFromSearchDirect = (nomDuJeu) => {
         const modalTitre = document.getElementById("modal-titre-recherche");
         
         if (modal && modalMedia && modalTitre) {
-            modalTitre.innerText = "";
-        
+            modalTitre.innerText = ""; // On vide le titre car il est dans le HTML ci-dessous
+            modalMedia.innerHTML = `
+                <div class="container-recherche-jeu">
+                    <a href="${item.twitch || '#'}" target="_blank">
+                        <img src="${item.img}" class="img-resultat-recherche">
+                    </a>
+                    <div class="titre-jeu-recherche">${item.nom}</div>
+                </div>
+            `;
+            modal.style.display = "flex"; // Utilise "flex" si c'était ton réglage pour centrer
+        }
 
-modalTitre.innerText = ""; 
-modalMedia.innerHTML = `
-    <div class="container-recherche-jeu">
-        <a href="${item.twitch || '#'}" target="_blank">
-            <img src="${item.img}" class="img-resultat-recherche">
-        </a>
-        <div class="titre-jeu-recherche">${item.nom}</div>
-    </div>
-`;
-        modal.style.display = "block";}
-
+        // On ferme les résultats de recherche
         const resultsDiv = document.getElementById('results');
-        if(resultsDiv) resultsDiv.style.display = 'none';
+        if (resultsDiv) resultsDiv.style.display = 'none';
         
         const barre = document.getElementById('recherche');
-        if(barre) barre.value = '';
+        if (barre) barre.value = '';
     }
 };
-
 
 window.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
