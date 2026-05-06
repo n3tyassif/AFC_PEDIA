@@ -739,7 +739,15 @@ html, body {
 }
 
 /* Couleurs spécifiques */
-.badge-modal.termine { background-color: #2ecc71; } /* Vert */
+.badge-modal.termine { 
+    background-color: #2ecc71;
+
+    font-weight: 400; /* Très gras pour la lisibilité */
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+} /* Vert */
 .badge-modal.encours { background-color: #f1c40f; color: #000; } /* Jaune */
 .badge-modal.drop    { background-color: #e74c3c; } /* Rouge */
 
