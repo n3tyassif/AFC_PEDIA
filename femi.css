@@ -313,7 +313,7 @@ html, body {
     font-family: 'Arial Black', sans-serif;
     margin-top: -340px;
 }
-.stat-label { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; }
+.stat-label { font-size: 1rem; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; }
 
 
 .category-header { 
@@ -827,15 +827,21 @@ html, body {
 }
 /* On rapetisse les images de résultats */
 #results img {
-    width: 90px !important; /* Taille fixe plus petite */
+    width: 130px !important; /* Taille fixe plus petite */
     height: auto;
     border-radius: 8px;
 }
 
 /* On réduit la police du texte à côté */
 #results div {
-    font-size: 1em !important;
+    font-size: 1.08em !important;
     padding: 10px !important;
+    font-weight: 300; /* Très gras pour la lisibilité */
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    
 }
 .category-line{
   width: 95%; 
@@ -947,7 +953,7 @@ html, body {
     display: block !important;
     /* On utilise max-height pour que l'image reste belle sans être déformée */
     max-height: 80vh !important; 
-    width: auto !important; 
+    width: 340px !important; 
     
     border-radius: 15px;
     cursor: pointer;
@@ -958,8 +964,9 @@ html, body {
 #overlay-title {
     margin-top: 15px !important;
     color: white;
-    text-align: center;
+   
     width: 100%;
+    margin-left: -10px;
 }
 
 #modal-media-planete img {
