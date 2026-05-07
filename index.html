@@ -122,6 +122,18 @@
 
     <div id="grid-animes" class="game-grid"></div> 
 </section>
+
+ <section id="film">
+    <div class="category-anime">
+        <div class="film-icon">
+          <img src="https://res.cloudinary.com/dyhcasitx/image/upload/output-onlinegiftools_5_yidtqa" alt="logo darkvador" class="anime-icon">
+          <div class="anime-title"> <h2>FILMS</h2> </div>
+        </div>
+        <div class="line-anime"></div>
+    </div>
+
+    <div id="grid-animes" class="game-grid"></div> 
+</section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -166,8 +178,14 @@ const jeux2025 = [
     { nom: "BeamNG.drive ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BNmQyNTY1MDgtZWIyYi00MTg1LWIwNDktZmNkMjMzNTZlNzJkXkEyXkFqcGc._V1_FMjpg_UX1000__sihvjo",  twitch: "https://twitchtracker.com/femimarss/games/491878"},
     { nom: "Taxi Life: A City Driving Simulator", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BZTE4ZWE0ZjctZGI2Ny00MDk5LThjOWUtNDM5OTRmNTQzZWZkXkEyXkFqcGc._V1__fd1xxe",  twitch: "https://youtu.be/5RFFDqGQeFc?si=pgKr0PTcSZYUqHEc"},
     { nom: "Drive Beyond Horizons", img: "https://i.postimg.cc/zfBFtsS0/image.png", twitch: "https://youtu.be/_lPhgj4mjS8?si=Fz5umMYLm7UWRMT2" },
-  
-];
+    { nom: "open front", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/01bdc60d66843a2224e61623cc622774_mlrrcj",  twitch: "https://twitchtracker.com/femimarss/games/1896092709"},
+    { nom: "hunts man", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/huntsman_p38u.600_au9ax9",  twitch: "https://twitchtracker.com/femimarss/streams/321008527612"},
+    { nom: "agar.io", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/4f2465d3ccc65c6986eb924da739f005_hj8cok",  twitch: "https://twitchtracker.com/femimarss/games/489594"},
+    { nom: "r.e.p.o", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/il_fullxfull.6872768834_rws0_cc4sy7",  twitch: "https://twitchtracker.com/femimarss/games/1294658629"},
+    { nom: "Pushing It! Together: Sisyphus Co-Op", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/co9n5i_g4hnrc",  twitch: "https://twitchtracker.com/femimarss/games/1592726071"},
+   
+];  
+
 const jeux2024 = [
     
 ]
@@ -177,6 +195,7 @@ const animesList = [
     { nom: "ONE PIECE", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/dB4EDhre2dsC2kxYDavyKWqLQwi_bpd3we", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2NkzSZd0vgtLTBuZlw4_Hr&si=-ReWaRCtqFXWQgh5", statut: "encours" },
     { nom: "naruto", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/piCt3IjXvoKaIwycJbOlE5TeEkA_fj7qrd", twitch: "https://www.patreon.com/collection/857629?view=expanded", statut: "termine" },
     { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/71mASgFgSiPl9QUexVH8BubU0lD_bxj4xu", twitch: "https://www.patreon.com/collection/857628" , statut: "termine" },
+    { nom: "Boruto : Naruto Next Generations", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/5In9hxnBHv6klZKpZhmAJwSpwYI_mk6wuz", twitch: "https://www.patreon.com/collection/857630?view=expanded" , statut: "termine"},
     { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641", statut: "termine"  },
     { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/i9kVgMqRocRUCOi4VX8v4ieQk2Z_et2qk7", twitch: "https://www.patreon.com/collection/1322813"},
     { nom: "blue lock: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine"  },
@@ -203,7 +222,30 @@ const animesList = [
     { nom: "death note", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/chnG4pYo89weaBjXHJWvW68E35B_te1iap", twitch: "https://www.patreon.com/collection/857661" , statut: "termine"},
     { nom: "bleach", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/7bSQNQuhHeInFMfzMwevfCiqcTm_l2d2pn", twitch: "https://www.patreon.com/collection/857634" , statut: "termine"},
     { nom: "Bleach: Thousand-Year Blood War", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/zbwbIldXg0SjgO80gSZ0mi92jja_ooxgfd", twitch: "https://www.patreon.com/collection/857634" , statut: "termine"},
-
+    { nom: "my hero academia", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/xL1AwLxTHtdttdZ03R2Au3p8Dp7_kuqrn3", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/br8pKycZtoA6NR2KBuNyloPA4PZ_ng6iwn", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 3", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/t1wSWQlCINCN21xyDuOrRISQzr9_iba2d5", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 4", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/ltGB09AEycNp1N9qj7UKGAWNMmx_esoqqb", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 5", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/bv2TrbgQMR8a6TvExeZnG5rJjKV_my4i9p", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 6", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/yRmGrfGMXI4nD3DnXGnPTzriYo1_swgi48", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison 7", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/rETD98Q9xGdNDIi5R9YKsAcZMYu_txfarm", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "my hero academia: saison finale", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/nAVqRnTsg4X5SKyPG5VikNwx6eM_bnat2o", twitch: "https://www.patreon.com/collection/1859121?view=expanded" , statut: "termine"},
+    { nom: "parasyte", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/2ngHwPQhHGPpLkLQd2MTAI3iXPq_emdxkz", twitch: "https://www.patreon.com/collection/857660?view=expanded" , statut: "termine"},
+    { nom: "shingeki no kyojin", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/lylYNfk1BGgKKO5esGBisQvHWGi_xia04j", twitch: "https://www.patreon.com/collection/857658?view=expanded" , statut: "termine"},
+    { nom: "shingeki no kyojin: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/pEOCVsHoUgSLcU01YiJY73zv6gz_rnqtis", twitch: "https://www.patreon.com/collection/857658?view=expanded" , statut: "termine"},
+    { nom: "shingeki no kyojin: saison 3", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/rkCQ1muFOjeDAnNJqtTIrrhPw8S_t0uiqv", twitch: "https://www.patreon.com/collection/857658?view=expanded" , statut: "termine"},
+    { nom: "shingeki no kyojin: saison finale", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/a4LAk8wD7wBS5sqQXmNiFAi66iD_j6dwe5", twitch: "https://www.patreon.com/collection/857658?view=expanded" , statut: "termine"},
+    { nom: "inazuma eleven", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/wGLKyYQfb06AU9vQbdRhBDAgn6t_k02lf8", twitch: "https://www.patreon.com/collection/857642?view=expanded" , statut: "termine"},
+    { nom: "inazuma eleven: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/portrait-with-logo_xxnqfa", twitch: "https://www.patreon.com/collection/857642?view=expanded" , statut: "termine"},
+    { nom: "inazuma eleven: saison 3", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/8156ogf8KJL._SL1083__wmd73e", twitch: "https://www.patreon.com/collection/857642?view=expanded" , statut: "termine"},
+    { nom: "the seven dealdy sins", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/gxTojpKEOtue85EEFlozwRbDXwJ_fu2lzt", twitch: "https://www.patreon.com/collection/857640?view=expanded" , statut: "termine"},
+    { nom: "jujutsu kaisen", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/6qQzMJG27XOJsyAEEIisoJB45j2_sxvjoh", twitch: "https://www.patreon.com/collection/857623?view=expanded" , statut: "termine"},
+    { nom: "jujutsu kaisen: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/3yFHMtdhriig4sm1w8oMQfA2gFN_mwrq46", twitch: "https://www.patreon.com/collection/857623?view=expanded" , statut: "termine"},
+    { nom: "wakfu", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/87SwFiUG4DG2obsAsSkFxLH4M2V_zdjcbg", twitch: "https://www.patreon.com/collection/857657?view=expanded" , statut: "termine"},
+    { nom: "wakfu: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/ci4zk0ZZIWC2ztfkxzIHNSdYxfO_vh4xax",  twitch: "https://www.patreon.com/collection/857657?view=expanded", statut: "termine"},
+    { nom: "wakfu: saison 3", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/alright-lets-switch-things-up-this-time-what-are-things-you-v0-lk601lmfmsxe1_xe4q3h",  twitch: "https://www.patreon.com/collection/857657?view=expanded", statut: "termine"},
+    { nom: "wakfu: saison 4", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/wakfusaison4kickstarter_i1iurm",  twitch: "https://www.patreon.com/collection/857657?view=expanded", statut: "termine"},
+    { nom: "wakfu: oav", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/phpbchq7f_g4oyyo", twitch: "https://www.patreon.com/collection/857657?view=expanded" , statut: "termine"},
 ]; 
 
 let currentTwitch = ""; 
@@ -306,15 +348,22 @@ const fuse = new Fuse(toutesLesListes, {
         const canvas = document.querySelector('#world-3d');
         const univers = [
           
-            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0256_sde1jg',titre: "la profondeur d'esprit"},
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0256_sde1jg',titre: "peluchenator 2"},
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_4479_i8y8jl',titre: "morning routine"},
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_4305_ttteux',titre: "l'elegance" },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Screenshot_20250829-1909022_ut48t3' ,titre: "la golluminisation." },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3747_vbt1wx',titre: "abasourdissant" },
-            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Snapchat-1544530563_cipcvm ',titre: "gamberge" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Snapchat-1544530563_cipcvm ',titre: "pas comme ca on imagine la vie" },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/image-112_e2mrjs' ,titre: "l'amour sans frontiere " },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/F_JeKZoWUAAPntE_ydjb1a',titre: "epstein" },
-            { type: 'video', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/samples/sea-turtle.mp4' }
+            { type: 'video', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/samples/sea-turtle.mp4' },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3728_sxc3tc',titre: "paff l'éclair" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_2542_ovq8tm',titre: "chiasse monstre" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_2571_ssc2g4',titre: "gyat" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0508_tuhsez',titre: "il riait. \n(credit: un gars sur discord)" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3689_cvg9ih',titre: "BBL" },
+            { type: 'video', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/RPReplay_Final1717177955_tj8xzv.mp4',titre: "GRRR PAW" },
+
         ];
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
