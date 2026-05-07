@@ -60,21 +60,20 @@
     </div>
 </header>
           
-
-            <div class="stats-container">
-                <div class="stat-card">
-                    <span class="stat-number"><a href="#anime" style="text-decoration: none; color: inherit;"> 38 </a></span>
-                    <span class="stat-label"> <a href="#anime" style="text-decoration: none; color: inherit;">ANIMÉS</a></span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number"> <a href="#jeu" style="text-decoration: none; color: inherit;"> 303 </a></span>
-                    <span class="stat-label"> <a href="#jeu" style="text-decoration: none; color: inherit;">JEUX </a></span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">53</span>
-                    <span class="stat-label">FILMS</span>
-                </div>
-            </div>
+<div class="stats-container">
+    <div class="stat-card">
+        <span class="stat-number"><a href="#anime" style="text-decoration: none; color: inherit;" data-target="38">0</a></span>
+        <span class="stat-label"><a href="#anime" style="text-decoration: none; color: inherit;">ANIMÉS</a></span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number"><a href="#jeu" style="text-decoration: none; color: inherit;" data-target="303">0</a></span>
+        <span class="stat-label"><a href="#jeu" style="text-decoration: none; color: inherit;">JEUX</a></span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number" data-target="53">0</span>
+        <span class="stat-label">FILMS</span>
+    </div>
+</div>
 
             <div class="search-container">
     <div class="search">
@@ -175,18 +174,37 @@ const jeux2024 = [
 
 
 const animesList = [
-    { nom: "ONE PIECE", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/what-would-happend-if-the-maw-appeared-in-the-one-piece-v0-qyn1vvzyr7pg1_camrmr", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2NkzSZd0vgtLTBuZlw4_Hr&si=-ReWaRCtqFXWQgh5", statut: "encours" },
-    { nom: "naruto", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/435vbgdmi76f1_hqrdhm", twitch: "https://www.patreon.com/collection/857629?view=expanded", statut: "termine"},
-    { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/81Zj-BWityL._AC_UF1000_1000_QL80__adwiix", twitch: "https://www.patreon.com/collection/857628", statut: "termine" },
-    { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641", statut: "termine" },
-    { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/4402230_emlacw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine"},
-    { nom: "blue lock: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine" },
-    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
-    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
-    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
-    { nom: "", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/", twitch: "" },
-    
-];
+    { nom: "ONE PIECE", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/dB4EDhre2dsC2kxYDavyKWqLQwi_bpd3we", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2NkzSZd0vgtLTBuZlw4_Hr&si=-ReWaRCtqFXWQgh5", statut: "encours" },
+    { nom: "naruto", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/piCt3IjXvoKaIwycJbOlE5TeEkA_fj7qrd", twitch: "https://www.patreon.com/collection/857629?view=expanded", statut: "termine" },
+    { nom: "naruto shippuden", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/71mASgFgSiPl9QUexVH8BubU0lD_bxj4xu", twitch: "https://www.patreon.com/collection/857628" , statut: "termine" },
+    { nom: "hunter x hunter", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/download_si4pgq", twitch: "https://www.patreon.com/collection/857641", statut: "termine"  },
+    { nom: "blue lock", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/i9kVgMqRocRUCOi4VX8v4ieQk2Z_et2qk7", twitch: "https://www.patreon.com/collection/1322813"},
+    { nom: "blue lock: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/blue-lock-season-2-key-visual-v0-r8y028b0zdjd1_esrxvw", twitch: "https://www.patreon.com/collection/1322813", statut: "termine"  },
+    { nom: "vinland saga", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/vUHlpA5c1NXkds59reY3HMb4Abs_fdv5ix", twitch: "https://www.patreon.com/collection/857649?view=expanded", statut: "termine" },
+    { nom: "vinland saga: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Vinland_Saga-anime-S2_sajp2m", twitch: "https://www.patreon.com/collection/857649?view=expanded" , statut: "termine"  },
+    { nom: "chainsaw man", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/npdB6eFzizki0WaZ1OvKcJrWe97_qilocf", twitch: "https://www.patreon.com/collection/1819982", statut: "termine"  },
+    { nom: "to be hero x", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/7ynNG9lYS9HIR8cYMgawO19VPkg_waftzr", twitch: "https://www.patreon.com/collection/1727648" , statut: "termine" },
+    { nom: "tokyo ghoul", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/tokyo-ghoul-gigapixel-art-width-2480px_ovccox", twitch: "https://www.patreon.com/collection/1787692" , statut: "termine"  },
+    { nom: "tokyo ghoul: re", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BNmJkZjUyYjItNjM1MC00YTU1LTgwNjMtMDA4YjdlYzc4MWQzXkEyXkFqcGc._V1_FMjpg_UX1000__s7xwxa", twitch: "https://www.patreon.com/collection/1787692", statut: "drop" },
+    { nom: "demon slayer", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/taT33NroOl2Fn8bUGj8bwdmNw3G_xj7uu2", twitch: "https://www.patreon.com/collection/1828584" , statut: "termine" },
+    { nom: "demon slayer: saison 2 ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/elL9f6ey1HHXuGyDagNon2nX4vd_s4e5ei", twitch: "https://www.patreon.com/collection/1828584", statut: "termine"  },
+    { nom: "digital circus", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/lpfrgfomX8uNFxv4VaEzvJGs9TK_wfbiqh", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz1QFxEzt7kT0D9js9xtzIe_&si=_clw2LzDZmVmW5dR" , statut: "termine" },
+    { nom: "solo leveling", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/geCRueV3ElhRTr0xtJuEWJt6dJ1_umhzot", twitch: "https://www.patreon.com/collection/1411820" , statut: "termine" },
+    { nom: "solo leveling: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/rsOApVLbIQEcNkqSlOxNPyg3FyI_cb9iml", twitch: "https://www.patreon.com/collection/1411820", statut: "termine"  },
+    { nom: "rankings of kings", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/pU3PK0yG5cMWNwvkJcEljDndGrd_ef9dv2", twitch: "https://www.patreon.com/collection/1203292", statut: "drop"  },
+    { nom: "arcane", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/6FMWx79iAtZx8WHtOrRj0VlM8Tp_sx0ybw", twitch: "https://www.patreon.com/collection/1229300" ,statut: "termine" },
+    { nom: "arcane: saison 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/cMsjlMXe8sDlWyZPtIz2kM2HEXV_fluqqo", twitch: "https://www.patreon.com/collection/1229300", statut: "termine" },
+    { nom: "fairy tail", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/703mVJP8UyP1b1hEJi6aTrf0MQ1_eecxak", twitch: "https://www.patreon.com/collection/857632",statut: "termine" },
+    { nom: "JoJo's Bizarre Adventure: part 1", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/ogAWwbh3frWtiTyyXrZaVFtqCgp_y77ovz", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2UID8kVAvCBGfNRpabknA2&si=pr3SebiOjzb6u_Us" , statut: "termine"},
+    { nom: "JoJo's Bizarre Adventure: part 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/81_-uBDbZYL._AC_SL1500__wnbfgw", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2UID8kVAvCBGfNRpabknA2&si=pr3SebiOjzb6u_Us" , statut: "termine"},
+    { nom: "JoJo's Bizarre Adventure: part 3", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/s-l1600_mlp5wp", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2UID8kVAvCBGfNRpabknA2&si=pr3SebiOjzb6u_Us" , statut: "termine"},
+    { nom: "JoJo's Bizarre Adventure: part 4", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/gpadk8ygTw516scC6w5I81ytYpU_yvkh6d", twitch: "https://youtube.com/playlist?list=PLYopthT7CLz2UID8kVAvCBGfNRpabknA2&si=pr3SebiOjzb6u_Us" , statut: "encours"},
+    { nom: "zom 100", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/q7QS8lAF1x3CxRSXoraOCdedXUc_gi4xvy", twitch: "https://www.patreon.com/collection/1546829" , statut: "termine"},
+    { nom: "death note", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/chnG4pYo89weaBjXHJWvW68E35B_te1iap", twitch: "https://www.patreon.com/collection/857661" , statut: "termine"},
+    { nom: "bleach", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/7bSQNQuhHeInFMfzMwevfCiqcTm_l2d2pn", twitch: "https://www.patreon.com/collection/857634" , statut: "termine"},
+    { nom: "Bleach: Thousand-Year Blood War", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/zbwbIldXg0SjgO80gSZ0mi92jja_ooxgfd", twitch: "https://www.patreon.com/collection/857634" , statut: "termine"},
+
+]; 
 
 let currentTwitch = ""; 
 
@@ -225,28 +243,30 @@ function ouvrirCarte(img, titre, twitch, statut) {
     imgElement.src = img;
     titleElement.innerText = titre;
     currentTwitch = twitch;
-
-    // Gestion du Badge
-    // On cherche s'il y a déjà un badge et on le supprime
+// 1. On nettoie toujours l'ancien badge avant
     const existingBadge = overlay.querySelector('.badge-modal');
     if (existingBadge) existingBadge.remove();
 
-    // Si un statut existe, on crée le nouveau badge
-    if (statut && statut !== "") {
+    // 2. On définit les statuts qui ont le droit à un badge
+    const statutsAutorises = ["drop", "encours"];
+
+    // 3. On vérifie si le statut actuel est dans la liste
+    if (statut && statutsAutorises.includes(statut.toLowerCase())) {
         const badge = document.createElement('div');
-        badge.className = `badge-modal ${statut}`;
+        badge.className = `badge-modal ${statut.toLowerCase()}`;
         
-        // On rend le texte joli (ex: "encours" -> "EN COURS")
+        // Texte joli
         badge.innerText = statut.toUpperCase().replace("ENCOURS", "EN COURS");
         
-        // On l'ajoute dans le container de l'image
+        // Ajout au container
         const container = overlay.querySelector('.overlay-image-container');
         if (container) {
             container.appendChild(badge);
         } else {
-            overlay.appendChild(badge); // Fallback si le container n'existe pas
+            overlay.appendChild(badge);
         }
     }
+    // Si c'est "Terminé" ou vide, le code s'arrête ici et ne crée rien.
 
     overlay.style.display = 'flex';
 }
@@ -687,6 +707,39 @@ window.addEventListener('load', async () => {
     await decodeEffect('text-femi', 'femimarss', 1); 
     const header = document.getElementById('header-anim');
     if(header) header.classList.add('reveal');
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // On cible tous les éléments qui ont un data-target
+    const compteurs = document.querySelectorAll('[data-target]');
+    
+    compteurs.forEach(compteur => {
+        const cible = +compteur.getAttribute('data-target');
+        const dureeTotale = 2000; // L'animation durera 2 secondes pour TOUT LE MONDE
+        const frameRate = 16; // Environ 60 images par seconde
+        const totalFrames = dureeTotale / frameRate;
+        
+        // On calcule l'incrément spécifique pour ce nombre
+        // Plus le nombre est grand, plus l'incrément sera fort
+        const increment = cible / totalFrames; 
+        
+        let valeurActuelle = 0;
+
+        const actualiser = () => {
+            valeurActuelle += increment;
+            
+            if (valeurActuelle < cible) {
+                compteur.innerText = Math.ceil(valeurActuelle);
+                setTimeout(actualiser, frameRate);
+            } else {
+                // On s'assure d'afficher le chiffre exact à la fin
+                compteur.innerText = cible;
+            }
+        };
+
+        actualiser();
+    });
 });
 </script>
 
