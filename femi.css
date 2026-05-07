@@ -140,8 +140,8 @@ html, body {
 }
 
 .femimarss a:hover {
-    color: #ff4d4d;          
-    text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000; 
+    color: #ff1f1f;          
+    text-shadow: 0 0 8px #931212, 0 0 15px #b30606; 
 }
 
 .search-container {
@@ -162,6 +162,9 @@ html, body {
     display: block;
     transition: all 0.4s ease;
     z-index: 10;
+   
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
+    transition: 0.5s;
 }
 
 #recherche {
@@ -169,13 +172,13 @@ html, body {
     padding: 18px 25px 18px 55px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(154, 7, 212, 0.4);
-    border-radius: 25px;
+    border-radius: 22px;
     color: white;
     font-size: 16px;
     outline: none;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    margin-left: -7px;
+    margin-left: -5px;
 }
 #recherche:focus {
     border-color: #bf00ff;
@@ -183,9 +186,18 @@ html, body {
 }
 
 #recherche:hover {
-    border-color: #ae00ff92;
-    box-shadow: 0 0 15px rgba(0, 4, 255, 0.2);
+   border-color: #9407d4; /* Ton violet */
+    box-shadow: 0 0 15px rgba(148, 7, 212, 0.4), 
+                inset 0 0 10px rgba(148, 7, 212, 0.2);
+    transform: scale(1.01); /* Très léger grossissement */
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(148, 7, 212, 0.1) 50%, rgba(255,255,255,0) 70%);
+    background-size: 200% 100%;
+    background-position: right center;
+    border-color: #bf00ff;
+   
 }
+
 
 .search:focus-within {
     transform: scale(1.05);
@@ -301,7 +313,7 @@ html, body {
    display: flex !important;
     justify-content: center !important; /* Centre horizontalement */
     align-items: center !important;     /* Centre verticalement si besoin */
-    gap: 50px !important;              /* L'espace entre tes cartes */
+    gap: 140px !important;              /* L'espace entre tes cartes */
     margin: 45px auto 0 auto !important; /* Le 'auto' à gauche et à droite force le centrage du bloc */
     width: 100% !important;
     text-decoration: none;
@@ -315,20 +327,26 @@ html, body {
     z-index: 9999;
     transition: all 0.3s ease; /* Rend l'animation fluide */
     cursor: pointer;
+    
+}
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: #bf00ff !important;
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.6), 
+                inset 0 0 10px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* Pour forcer le texte et les liens à briller aussi */
+.stat-card:hover .stat-number, 
+.stat-card:hover .stat-label, 
+.stat-card:hover a {
+    color:#cc00ffba;
+  
 }
 
 .stat-card:hover {
-
-    transform: translateY(-10px);
-    /* On enlève le filter brightness pour ne pas éclaircir */
-    
-    /* Couleur violette bien saturée */
-    color: #9407d4; 
-    
-    /* Ombre portée plus diffuse mais moins "blanche" */
-    text-shadow: 0 0 10px rgba(137, 85, 164, 0.9);
+    animation: neon-pulse 1.5s infinite;
 }
-
 
 .stat-number {
     font-size: 2.5rem; color: #bf00ff;
@@ -472,6 +490,7 @@ html, body {
     object-fit: cover;
     margin-top: 50px;
     border-radius: 15px;
+    z-index: 999999999999999999999999999999;
 }
 
 
@@ -553,7 +572,7 @@ html, body {
     margin: 0; /* On supprime le décalage manuel de -300px */
     font-family: "lexend", sans-serif;
     color: white;
-    z-index: 10002; /* Pour être sûr qu'il passe devant la vidéo */;
+    z-index: 102; /* Pour être sûr qu'il passe devant la vidéo */;
     margin-left: -148px;
     margin-top: 20px;
 
@@ -773,7 +792,14 @@ html, body {
     text-rendering: optimizeLegibility;
 } /* Vert */
 .badge-modal.encours { background-color: #f1c40f; color: #000; } /* Jaune */
-.badge-modal.drop    { background-color: #e74c3c; } /* Rouge */
+.badge-modal.drop    { 
+    background-color: #e74c3c; 
+    font-weight: 400; /* Très gras pour la lisibilité */
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+} /* Rouge */
 
 /* Optionnel : petit triangle pour l'effet ruban plié */
 .badge-modal::after {
