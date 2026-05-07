@@ -82,7 +82,7 @@ html, body {
 
 
 .nav-logo:hover span {
-    color: #ffffffd3 ;
+    color: #b7d4e2d3 ;
     text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff; 
 }
 
@@ -746,12 +746,18 @@ html, body {
 .anime-title {
     margin-top: 50px;
     margin-left: 98px;
-    font-size:1.2em;
+    font-size:1.4em;
 }
 
 .anime-icon img {
-    height: 65px;
-    margin-left: 40px;
+    height: 80px;
+    margin-left: 30px;
+    margin-bottom: -92px; 
+}
+
+.film-icon img {
+    height: 80px;
+    margin-left: 35px;
     margin-bottom: -92px; 
 }
 
@@ -857,7 +863,7 @@ html, body {
 
     .line-anime {
     margin-left: 30px;
-    margin-top: -10px;
+    margin-top: -12px;
     width: 65%;
 }
     
