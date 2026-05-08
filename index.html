@@ -789,22 +789,22 @@ document.addEventListener("DOMContentLoaded", () => {
         actualiser();
     });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
+    // On cible toutes les images du site
     const images = document.querySelectorAll('img');
 
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                
+                // On s'assure que le navigateur charge l'image seulement quand elle est proche
                 img.src = img.src; 
-                img.classList.add('fade-in'); 
+                img.classList.add('fade-in'); // On ajoute un petit effet d'apparition
                 observer.unobserve(img);
             }
         });
     }, {
-
+        // On demande au navigateur de charger l'image 300px AVANT qu'elle arrive à l'écran
         rootMargin: "0px 0px 300px 0px"
     });
 
