@@ -733,13 +733,14 @@ html, body {
     left: 150%;
 }
 
-img {
+/* Uniquement pour les cartes de la liste, pas pour la planète */
+.result-item img, .anime-card img { 
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
-
-img.fade-in {
+/* La classe ajoutée par le JS quand on scroll */
+.result-item img.fade-in, .anime-card img.fade-in {
     opacity: 1;
 }
 #text-wiki, 
