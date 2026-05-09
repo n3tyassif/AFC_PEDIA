@@ -313,7 +313,7 @@ html, body {
    display: flex !important;
     justify-content: center !important; /* Centre horizontalement */
     align-items: center !important;     /* Centre verticalement si besoin */
-    gap: 140px !important;              /* L'espace entre tes cartes */
+    gap: 140px ;              /* L'espace entre tes cartes */
     margin: 45px auto 0 auto !important; /* Le 'auto' à gauche et à droite force le centrage du bloc */
     width: 100% !important;
     text-decoration: none;
@@ -503,7 +503,7 @@ html, body {
 #overlay-title {
     position: absolute;
     bottom: 0;
-    left: 0;
+     left: 0;
     width: 92%;
     margin: 0;
     padding: 60px 20px 20px 20px;
@@ -523,6 +523,7 @@ html, body {
 .overlay-content:hover {
     transform: scale(1.03);
 }
+
 
  
 #planete-container {
@@ -675,6 +676,18 @@ html, body {
     height: 100%;
     background: rgba(255, 0, 0, 0.785);
     transition: width 0.3s;
+}
+
+.serie-icon img {
+    height: 80px;
+    margin-left: 30px;
+    margin-bottom: -100px; 
+}
+
+.serie-title h2 {
+    margin-top: 50px;
+    margin-left: 138px;
+    font-size:2em;
 }
 
 
@@ -889,7 +902,11 @@ html, body {
 
     .stats-container {
         margin-top: -50px !important;
+        gap: 50px;
     }
+
+  
+
 
     .line-anime {
     margin-left: 30px;
