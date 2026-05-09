@@ -300,7 +300,11 @@ const animationList = [
 
 
 const serieList = [
-    { nom: "Spider-Man: New Generation", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/iiZZdoQBEYBv6id8su7ImL0oCbD_vr5wrm", twitch: " https://www.patreon.com/posts/spiderman-miles-90868146?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
+    { nom: "YOU", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/sMF0G96CdgTNrVy52BJnux5pNB5_fja49i", twitch: "https://www.patreon.com/collection/2041969?view=expanded" },
+    { nom: "alice in borderlands", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Ac8ruycRXzgcsndTZFK6ouGA0FA_k6coj8", twitch: "https://www.patreon.com/collection/1998609?view=expanded" },
+    { nom: "one piece live action", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/yEtSBgugED8XyhqjcKgF6j2zDMf_pll1sq", twitch: "https://www.patreon.com/collection/1845001" },
+    { nom: "100% physique", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/1rR4vSxM0R1qlIp5AbgB2ap1zxm_tdv5gu", twitch: "https://www.patreon.com/collection/1632117?view=expanded" },
+    { nom: "sauve qui pecho", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/h6Twsz6h5CAcguCzJkgnYZ6vkhb_yrp1y2", twitch: "https://www.patreon.com/collection/1404560?view=expanded" },
    
 ]
 
@@ -400,8 +404,97 @@ const fuse = new Fuse(toutesLesListes, {
     distance: 100
 });
 
-</script>
 
+const inputRecherche = document.getElementById('recherche'); 
+const resultsDiv = document.getElementById('results');
+if (inputRecherche && resultsDiv) {
+    inputRecherche.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+
+        if (value.length > 0) {
+            const hits = fuse.search(value);
+            if (hits.length > 0) {
+                // On génère les résultats
+                resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
+                  const item = hit.item;
+const safeNom = item.nom.replace(/'/g, "\\'");
+
+// DÉTECTION DU TYPE (Utilise tes vrais noms de listes)
+let typeTexte = "Jeu"; 
+
+if (animesList.includes(item)) {
+    typeTexte = "Anime";
+} 
+// On vérifie si l'item est dans filmList OU animationList
+else if ((typeof filmList !== 'undefined' && filmList.includes(item)) || 
+         (typeof animationList !== 'undefined' && animationList.includes(item))) {
+    typeTexte = "Film"; 
+} 
+else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
+    typeTexte = "Serie";
+}
+
+return `
+    <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
+        <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
+        <div class="res-info">
+            <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
+            <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
+        </div>
+    </div>
+`;
+                }).join(''); // On ferme le .map() et on joint le tout ici
+                
+                resultsDiv.style.display = 'block';
+            } else {
+                resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat...</div>';
+                resultsDiv.style.display = 'block';
+            }
+        } else {
+            resultsDiv.style.display = 'none';
+        }
+    });
+}
+
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+        resultsDiv.style.display = 'none';
+    }
+});
+window.showFromSearchDirect = (nomDuJeu) => {
+    // On regroupe toutes les listes pour que la recherche trouve tout
+    const toutesLesDonnees = [...jeux2026, ...jeux2025, ...animesList, ...filmList, ...animationList, ...serieList]; 
+    const item = toutesLesDonnees.find(j => j.nom === nomDuJeu);
+
+    if (item) {
+        const modal = document.getElementById("modal-recherche");
+        const modalMedia = document.getElementById("modal-media-recherche");
+        const modalTitre = document.getElementById("modal-titre-recherche");
+        
+        if (modal && modalMedia && modalTitre) {
+            modalTitre.innerText = ""; // On vide le titre car il est dans le HTML ci-dessous
+            modalMedia.innerHTML = `
+                <div class="container-recherche-jeu">
+                    <a href="${item.twitch || '#'}" target="_blank">
+                        <img src="${item.img}" class="img-resultat-recherche">
+                    </a>
+                    <div class="titre-jeu-recherche">${item.nom}</div>
+                </div>
+            `;
+            modal.style.display = "flex"; // Utilise "flex" si c'était ton réglage pour centrer
+        }
+
+        // On ferme les résultats de recherche
+        const resultsDiv = document.getElementById('results');
+        if (resultsDiv) resultsDiv.style.display = 'none';
+        
+        const barre = document.getElementById('recherche');
+        if (barre) barre.value = '';
+    }
+};
+
+</script>
 <script type="module">
         import * as THREE from 'three';
 
@@ -604,94 +697,6 @@ window.addEventListener('click', (event) => {
 };
 
 
-const inputRecherche = document.getElementById('recherche'); 
-const resultsDiv = document.getElementById('results');
-if (inputRecherche && resultsDiv) {
-    inputRecherche.addEventListener('input', (e) => {
-        const value = e.target.value.toLowerCase();
-
-        if (value.length > 0) {
-            const hits = fuse.search(value);
-            if (hits.length > 0) {
-                // On génère les résultats
-                resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
-                  const item = hit.item;
-const safeNom = item.nom.replace(/'/g, "\\'");
-
-// DÉTECTION DU TYPE (Utilise tes vrais noms de listes)
-let typeTexte = "Jeu"; 
-
-if (animesList.includes(item)) {
-    typeTexte = "Anime";
-} 
-// On vérifie si l'item est dans filmList OU animationList
-else if ((typeof filmList !== 'undefined' && filmList.includes(item)) || 
-         (typeof animationList !== 'undefined' && animationList.includes(item))) {
-    typeTexte = "Film"; 
-} 
-else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
-    typeTexte = "Serie";
-}
-
-return `
-    <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
-        <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
-        <div class="res-info">
-            <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
-            <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
-        </div>
-    </div>
-`;
-                }).join(''); // On ferme le .map() et on joint le tout ici
-                
-                resultsDiv.style.display = 'block';
-            } else {
-                resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat...</div>';
-                resultsDiv.style.display = 'block';
-            }
-        } else {
-            resultsDiv.style.display = 'none';
-        }
-    });
-}
-
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-container')) {
-        resultsDiv.style.display = 'none';
-    }
-});
-window.showFromSearchDirect = (nomDuJeu) => {
-    // On regroupe toutes les listes pour que la recherche trouve tout
-    const toutesLesDonnees = [...jeux2026, ...jeux2025, ...animesList, ...filmList, ...animationList, ...serieList]; 
-    const item = toutesLesDonnees.find(j => j.nom === nomDuJeu);
-
-    if (item) {
-        const modal = document.getElementById("modal-recherche");
-        const modalMedia = document.getElementById("modal-media-recherche");
-        const modalTitre = document.getElementById("modal-titre-recherche");
-        
-        if (modal && modalMedia && modalTitre) {
-            modalTitre.innerText = ""; // On vide le titre car il est dans le HTML ci-dessous
-            modalMedia.innerHTML = `
-                <div class="container-recherche-jeu">
-                    <a href="${item.twitch || '#'}" target="_blank">
-                        <img src="${item.img}" class="img-resultat-recherche">
-                    </a>
-                    <div class="titre-jeu-recherche">${item.nom}</div>
-                </div>
-            `;
-            modal.style.display = "flex"; // Utilise "flex" si c'était ton réglage pour centrer
-        }
-
-        // On ferme les résultats de recherche
-        const resultsDiv = document.getElementById('results');
-        if (resultsDiv) resultsDiv.style.display = 'none';
-        
-        const barre = document.getElementById('recherche');
-        if (barre) barre.value = '';
-    }
-};
 
 window.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
