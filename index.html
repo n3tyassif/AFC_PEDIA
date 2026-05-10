@@ -44,7 +44,7 @@
             <li><a href="#anime">anime</a></li>
             <li><a href="#film">films</a></li>
             <li><a href="#serie">séries</a></li>
-            <li><a href="#">episode 1</a></li>
+            <li><a href="#episode">episode 1</a></li>
             <li><a href="#">recaps</a></li>
 
         </ul>
@@ -152,6 +152,23 @@
 
     <div id="grid-serie" class="game-grid"></div> 
 </section>
+
+<section id="episode">
+    <div class="category-anime">
+          <div class="episode-title"> <h2>épisode 1</h2> </div>
+        </div>
+        <div class="line-episode"></div>
+    </div>
+
+    <div id="grid-film" class="game-grid"></div> 
+</section>
+<div class="episode-tabs">
+    <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
+    <button class="tab-btn" onclick="changerCategorie('serie')">SÉRIES</button>
+</div>
+<div id="grid-episode-unique" class="game-grid"></div>
+
+ <div class="disclaimer"> <h4>*les animes/series dont il a vu uniquement les premiers episodes*</h4></div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -308,7 +325,15 @@ const serieList = [
    
 ]
 
+const episodeAnime = [
+    { nom: "YOU", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/sMF0G96CdgTNrVy52BJnux5pNB5_fja49i", twitch: "https://www.patreon.com/collection/2041969?view=expanded" , statut: "ban" },
 
+];
+
+const episodeSerie = [
+    { nom: "YOU", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/sMF0G96CdgTNrVy52BJnux5pNB5_fja49i", twitch: "https://www.patreon.com/collection/2041969?view=expanded" , statut: "ban" },
+      { nom: "sauve qui pecho", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/h6Twsz6h5CAcguCzJkgnYZ6vkhb_yrp1y2", twitch: "https://www.patreon.com/collection/1404560?view=expanded" },
+];
 let currentTwitch = ""; 
 
 function remplirGrille(listeDeJeux, idDeLaGrille) {
@@ -322,11 +347,12 @@ function remplirGrille(listeDeJeux, idDeLaGrille) {
         carte.className = 'game-card';
        carte.onclick = () => ouvrirCarte(jeu.img, jeu.nom, jeu.twitch || "", jeu.statut || "");
 
-        let badgeHTML = "";
-        if (jeu.statut) {
-            badgeHTML = `<div class="badge-statut ${jeu.statut}"></div>`;
-        }
 
+let badgeHTML = "";
+if (jeu.statut) {
+    // On met juste la classe, sans texte à l'intérieur pour que ce soit invisible ou discret
+    badgeHTML = `<div class="badge-statut ${jeu.statut.toLowerCase()}"></div>`;
+}
         // CORRECTION ICI : Utilise bien les backticks ` du début à la fin
         carte.innerHTML = `
             <div class="image-container">
@@ -350,25 +376,24 @@ function ouvrirCarte(img, titre, twitch, statut) {
     const existingBadge = overlay.querySelector('.badge-modal');
     if (existingBadge) existingBadge.remove();
 
-    // 2. On définit les statuts qui ont le droit à un badge
-    const statutsAutorises = ["drop", "encours"];
+   const statutsAutorises = ["drop", "encours", "ban"]; 
 
-    // 3. On vérifie si le statut actuel est dans la liste
-    if (statut && statutsAutorises.includes(statut.toLowerCase())) {
-        const badge = document.createElement('div');
-        badge.className = `badge-modal ${statut.toLowerCase()}`;
-        
-        // Texte joli
+if (statut && statutsAutorises.includes(statut.toLowerCase())) {
+    const badge = document.createElement('div');
+    badge.className = `badge-modal ${statut.toLowerCase()}`;
+    
+    // Si c'est ban, on écrit BAN, sinon on garde ton ancienne logique de texte
+    if (statut.toLowerCase() === "ban") {
+        badge.innerText = "BAN";
+    } else {
         badge.innerText = statut.toUpperCase().replace("ENCOURS", "EN COURS");
-        
-        // Ajout au container
-        const container = overlay.querySelector('.overlay-image-container');
-        if (container) {
-            container.appendChild(badge);
-        } else {
-            overlay.appendChild(badge);
-        }
     }
+    
+    const container = overlay.querySelector('.overlay-image-container');
+    if (container) {
+        container.appendChild(badge);
+    }
+}
     // Si c'est "Terminé" ou vide, le code s'arrête ici et ne crée rien.
 
     overlay.style.display = 'flex';
@@ -391,12 +416,15 @@ document.querySelector('#overlay-img').onclick = function(event) {
 
 remplirGrille(jeux2026, 'grid-2026');
 remplirGrille(jeux2025, 'grid-2025');
+remplirGrille(animesList, 'grid-animes');
 remplirGrille(filmList, 'grid-film');
 remplirGrille(serieList, 'grid-serie');
 remplirGrille(animationList, 'grid-animation');
-const toutesLesListes = [...jeux2026, ...jeux2025, ...animesList,...filmList, ...animationList, ...serieList];
+remplirGrille(episodeAnime, 'grid-episode-unique');
 
-remplirGrille(animesList, 'grid-animes');
+
+const toutesLesListes = [...jeux2026, ...jeux2025, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
+
 
 const fuse = new Fuse(toutesLesListes, {
     keys: ['nom'],
@@ -404,6 +432,15 @@ const fuse = new Fuse(toutesLesListes, {
     distance: 100
 });
 
+function changerCategorie(type) {
+    const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
+    
+    // ICI : On utilise l'ID de la grille commune
+    remplirGrille(listeChoisie, 'grid-episode-unique');
+
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
 
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
@@ -513,7 +550,7 @@ window.showFromSearchDirect = (nomDuJeu) => {
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3728_sxc3tc',titre: "paff l'éclair" },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_2542_ovq8tm',titre: "chiasse monstre" },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_2571_ssc2g4',titre: "gyat" },
-            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0508_tuhsez',titre: "il riait. \n(credit: un gars sur discord)" },
+            { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_0508_tuhsez',titre: "il riait. " },
             { type: 'image', url: 'https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/IMG_3689_cvg9ih',titre: "BBL" },
             { type: 'video', url: 'https://res.cloudinary.com/dyhcasitx/video/upload/v1776419424/RPReplay_Final1717177955_tj8xzv.mp4',titre: "GRRR PAW" },
 
@@ -890,6 +927,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     images.forEach(img => imageObserver.observe(img));
 });
+
+
 </script>
 
 <div id="modal-planete" class="modal">
