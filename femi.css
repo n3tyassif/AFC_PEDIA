@@ -317,6 +317,7 @@ html, body {
     margin: 45px auto 0 auto !important; /* Le 'auto' à gauche et à droite force le centrage du bloc */
     width: 100% !important;
     text-decoration: none;
+    transform: translateY(-20px) !important;
 
 }
 
@@ -1498,3 +1499,27 @@ html, body {
 }
 
 
+/* Cette règle ne s'appliquera que sur les écrans de taille moyenne/petite */
+@media screen and (max-width: 1500px) {
+    
+    .stat-number {
+        /* On réduit la marge négative qui faisait tout descendre chez lui */
+        /* Ajuste ce chiffre (-150px, -200px...) jusqu'à ce que ce soit parfait sur son écran */
+        margin-top: -280px !important; 
+        font-size: 2.2rem !important; /* On réduit un peu la taille pour que ça passe mieux */
+    }
+
+    .stats-container {
+        gap: 80px !important; /* On rapproche les stats pour pas qu'elles sortent de l'écran */
+        margin-top: 30px !important;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .category-header{
+        margin-top: -500px;
+    }
+    
+}
