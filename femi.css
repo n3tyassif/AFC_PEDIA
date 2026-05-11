@@ -547,6 +547,7 @@ html, body {
     outline: none;
     background: transparent;
     height: auto !important; /* Garde les proportions */
+    z-index: 100;
 }
 
 
@@ -934,15 +935,14 @@ html, body {
 }
 
 
-.disclaimer {
-    font-size: 0.9rem;
+.mini-disclaimer{
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     text-align: left;
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: 'Arial', sans-serif;
     font-size: 0.82rem;
 }
-
 .episode-title {
     font-size: 1.2rem;
     color: white;
@@ -1289,7 +1289,7 @@ html, body {
     }
 
     .stats-container {
-        margin-top: 150px !important; /* On redescend les stats pour pas qu'elles chevauchent le titre */
+        margin-top: 150px !important; 
     }
 
     #overlay-title {
@@ -1333,8 +1333,8 @@ html, body {
 
     #recherche {
     width: 550px;
-    padding: 22px 50px; /* Augmente l'espace interne (Haut/Bas Gauche/Droite) */
-    font-size: 20px;    /* Grossit le texte que l'on tape */
+    padding: 22px 50px; 
+    font-size: 20px;    
     margin-top: -50px;
     }
 
@@ -1356,20 +1356,21 @@ html, body {
 }
 }
 
-/* --- FIX SPÉCIFIQUE TÉLÉPHONE COUCHÉ (IMAGE_8C073D) --- */
+/* ---  TÉLÉPHONE COUCHÉ  --- */
 @media only screen and (max-height: 500px) and (orientation: landscape) {
 
-    /* --- HEADER & TITRES --- */
+  
     .head {
-        min-height: auto !important;
-        padding-top: 10px !important; /* Version réduite */
-        padding-bottom: 40px !important;
+        min-height: auto ;
+        padding-top: 10px; 
+        padding-bottom: 40px ;
     }
 
     .head h1, .head .title-wiki { 
-        font-size: 2.5rem !important; /* Version optimisée */
+        font-size: 2.5rem !important;
         margin-top: 5px !important;
         margin-bottom: 0px !important;
+        text-align: center;
     }
 
     .title {
@@ -1380,17 +1381,19 @@ html, body {
         margin-top: 150px !important; 
     }
 
-    /* --- STATS & RECHERCHE --- */
+
     .stats-container {
         margin-top: 240px !important; 
         margin-bottom: 10px !important;
-        transform: scale(0.75) !important; /* Version la plus compacte */
+        transform: scale(0.75) !important; 
+        text-align: center;
     }
 
     .search-container {
         margin-top: -180px !important; 
         position: relative;
         z-index: 1000 !important;
+        text-align: center;
     }
 
     #results img {
@@ -1405,12 +1408,11 @@ html, body {
         z-index: 99999;
     }
 
-    /* --- PLANETE --- */
     #planete-container {
         height: 300px !important;
     }
 
-    /* --- MODAL (CARTE ZOOMÉE) --- */
+   
     .modal-container {
         display: flex !important;
         align-items: center !important;
@@ -1431,7 +1433,6 @@ html, body {
    
 
 
-    /* --- OVERLAY CONTENT (RECHERCHE) --- */
     .overlay-content {
         max-width: 80% !important;
         width: auto !important;
@@ -1439,7 +1440,7 @@ html, body {
 
     .overlay-content img { 
         max-width: 100% !important;
-        max-height: 77vh !important; /* Dernière version demandée */
+        max-height: 77vh !important; 
         margin-top: 75px !important;
         object-fit: contain !important;
         border-radius: 10px !important;
@@ -1499,18 +1500,17 @@ html, body {
 }
 
 
-/* Cette règle ne s'appliquera que sur les écrans de taille moyenne/petite */
+/* écran pc plus petit */
 @media screen and (max-width: 1500px) {
     
     .stat-number {
-        /* On réduit la marge négative qui faisait tout descendre chez lui */
-        /* Ajuste ce chiffre (-150px, -200px...) jusqu'à ce que ce soit parfait sur son écran */
+       
         margin-top: -280px !important; 
-        font-size: 2.2rem !important; /* On réduit un peu la taille pour que ça passe mieux */
+        font-size: 2.2rem !important; 
     }
 
     .stats-container {
-        gap: 80px !important; /* On rapproche les stats pour pas qu'elles sortent de l'écran */
+        gap: 80px !important;
         margin-top: 30px !important;
     }
     
