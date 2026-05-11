@@ -485,15 +485,14 @@ html, body {
     width: 90%;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 30px 60px rgba(22, 20, 20, 0.8);
     cursor: pointer;
     transition: transform 0.3s ease;
     z-index: 99999999999999999999999999999;
 }
 
 .overlay-content img {
-    width: 100%;
-    display: block;
+    width: 97%;
     object-fit: cover;
     margin-top: 50px;
     border-radius: 15px;
@@ -724,7 +723,7 @@ html, body {
 /* Effet au survol de la carte */
 .video-card:hover {
     transform: translateY(-8px);
-    border-color: #00ffff;
+    border-color: #9d00ff;
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.06);
 }
@@ -774,12 +773,12 @@ html, body {
 .play-button {
     width: 55px;
     height: 55px;
-    background: #00ffff;
+    background: #b300ff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(136, 0, 255, 0.8);
     transform: scale(0.5);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -955,8 +954,8 @@ html, body {
 /* Le badge dans le modal */
 .badge-modal {
     position: absolute;
-    top: 30px;
-    right: -10px; /* Effet de dépassement */
+    top: 75px;
+    right: 8px; /* Effet de dépassement */
     padding: 8px 20px;
     font-size: 14px;
     font-weight: bold;
@@ -1009,7 +1008,7 @@ html, body {
     border-radius: 5px;
     box-shadow: 0 0 15px #ff0000;
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: -3px;
     font-size: 1rem;
 
@@ -1357,6 +1356,7 @@ html, body {
     
     /* On enlève le margin-top qui décale verticalement */
     margin: 0 !important;
+    
 }
 #overlay-title {
     margin-top: 15px !important;
