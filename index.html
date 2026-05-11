@@ -45,7 +45,7 @@
             <li><a href="#film">films</a></li>
             <li><a href="#serie">séries</a></li>
             <li><a href="#episode">episode 1</a></li>
-            <li><a href="#">recaps</a></li>
+            <li><a href="#recap">recaps</a></li>
 
         </ul>
     </nav>
@@ -160,7 +160,7 @@
         <div class="line-episode"></div>
     </div>
 
-    <div id="grid-film" class="game-grid"></div> 
+    <div id="grid-episode" class="game-grid"></div> 
 </section>
 <div class="episode-tabs">
     <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
@@ -170,6 +170,32 @@
 
 
   <div class="mini-disclaimer"> <h5> *si ton épisode 1 est nul = ban*</h5></div>
+
+  
+<section id="recap">
+    <div class="category-anime">
+          <div class="episode-title"> <h2>les récaps</h2> </div>
+        </div>
+        <div class="line-episode"></div>
+    </div>
+
+    <div id="grid-recaps" class="video-grid"></div> 
+</section>
+
+
+<section id="arrache">
+    <div class="category-anime">
+          <div class="episode-title"> <h2>à l'arrache </h2> </div>
+        </div>
+        <div class="line-episode"></div>
+    </div>
+
+    <div id="grid-arrache" class="video-grid"></div> 
+</section>
+
+ <div class="mini-disclaimer"> <h4> *podcast*</h4></div>
+
+   
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -336,6 +362,26 @@ const episodeSerie = [
    { nom: "slasher", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/A4j6zNyypLbsn0vJfrajlgNazc5_sngjp2", twitch: "" , statut: "ban"},
    { nom: "vampire diaries", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/xKltipwfXRgvyD2u79FUnXAZ09F_tio45y", twitch: "" },
    { nom: "the 8 show", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/3LcyKtMmDWwgK4T5d4cf8quHWOa_tuh7rh", twitch: "" },
+];
+
+
+const listeRecaps = [
+    { titre: "recap 2023", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_125606_nz5yat", url: "https://canva.link/ldxuizsn6e39z2k"},
+    { titre: "recap 2024", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_130743_fqsyf9", url: "https://canva.link/8r5ff72b2dt35he"},
+    { titre: "recap 2025 part. 1", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131323_sw499t", url: "https://canva.link/d1af7odzd49mdp1"},
+    { titre: "recap 2025 part. 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131826_g2mnnr", url: "https://canva.link/qbncwkthvctgd9e"},
+
+];
+
+const listeArrache = [
+    { id: 1, titre: "CE STREAMER ELDEN RING SE CONFIE SUR SON DRAMA !", img: "https://img.youtube.com/vi/NYbYeESWyNc/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=NYbYeESWyNc&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "Erastem" },
+    { id: 2, titre: "IL S'EST FAIT MENACER PAR UNE SECTE A CAUSE DE FRIEREN !", img: "https://img.youtube.com/vi/wfu0nG7FezE/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=wfu0nG7FezE&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "Nicky" },
+    { id: 3, titre: "IL NOUS DIT LA SOMBRE VÉRITÉ SUR LES INFLUENCEURS ANIME/MANGA !", img: "https://img.youtube.com/vi/9uxfh42NuO4/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=9uxfh42NuO4&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "mino & kailon" },
+    { id: 4, titre: "DOFLA RACONTE CE QUI LUI EST ARRIVE A CAUSE DE SES OPINIONS ! ", img: "https://img.youtube.com/vi/e27ytq4eS2g/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=e27ytq4eS2g&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "dofla et la camera arriere de sa voiture" },
+    { id: 5, titre: "LILMCQUEEN NOUS DIT LA VÉRITÉ SUR SON BUZZ ! ", img: "https://img.youtube.com/vi/p_Cu4UQi-mM/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=p_Cu4UQi-mM&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "lilmcqueen" },
+    { id: 6, titre: "RYOSENSEI NOUS LIVRE TOUS LES SECRETS DE ONE PIECE !", img: "https://img.youtube.com/vi/0NFIXs6s8o4/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=0NFIXs6s8o4&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "ryosensei" },
+
+    
 ];
 let currentTwitch = ""; 
 
@@ -937,6 +983,45 @@ document.addEventListener("DOMContentLoaded", () => {
     images.forEach(img => imageObserver.observe(img));
 });
 
+
+// --- 2. La fonction "Magique" ---
+// Cette fonction peut remplir N'IMPORTE QUELLE grille
+function genererGrilleVideo(liste, idConteneur) {
+    const grille = document.getElementById(idConteneur);
+    if (!grille) return;
+
+    // On vérifie si on est dans la grille des recaps pour masquer des trucs
+    const isRecap = idConteneur === 'grid-recaps';
+
+    grille.innerHTML = liste.map(video => `
+        <a href="${video.url}" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="${video.img}" alt="${video.titre}">
+                <div class="video-overlay">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+                ${!isRecap ? `<div class="video-number">#${video.id}</div>` : ''}
+            </div>
+            <div class="video-info">
+                <h3>${!isRecap ? `#${video.id} — ` : ''}${video.titre}</h3>
+                
+                ${!isRecap ? `<p>feat. ${video.invites}</p>` : ''}
+            </div>
+        </a>
+    `).join('');
+}
+
+
+// --- 3. On lance le chargement ---
+window.addEventListener('DOMContentLoaded', () => {
+    // On remplit la grille des recaps avec la liste des recaps
+    genererGrilleVideo(listeRecaps, 'grid-recaps');
+    
+    // On remplit la grille à l'arrache avec la liste à l'arrache
+    genererGrilleVideo(listeArrache, 'grid-arrache');
+});
 
 </script>
 
