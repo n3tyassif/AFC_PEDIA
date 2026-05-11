@@ -692,6 +692,149 @@ html, body {
     font-size:2em;
 }
 
+/* --- GRILLE DES VIDÉOS --- */
+.video-grid {
+    display: grid;
+    /* On force les colonnes à rester entre 300px et 350px max */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 350px)); 
+    gap: 30px;
+    padding: 20px;
+    justify-content: center; /* Centre les cartes horizontalement */
+    max-width: 1200px;      /* Empêche la grille de s'étaler trop sur ultra-wide */
+  
+}
+
+/* --- CARTE VIDÉO --- */
+.video-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    position: relative;
+    width: 100%; /* S'adapte à la colonne de la grille */
+    max-width: 350px; /* Sécurité anti-géant */
+    text-decoration: none !important; /* Enlève le soulignement du titre */
+    display: block;                  /* Indispensable pour que le lien prenne toute la forme de la carte */
+    color: inherit;
+    margin-left: -45px;
+}
+
+/* Effet au survol de la carte */
+.video-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ffff;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* --- MINIATURE ET OVERLAY --- */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Garde le format YouTube même sans image */
+    background: #111;     /* Fond sombre de secours */
+    overflow: hidden;
+}
+
+.thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit le cadre sans se déformer */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.video-card:hover .thumbnail-container img {
+    transform: scale(1.08);
+}
+
+/* Voile noir au hover */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.video-card:hover .video-overlay {
+    opacity: 1;
+}
+
+/* --- BOUTON PLAY --- */
+.play-button {
+    width: 55px;
+    height: 55px;
+    background: #00ffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    transform: scale(0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.video-card:hover .play-button {
+    transform: scale(1);
+}
+
+.play-button svg {
+    width: 28px;
+    height: 28px;
+    color: #000;
+    margin-left: 3px;
+}
+
+/* --- INFOS --- */
+.video-info {
+    padding: 18px;
+}
+
+.video-info h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+
+    font-weight: 500; /* Très gras pour la lisibilité */
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+.video-info p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* --- BADGE NUMÉRO --- */
+.video-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    border-radius: 4px;
+    z-index: 3;
+}
+
 
 .spinner {
     width: 40px; height: 40px;
@@ -892,7 +1035,7 @@ html, body {
 .episode-tabs {
     display: flex;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-top: 25px;
     padding-left: 10px;
 }
 
@@ -908,6 +1051,7 @@ html, body {
     letter-spacing: 1px;
     transition: all 0.3s ease; /* Pour que le switch soit fluide */
     border-radius: 4px;
+    margin-top: 30px;
 }
 
 /* EFFET HOVER (quand on passe la souris) */
@@ -976,7 +1120,7 @@ html, body {
 /* On s'assure que la grille elle-même n'a pas de marge haute */
 #grid-episode-unique {
     margin-top: 0 !important;
-    padding-top: 0 !important;
+    
 }
 
 @media (max-width: 768px) {
