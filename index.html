@@ -168,7 +168,8 @@
 </div>
 <div id="grid-episode-unique" class="game-grid"></div>
 
- <div class="disclaimer"> <h4>*les animes/series dont il a vu uniquement les premiers episodes*</h4></div>
+
+  <div class="mini-disclaimer"> <h5> *si ton épisode 1 est nul = ban*</h5></div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -331,8 +332,10 @@ const episodeAnime = [
 ];
 
 const episodeSerie = [
-    { nom: "YOU", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/sMF0G96CdgTNrVy52BJnux5pNB5_fja49i", twitch: "https://www.patreon.com/collection/2041969?view=expanded" , statut: "ban" },
-      { nom: "sauve qui pecho", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/h6Twsz6h5CAcguCzJkgnYZ6vkhb_yrp1y2", twitch: "https://www.patreon.com/collection/1404560?view=expanded" },
+   { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "" },
+   { nom: "slasher", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/A4j6zNyypLbsn0vJfrajlgNazc5_sngjp2", twitch: "" , statut: "ban"},
+   { nom: "vampire diaries", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/xKltipwfXRgvyD2u79FUnXAZ09F_tio45y", twitch: "" },
+   { nom: "the 8 show", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/3LcyKtMmDWwgK4T5d4cf8quHWOa_tuh7rh", twitch: "" },
 ];
 let currentTwitch = ""; 
 
@@ -469,6 +472,12 @@ else if ((typeof filmList !== 'undefined' && filmList.includes(item)) ||
 } 
 else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
     typeTexte = "Serie";
+}
+else if (typeof episodeSerie !== 'undefined' && episodeSerie.includes(item)) {
+    typeTexte = "épisode 1 ";
+}
+else if (typeof episodeAnime !== 'undefined' && episodeAnime.includes(item)) {
+    typeTexte = "épisode 1";
 }
 
 return `
