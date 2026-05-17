@@ -65,7 +65,7 @@ html, body {
     text-decoration: none !important;
 }
 .nav-logo img { 
-    height: 45px; 
+    height: 50px; 
     width: auto; 
     margin-right: 10px; 
     transition: 0.3s ease;
@@ -922,15 +922,15 @@ html, body {
 
 
 .anime-title {
-    margin-top: 50px;
-    margin-left: 98px;
+    margin-top: 60px;
+    margin-left: 110px;
     font-size:1.4em;
 }
 
 .anime-icon img {
     height: 80px;
     margin-left: 30px;
-    margin-bottom: -92px; 
+    margin-bottom: -110px; 
 }
 
 .film-icon img {
@@ -1122,6 +1122,166 @@ html, body {
     
 }
 
+.footer-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espace entre les deux lignes de texte */
+    margin-top: 70px;
+}
+
+.footer-credits2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espace entre les deux lignes de texte */
+    margin-top: -12px;
+    
+}
+
+.credits-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25); /* Gris très sombre pour ne pas sauter aux yeux */
+    text-align: left;
+}
+
+.credits-text2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.25); /* Gris très sombre pour ne pas sauter aux yeux */
+    text-align: left;
+    margin-top: -2px;
+    text-align: right;
+}
+
+/* Le lien d'inspiration */
+.credit-link {
+    color: rgba(255, 255, 255, 0.4); /* Un poil plus clair pour montrer que c'est cliquable */
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2); /* Petite ligne pointillée discrète */
+    transition: all 0.3s ease;
+    
+   
+}
+
+/* L'effet "Cyber" uniquement au survol */
+.credit-link:hover {
+    color: #00ffff; /* Ton Cyan Néon */
+    border-bottom-color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Léger glow */
+}
+
+
+.footer-line { 
+   width: 40%;          /* Ou la taille en pourcentage que tu veux */
+    margin: 0 auto;      /* INDISPENSABLE : Ça centre automatiquement la ligne au milieu */
+    height: 2px;
+    background: rgba(255, 0, 0, 0.705);     /* Ton dégradé ou ta couleur */
+    margin-top: 200px;
+  
+}
+
+/* Conteneur principal */
+.social-container {
+    display: flex;
+    justify-content: center; /* Aligne les boutons pile au milieu de l'écran, sous la ligne */
+    gap: 15px;
+    width: 100%;
+    margin-top: 45px;
+}
+
+/* Style de base de TOUS les boutons */
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;               /* Espace entre l'icône et le texte */
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.03); /* Fond sombre hyper transparent */
+    border-radius: 6px;      /* Coins légèrement arrondis */
+    text-decoration: none;   /* Enlève le soulignement */
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Taille des icônes SVG */
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- COULEURS SPÉCIFIQUES À CHAQUE RÉSEAU --- */
+
+/* X / Twitter (Gris très clair / Blanc) */
+.x-btn {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+}
+.x-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Twitch (Violet) */
+.twitch-btn {
+    border-color: rgba(145, 71, 255, 0.4);
+    color: #a970ff;
+}
+.twitch-btn:hover {
+    background: rgba(145, 71, 255, 0.15);
+    box-shadow: 0 0 15px rgba(145, 71, 255, 0.3);
+}
+
+/* YouTube (Rouge Sombre / Crimson) */
+.youtube-btn {
+    border-color: rgba(198, 40, 40, 0.4);
+    color: #e53935;
+}
+.youtube-btn:hover {
+    background: rgba(198, 40, 40, 0.15);
+    box-shadow: 0 0 15px rgba(198, 40, 40, 0.3);
+}
+
+/* Patreon (Rouge / Corail) */
+.patreon-btn {
+    border-color: rgba(255, 66, 50, 0.4);
+    color: #ff4232;
+}
+.patreon-btn:hover {
+    background: rgba(255, 66, 50, 0.15);
+    box-shadow: 0 0 15px rgba(255, 66, 50, 0.3);
+}
+
+/* Instagram (Rose / Magenta) */
+.instagram-btn {
+    border-color: rgba(225, 48, 108, 0.4);
+    color: #e1306c;
+}
+.instagram-btn:hover {
+    background: rgba(225, 48, 108, 0.15);
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.3);
+}
+
+/* Effet général quand on clique (enfoncement) */
+.social-btn:active {
+    transform: scale(0.95);
+}
+
+.credit{
+    
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    
+}
+
 @media (max-width: 768px) {
     
     
@@ -1168,7 +1328,9 @@ html, body {
     }
 
   
-
+    .episode-tabs{
+        margin-top: -20px;
+    }
 
     .line-anime {
     margin-left: 30px;
@@ -1177,7 +1339,9 @@ html, body {
 }
     
   
-
+    .video-card{
+        margin-left: 0px;
+    }
 
     .head {
         display: flex;
@@ -1645,7 +1809,7 @@ html, body {
 
 
 /* écran pc plus petit */
-@media screen and (max-width: 1500px) {
+@media screen and (width: 1500px) {
     
     .stat-number {
        
@@ -1655,7 +1819,7 @@ html, body {
 
     .stats-container {
         gap: 80px !important;
-        margin-top: 30px !important;
+        margin-top: 150px !important;
     }
     
     .stat-label {
@@ -1664,6 +1828,10 @@ html, body {
 
     .category-header{
         margin-top: -500px;
+    }
+
+    #jeu {
+        margin-top: 450px;
     }
     
 }
