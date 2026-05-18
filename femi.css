@@ -172,13 +172,13 @@ html, body {
     padding: 20px 50px 21px 60px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(154, 7, 212, 0.4);
-    border-radius: 22px;
+    border-radius: 23px;
     color: white;
-    font-size: 16px;
+    font-size: 16.9px;
     outline: none;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    margin-left: -20px;
+    margin-left: -58px;
 }
 #recherche:focus {
     border-color: #bf00ff;
@@ -219,7 +219,7 @@ html, body {
     max-height: 450px;
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-left: 35px;
+    margin-left: -14px;
 }
 
 .result-item {
@@ -300,7 +300,7 @@ html, body {
 
 .icon {
     position: absolute;
-    left: 5px; top: 50%;
+    left: -32px; top: 50%;
     transform: translateY(-50%);
     color: rgba(154, 7, 212, 0.8);
     font-size: 22px;
