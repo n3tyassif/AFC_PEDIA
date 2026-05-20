@@ -524,18 +524,18 @@ if (inputRecherche && resultsDiv) {
         if (value.length > 0) {
             const hits = fuse.search(value);
             if (hits.length > 0) {
-                // On génère les résultats
+                
                 resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
                   const item = hit.item;
 const safeNom = item.nom.replace(/'/g, "\\'");
 
-// DÉTECTION DU TYPE (Utilise tes vrais noms de listes)
+// DÉTECTION DU TYPE 
 let typeTexte = "Jeu"; 
 
 if (animesList.includes(item)) {
     typeTexte = "Anime";
 } 
-// On vérifie si l'item est dans filmList OU animationList
+
 else if ((typeof filmList !== 'undefined' && filmList.includes(item)) || 
          (typeof animationList !== 'undefined' && animationList.includes(item))) {
     typeTexte = "Film"; 
@@ -559,7 +559,7 @@ return `
         </div>
     </div>
 `;
-                }).join(''); // On ferme le .map() et on joint le tout ici
+                }).join('');
                 
                 resultsDiv.style.display = 'block';
             } else {
@@ -734,11 +734,11 @@ window.showFromSearch = (index) => {
         const modalTitre = document.getElementById("modal-titre-recherche");
 
         if (modal && modalMedia && modalTitre) {
-            // ON MET TOUT ICI DEDANS
+
             modalTitre.innerText = item.nom; 
-            modalTitre.style = ""; // On vide le style JS pour laisser le CSS agir
+            modalTitre.style = ""; 
             
-            // On peut aussi remplir le média ici si besoin
+            
             
             modal.style.display = "flex";
         }
@@ -781,7 +781,7 @@ window.addEventListener('click', (event) => {
             modal.style.display = "block";
         }
     } else {
-        // FERMETURE AUTOMATIQUE : Si on clique à côté
+       
         const modPlanete = document.getElementById("modal-planete");
         const modRecherche = document.getElementById("modal-recherche");
 
@@ -955,17 +955,15 @@ window.addEventListener('load', async () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // On cible tous les éléments qui ont un data-target
+   
     const compteurs = document.querySelectorAll('[data-target]');
     
     compteurs.forEach(compteur => {
         const cible = +compteur.getAttribute('data-target');
-        const dureeTotale = 2000; // L'animation durera 2 secondes pour TOUT LE MONDE
-        const frameRate = 16; // Environ 60 images par seconde
+        const dureeTotale = 2000; 
+        const frameRate = 16; 
         const totalFrames = dureeTotale / frameRate;
         
-        // On calcule l'incrément spécifique pour ce nombre
-        // Plus le nombre est grand, plus l'incrément sera fort
         const increment = cible / totalFrames; 
         
         let valeurActuelle = 0;
@@ -977,7 +975,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 compteur.innerText = Math.ceil(valeurActuelle);
                 setTimeout(actualiser, frameRate);
             } else {
-                // On s'assure d'afficher le chiffre exact à la fin
+                
                 compteur.innerText = cible;
             }
         };
@@ -986,21 +984,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 document.addEventListener("DOMContentLoaded", () => {
-    // On cible toutes les images du site
+    
     const images = document.querySelectorAll('img');
 
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                // On s'assure que le navigateur charge l'image seulement quand elle est proche
+               
                 img.src = img.src; 
-                img.classList.add('fade-in'); // On ajoute un petit effet d'apparition
+                img.classList.add('fade-in');
                 observer.unobserve(img);
             }
         });
     }, {
-        // On demande au navigateur de charger l'image 300px AVANT qu'elle arrive à l'écran
+        
         rootMargin: "0px 0px 300px 0px"
     });
 
@@ -1008,13 +1006,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// --- 2. La fonction "Magique" ---
-// Cette fonction peut remplir N'IMPORTE QUELLE grille
+
+
 function genererGrilleVideo(liste, idConteneur) {
     const grille = document.getElementById(idConteneur);
     if (!grille) return;
 
-    // On vérifie si on est dans la grille des recaps pour masquer des trucs
+
     const isRecap = idConteneur === 'grid-recaps';
 
     grille.innerHTML = liste.map(video => `
@@ -1038,12 +1036,12 @@ function genererGrilleVideo(liste, idConteneur) {
 }
 
 
-// --- 3. On lance le chargement ---
+
 window.addEventListener('DOMContentLoaded', () => {
-    // On remplit la grille des recaps avec la liste des recaps
+    
     genererGrilleVideo(listeRecaps, 'grid-recaps');
     
-    // On remplit la grille à l'arrache avec la liste à l'arrache
+    
     genererGrilleVideo(listeArrache, 'grid-arrache');
 });
 
