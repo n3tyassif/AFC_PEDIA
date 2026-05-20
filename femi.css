@@ -10,7 +10,7 @@ html {
 @font-face {  font-family: "lexend"; src: url("./assets/fonts/LexendDeca-VariableFont_wght.ttf");}
 
 header {
-    padding-bottom: 0px !important; /* Enlève l'espace en bas du titre */
+    padding-bottom: 0px !important; 
     margin-bottom: 10px !important; 
 }
 
@@ -186,10 +186,10 @@ html, body {
 }
 
 #recherche:hover {
-   border-color: #9407d4; /* Ton violet */
+   border-color: #9407d4; 
     box-shadow: 0 0 15px rgba(148, 7, 212, 0.4), 
                 inset 0 0 10px rgba(148, 7, 212, 0.2);
-    transform: scale(1.01); /* Très léger grossissement */
+    transform: scale(1.01);
     transition: all 0.3s ease-in-out;
     background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(148, 7, 212, 0.1) 50%, rgba(255,255,255,0) 70%);
     background-size: 200% 100%;
@@ -232,22 +232,22 @@ html, body {
     width: 200px;
     text-align: center;
 }
-/* 1. Le parent doit être "relative" pour servir de base au titre */
+
 .container-recherche-jeu {
     position: relative !important;
-    display: inline-block; /* Pour que le cadre colle exactement à la taille de l'image */
-    margin: 0 auto; /* Centre le bloc dans le modal */
+    display: inline-block; 
+    margin: 0 auto; 
 }
 
-/* 2. L'image */
+
 .img-resultat-recherche {
     display: block;
-    max-height: 500px; /* Ou la taille que tu préfères */
+    max-height: 500px; 
     width: auto;
     border-radius: 20px;
 }
 
-/* 3. Le titre aimanté en bas à gauche de l'image */
+/* Le titre aimanté en bas à gauche de l'image */
 .titre-jeu-recherche {
     position: absolute;
     bottom: 0;
@@ -260,7 +260,6 @@ html, body {
     text-transform: uppercase;
     font-family: 'lexend', sans-serif;
     background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.4) 50%, transparent 100%);
-    /* UN BLANC PUR ET ÉCLATANT */
     color: #FFFFFF !important; 
     opacity: 1 !important;
     font-weight: 900 !important; 
@@ -311,10 +310,10 @@ html, body {
 
 .stats-container {
    display: flex !important;
-    justify-content: center !important; /* Centre horizontalement */
-    align-items: center !important;     /* Centre verticalement si besoin */
-    gap: 140px ;              /* L'espace entre tes cartes */
-    margin: 45px auto 0 auto !important; /* Le 'auto' à gauche et à droite force le centrage du bloc */
+    justify-content: center !important; 
+    align-items: center !important;   
+    gap: 140px ;              
+    margin: 45px auto 0 auto !important; 
     width: 100% !important;
     text-decoration: none;
     transform: translateY(-20px) !important;
@@ -326,7 +325,7 @@ html, body {
     flex-direction: column; 
     align-items: center; 
     z-index: 9999;
-    transition: all 0.3s ease; /* Rend l'animation fluide */
+    transition: all 0.3s ease; 
     cursor: pointer;
     
 }
@@ -337,7 +336,7 @@ html, body {
                 inset 0 0 10px rgba(191, 0, 255, 0.4) !important;
 }
 
-/* Pour forcer le texte et les liens à briller aussi */
+
 .stat-card:hover .stat-number, 
 .stat-card:hover .stat-label, 
 .stat-card:hover a {
@@ -411,7 +410,7 @@ html, body {
     color: #ffffff;
     margin-bottom: 15px;
     opacity: 0.9;
-    font-weight: 800; /* Très gras pour la lisibilité */
+    font-weight: 800; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -545,7 +544,7 @@ html, body {
     border: none;
     outline: none;
     background: transparent;
-    height: auto !important; /* Garde les proportions */
+    height: auto !important; 
     z-index: 100;
 }
 
@@ -576,11 +575,11 @@ html, body {
     position: absolute;
     width: 100%;
     top: 60px;
-    left: 0; /* On part du bord gauche */
-    margin: 0; /* On supprime le décalage manuel de -300px */
+    left: 0; 
+    margin: 0; 
     font-family: "lexend", sans-serif;
     color: white;
-    z-index: 102; /* Pour être sûr qu'il passe devant la vidéo */;
+    z-index: 102; 
     margin-left: -148px;
     margin-top: 20px;
 
@@ -605,14 +604,13 @@ html, body {
 #modal-recherche .modal-content, 
 #modal-planete .modal-content {
     margin: 0 auto;
-    width: fit-content;  /* <--- TRÈS IMPORTANT : le cadre s'ajuste à l'image */
+    width: fit-content; 
     height: fit-content;
     background: transparent;
     border: none;
-    pointer-events: none; /* <--- Permet au clic de traverser le cadre vide */
+    pointer-events: none; 
 }
 
-/* On redonne le droit de cliquer seulement sur l'image et le titre */
 #modal-recherche img, 
 #modal-planete img,
 #modal-planete video {
@@ -640,8 +638,7 @@ html, body {
     left: 0 !important;
     width: 100% !important;
     text-align: center !important;
-    
-    /* VALEUR NÉGATIVE POUR MONTER TRÈS HAUT */
+
     top: -5% !important; 
     
     color: white !important;
@@ -694,16 +691,14 @@ html, body {
 /* --- GRILLE DES VIDÉOS --- */
 .video-grid {
     display: grid;
-    /* On force les colonnes à rester entre 300px et 350px max */
     grid-template-columns: repeat(auto-fill, minmax(300px, 350px)); 
     gap: 30px;
     padding: 20px;
-    justify-content: center; /* Centre les cartes horizontalement */
-    max-width: 1200px;      /* Empêche la grille de s'étaler trop sur ultra-wide */
+    justify-content: center;
+    max-width: 1200px;      
   
 }
 
-/* --- CARTE VIDÉO --- */
 .video-card {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
@@ -712,15 +707,15 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     cursor: pointer;
     position: relative;
-    width: 100%; /* S'adapte à la colonne de la grille */
-    max-width: 350px; /* Sécurité anti-géant */
-    text-decoration: none !important; /* Enlève le soulignement du titre */
-    display: block;                  /* Indispensable pour que le lien prenne toute la forme de la carte */
+    width: 100%; 
+    max-width: 350px; 
+    text-decoration: none !important; 
+    display: block;                 
     color: inherit;
     margin-left: -45px;
 }
 
-/* Effet au survol de la carte */
+
 .video-card:hover {
     transform: translateY(-8px);
     border-color: #9d00ff;
@@ -728,19 +723,19 @@ html, body {
     background: rgba(255, 255, 255, 0.06);
 }
 
-/* --- MINIATURE ET OVERLAY --- */
+
 .thumbnail-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; /* Garde le format YouTube même sans image */
-    background: #111;     /* Fond sombre de secours */
+    aspect-ratio: 16 / 9; 
+    background: #111;     
     overflow: hidden;
 }
 
 .thumbnail-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* L'image remplit le cadre sans se déformer */
+    object-fit: cover; 
     display: block;
     transition: transform 0.5s ease;
 }
@@ -749,7 +744,7 @@ html, body {
     transform: scale(1.08);
 }
 
-/* Voile noir au hover */
+
 .video-overlay {
     position: absolute;
     top: 0;
@@ -769,7 +764,7 @@ html, body {
     opacity: 1;
 }
 
-/* --- BOUTON PLAY --- */
+
 .play-button {
     width: 55px;
     height: 55px;
@@ -794,7 +789,6 @@ html, body {
     margin-left: 3px;
 }
 
-/* --- INFOS --- */
 .video-info {
     padding: 18px;
 }
@@ -805,7 +799,7 @@ html, body {
     margin: 0 0 8px 0;
     line-height: 1.4;
 
-    font-weight: 500; /* Très gras pour la lisibilité */
+    font-weight: 500; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -900,13 +894,13 @@ html, body {
     opacity: 1 !important;
     visibility: visible !important;
 }
-/* Uniquement pour les cartes de la liste, pas pour la planète */
+
 .result-item img, .anime-card img { 
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
-/* La classe ajoutée par le JS quand on scroll */
+
 .result-item img.fade-in, .anime-card img.fade-in {
     opacity: 1;
 }
@@ -951,11 +945,10 @@ html, body {
     
 }
 
-/* Le badge dans le modal */
 .badge-modal {
     position: absolute;
     top: 75px;
-    right: 8px; /* Effet de dépassement */
+    right: 8px; 
     padding: 8px 20px;
     font-size: 14px;
     font-weight: bold;
@@ -965,41 +958,39 @@ html, body {
     box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     border-radius: 7px;
 
-    font-weight: 800; /* Très gras pour la lisibilité */
+    font-weight: 800; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/* Couleurs spécifiques */
 .badge-modal.termine { 
     background-color: #2ecc71;
 
-    font-weight: 400; /* Très gras pour la lisibilité */
+    font-weight: 400;
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-} /* Vert */
-.badge-modal.encours { background-color: #f1c40f; color: #000; } /* Jaune */
+} 
+.badge-modal.encours { background-color: #f1c40f; color: #000; } 
 .badge-modal.drop    { 
     background-color: #e74c3c; 
-    font-weight: 400; /* Très gras pour la lisibilité */
+    font-weight: 400; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-} /* Rouge */
+} 
 
 
 
-/* On cache le badge quand il est dans la grille pour garder l'image clean */
 .image-container .badge-statut.ban {
     display: none;
 }
 
-/* On s'assure que le badge de la modal (quand on clique) reste bien visible */
+
 .badge-modal.ban {
     display: block !important;
     background-color: #ff0000;
@@ -1012,14 +1003,14 @@ html, body {
     right: -3px;
     font-size: 1rem;
 
-    font-weight: 400; /* Très gras pour la lisibilité */
+    font-weight: 400; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/* Optionnel : petit triangle pour l'effet ruban plié */
+
 .badge-modal::after {
     content: '';
     position: absolute;
@@ -1030,7 +1021,7 @@ html, body {
 }
 
 
-/* Container des onglets */
+
 .episode-tabs {
     display: flex;
     gap: 15px;
@@ -1038,7 +1029,7 @@ html, body {
     padding-left: 10px;
 }
 
-/* Style de base des boutons */
+
 .tab-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1048,24 +1039,23 @@ html, body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease; /* Pour que le switch soit fluide */
+    transition: all 0.3s ease; 
     border-radius: 4px;
     margin-top: 30px;
 }
 
-/* EFFET HOVER (quand on passe la souris) */
 .tab-btn:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* EFFET ACTIF (Le bouton sélectionné) */
+
 .tab-btn.active {
-    background: #00ffffed; /* Couleur Cyan */
-    color: #000;         /* Texte noir pour le contraste */
+    background: #00ffffed;
+    color: #000;         
     border-color: #00ffff;
-    box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5); /* Le Néon */
-    transform: translateY(-2px); /* Petit effet de levée */
+    box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5); 
+    transform: translateY(-2px); 
 }
 
 @keyframes fadeIn {
@@ -1104,7 +1094,7 @@ html, body {
     width: 50%;
     height: 2.3px;
     background: linear-gradient(90deg, #00fbff, transparent);
-   margin-top: -10px;    /* Ajuste pour coller au titre "ÉPISODE 1" */
+   margin-top: -10px;    
     margin-bottom: 5px;
     margin-right: 90px;
 }
@@ -1112,11 +1102,11 @@ html, body {
 .episode-tabs {
     display: flex;
     gap: 10px;
-    margin-top: -50px;    /* Remonte les boutons vers la ligne */
-    margin-bottom: 10px;  /* Rapproche les affiches des boutons */
+    margin-top: -50px;   
+    margin-bottom: 10px;  
 }
 
-/* On s'assure que la grille elle-même n'a pas de marge haute */
+
 #grid-episode-unique {
     margin-top: 0 !important;
     
@@ -1125,14 +1115,14 @@ html, body {
 .footer-credits {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Espace entre les deux lignes de texte */
-    margin-top: 30px;
+    gap: 8px; 
+    margin-top: 25px;
 }
 
 .footer-credits2 {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Espace entre les deux lignes de texte */
+    gap: 8px; 
     margin-top: -80px;
     
 }
@@ -1142,7 +1132,7 @@ html, body {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.25); /* Gris très sombre pour ne pas sauter aux yeux */
+    color: rgba(255, 255, 255, 0.25); 
     text-align: left;
 }
 
@@ -1150,57 +1140,56 @@ html, body {
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25); /* Gris très sombre pour ne pas sauter aux yeux */
+    color: rgba(255, 255, 255, 0.25); 
     text-align: left;
     margin-top: -2px;
     text-align: right;
 }
 
-/* Le lien d'inspiration */
 .credit-link {
-    color: rgba(255, 255, 255, 0.4); /* Un poil plus clair pour montrer que c'est cliquable */
+    color: rgba(255, 255, 255, 0.4); 
     text-decoration: none;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.2); /* Petite ligne pointillée discrète */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     
    
 }
 
-/* L'effet "Cyber" uniquement au survol */
+
 .credit-link:hover {
-    color: #00ffff; /* Ton Cyan Néon */
+    color: #00ffff; 
     border-bottom-color: #00ffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Léger glow */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); 
 }
 
 
 .footer-line { 
-   width: 35%;          /* Ou la taille en pourcentage que tu veux */
-    margin: 0 auto;      /* INDISPENSABLE : Ça centre automatiquement la ligne au milieu */
+   width: 35%;         
+    margin: 0 auto;      
     height: 2px;
-    background: rgba(255, 0, 0, 0.705);     /* Ton dégradé ou ta couleur */
+    background: rgba(255, 0, 0, 0.705);    
     margin-top: 200px;
   
 }
 
-/* Conteneur principal */
+
 .social-container {
     display: flex;
-    justify-content: center; /* Aligne les boutons pile au milieu de l'écran, sous la ligne */
+    justify-content: center; 
     gap: 15px;
     width: 100%;
     margin-top: 45px;
 }
 
-/* Style de base de TOUS les boutons */
+
 .social-btn {
     display: flex;
     align-items: center;
-    gap: 10px;               /* Espace entre l'icône et le texte */
+    gap: 10px;              
     padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.03); /* Fond sombre hyper transparent */
-    border-radius: 6px;      /* Coins légèrement arrondis */
-    text-decoration: none;   /* Enlève le soulignement */
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 6px;      
+    text-decoration: none;   
     font-family: 'Arial', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
@@ -1208,15 +1197,13 @@ html, body {
     border: 1px solid transparent;
 }
 
-/* Taille des icônes SVG */
+
 .social-btn svg {
     width: 18px;
     height: 18px;
 }
 
 /* --- COULEURS SPÉCIFIQUES À CHAQUE RÉSEAU --- */
-
-/* X / Twitter (Gris très clair / Blanc) */
 .x-btn {
     border-color: rgba(255, 255, 255, 0.2);
     color: rgba(255, 255, 255, 0.8);
@@ -1226,7 +1213,7 @@ html, body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Twitch (Violet) */
+
 .twitch-btn {
     border-color: rgba(145, 71, 255, 0.4);
     color: #a970ff;
@@ -1236,7 +1223,6 @@ html, body {
     box-shadow: 0 0 15px rgba(145, 71, 255, 0.3);
 }
 
-/* YouTube (Rouge Sombre / Crimson) */
 .youtube-btn {
     border-color: rgba(198, 40, 40, 0.4);
     color: #e53935;
@@ -1246,7 +1232,7 @@ html, body {
     box-shadow: 0 0 15px rgba(198, 40, 40, 0.3);
 }
 
-/* Patreon (Rouge / Corail) */
+
 .patreon-btn {
     border-color: rgba(255, 66, 50, 0.4);
     color: #ff4232;
@@ -1256,7 +1242,7 @@ html, body {
     box-shadow: 0 0 15px rgba(255, 66, 50, 0.3);
 }
 
-/* Instagram (Rose / Magenta) */
+
 .instagram-btn {
     border-color: rgba(225, 48, 108, 0.4);
     color: #e1306c;
@@ -1266,7 +1252,7 @@ html, body {
     box-shadow: 0 0 15px rgba(225, 48, 108, 0.3);
 }
 
-/* Effet général quand on clique (enfoncement) */
+
 .social-btn:active {
     transform: scale(0.95);
 }
@@ -1381,22 +1367,22 @@ html, body {
     }
 
     .search-container {
-    margin-top: -280px !important; /* Ajuste le chiffre jusqu'à ce que ce soit parfait */
+    margin-top: -280px !important; 
     position: relative;
-    z-index: 100; /* Pour passer au-dessus d'éventuels éléments invisibles */
+    z-index: 100; 
 }
-/* On rapetisse les images de résultats */
+
 #results img {
-    width: 130px !important; /* Taille fixe plus petite */
+    width: 130px !important; 
     height: auto;
     border-radius: 8px;
 }
 
-/* On réduit la police du texte à côté */
+
 #results div {
     font-size: 1.08em !important;
     padding: 10px !important;
-    font-weight: 300; /* Très gras pour la lisibilité */
+    font-weight: 300;
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1419,9 +1405,9 @@ html, body {
 }
 .jeux {
     transform: translate(50px, 40px) !important; 
-    /* 20px = vers la droite | -10px = vers le haut */
+   
 }
-/* 1. Le fond noir (On le laisse en block comme le veut ton JS) */
+
 #modal-recherche.modal {
     position: fixed !important;
     top: 0 !important;
@@ -1429,16 +1415,16 @@ html, body {
     width: 100vw !important;
     height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(10px) !important; /* Le flou reste ici */
+    backdrop-filter: blur(10px) !important; 
     z-index: 10000 !important;
 }
 
-/* 2. LE CENTRAGE INCASSABLE (C'est ici la magie) */
+
 .modal-content {
     position: absolute !important;
-    top: 50% !important;  /* Pousse à 50% du haut de l'écran */
-    left: 42% !important; /* Pousse à 50% de la gauche de l'écran */
-    transform: translate(-50%, -50%) !important; /* Recentre l'élément sur lui-même */
+    top: 50% !important; 
+    left: 42% !important; 
+    transform: translate(-50%, -50%) !important; 
     
     width: fit-content !important;
     height: fit-content !important;
@@ -1448,7 +1434,7 @@ html, body {
     border: none !important;
 }
 
-/* 3. L'image */
+
 #modal-media-recherche img {
     display: block !important;
     max-width: 85vw !important;
@@ -1470,7 +1456,7 @@ html, body {
 
 
     body {
-        /* background-position: [Horizontal] [Vertical] */
+        
         background-position: right center !important; 
     }
     
@@ -1479,9 +1465,9 @@ html, body {
         margin-left: 14px;
         width:80%;
     }
-/* Le conteneur global (fond noir) */
+
 .overlay {
-    display: none; /* Passé en flex par le JS */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -1490,19 +1476,18 @@ html, body {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 10000;
     
-    /* On centre TOUT au milieu de l'écran */
     justify-content: center;
     align-items: center;
 }
 
 .overlay-content {
-    /* On laisse le flexbox gérer le centrage */
+
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     
-    /* On enlève les largeurs forcées qui cassent le centrage */
+
     width: auto !important;
     max-width: 90vw !important;
     position: relative !important;
@@ -1511,14 +1496,13 @@ html, body {
 
 .overlay-content img {
     display: block !important;
-    /* On utilise max-height pour que l'image reste belle sans être déformée */
     max-height: 80vh !important; 
     width: 340px !important; 
     
     border-radius: 15px;
     cursor: pointer;
     
-    /* On enlève le margin-top qui décale verticalement */
+
     margin: 0 !important;
     
 }
@@ -1568,7 +1552,7 @@ html, body {
 }
 
 .badge-modal.termine{
-    font-weight: 300; /* Très gras pour la lisibilité */
+    font-weight: 300; 
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1587,13 +1571,13 @@ html, body {
 }
 
     .overlay-content img {
-        max-height: 80vh !important; /* Encore plus petit car l'écran est plat */
+        max-height: 80vh !important; 
         width: 90% !important;
         margin-top: 20px !important;
     }
 
     .head {
-        padding-top: 10px !important; /* On gagne de la place en haut */
+        padding-top: 10px !important; 
     }
 
     .stats-container {
