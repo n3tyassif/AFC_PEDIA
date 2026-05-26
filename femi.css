@@ -133,10 +133,14 @@ html, body {
    
 }
 
+
+
+
 .femimarss a {
     color: #ff0000;
     text-decoration: none;
     transition: all 0.3s ease;
+    
 }
 
 .femimarss a:hover {
@@ -908,6 +912,7 @@ html, body {
 #text-femi {
     visibility: hidden;
     min-height: 1.2em; 
+    
 }
 
 .decoding {
@@ -1480,6 +1485,11 @@ html, body {
     align-items: center;
 }
 
+.badge-modal{
+    margin-top: -45px;
+    margin-right: -18px;
+}
+
 .overlay-content {
 
     display: flex !important;
@@ -1559,7 +1569,11 @@ html, body {
     text-rendering: optimizeLegibility;
     
 }
-    
+  
+
+    .credits-text2 {
+        margin-top:20px;
+    }
 
     .anime{
         margin-top:200px;
@@ -1575,6 +1589,35 @@ html, body {
         width: 90% !important;
         margin-top: 20px !important;
     }
+
+        .image-container img {
+        height: 300px !important;
+        width: 200px;
+    }
+
+    
+    
+     .social-container {
+        gap: 8px;          /* Moins d'espace entre les boutons */
+        padding: 10px;
+    }
+
+    /* On rend les boutons plus petits */
+    .social-btn {
+        padding: 6px 12px; /* Moins de rembourrage interne */
+        font-size: 0.75rem; /* Écrit plus petit */
+        gap: 6px;          /* Moins d'espace entre l'icône et le texte */
+    }
+
+    /* On rétrécit les icônes SVG */
+    .social-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .icon {
+    margin-left:50px;
+}
 
     .head {
         padding-top: 10px !important; 
@@ -1645,6 +1688,10 @@ html, body {
    #modal-media-planete img {
     margin-right: 180px;
     margin-top: 80px;
+}
+
+#text-wiki {
+    margin-top: 170px;
 }
 }
 
@@ -1818,4 +1865,46 @@ html, body {
         margin-top: 450px;
     }
     
+}
+
+/* Le patch de secours pour tous les téléphones et tablettes */
+@media (max-width: 1024px) {
+    #footer, .site-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding: 20px 10px !important;
+    }
+
+    .social-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    /* On force les boutons à rétrécir un bon coup */
+    .social-btn {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+    }
+
+    /* Le coup de balai final sur les marges qui font chier */
+    .footer-credits,  [class*="credits"] {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        text-align: center;
+    }
+    
+    .footer-line {
+        width: 80% ;
+        margin-top: -10px;
+    }
+
+    .footer-credits2, [class*="credits"] {
+        margin: 0 !important;
+        margin-top: 10px !important;
+        text-align: center;
+    }
 }
