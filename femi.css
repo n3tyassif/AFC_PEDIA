@@ -549,7 +549,7 @@ html, body {
     outline: none;
     background: transparent;
     height: auto !important; 
-    z-index: 100;
+    
 }
 
 
@@ -1282,10 +1282,11 @@ html, body {
         margin-right: 30px;
     }
 
-    #recherche{
-        margin-left: 0px;
-    }
    
+    .icon {
+        left: 0px;
+        
+    }
     .title h1 {
         font-size: 2.8rem !important;
         text-align: center;
@@ -1385,7 +1386,7 @@ html, body {
 
 
 #results div {
-    font-size: 1.08em !important;
+    
     padding: 10px !important;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -1722,17 +1723,48 @@ html, body {
 
 
     .stats-container {
-        margin-top: 240px !important; 
+        margin-top: 280px !important; 
         margin-bottom: 10px !important;
         transform: scale(0.75) !important; 
         text-align: center;
     }
 
     .search-container {
-        margin-top: -180px !important; 
+        margin-top: -220px !important; 
         position: relative;
         z-index: 1000 !important;
         text-align: center;
+    }
+
+    /* 2. RÉTRÉCIT ET CENTRE LA BARRE EN MODE COUCHÉ */
+    .search {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        
+        width: 90% !important; /* Réduit la barre à la moitié de l'écran large */
+        
+        margin: 0 auto !important; /* Centre parfaitement horizontalement */
+        left: auto !important;
+    }
+
+    /* 3. Recale l'input intérieur */
+    #recherche {
+        width: 100% !important;
+        margin: 0 !important; /* Nettoie les anciens décalages */
+        padding: 15px 15px 20px 40px !important; /* Laisse de l'air pour l'icône à gauche */
+        font-size: 14px !important; /* Évite que le texte soit trop énorme sur écran bas */
+        box-sizing: border-box !important;
+    }
+
+    /* 4. ASSOCIE L'ICÔNE À L'INPUT RÉTRÉCI */
+    .icon {
+        position: absolute !important;
+        left: 15px !important; /* Aligne la loupe au bord gauche de l'input */
+        top: 52% !important;
+        transform: translateY(-50%) !important; /* Centrage vertical parfait */
+        margin: 0 !important;
     }
 
     #results img {
@@ -1811,7 +1843,7 @@ html, body {
 #modal-media-planete img {
     margin-left: 0px;
     margin-right: 170px;
-   
+   margin-top: 20px;
    
 }
 
@@ -1837,6 +1869,11 @@ html, body {
     margin-top: -15px;
 }
 }
+
+    .image-container img {
+        height: 250px !important;
+        width: 180px;
+    }
 
 
 /* écran pc plus petit */
@@ -1906,5 +1943,147 @@ html, body {
         margin: 0 !important;
         margin-top: 10px !important;
         text-align: center;
+    }
+}
+
+.video.overlay {
+    display: grid !important;
+    /* RÈGLAGE CLÉ : Chaque colonne fera au moins 180px, et prendra tout l'espace s'il y a de la place */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
+    gap: 15px !important; /* Espace entre les cartes */
+    width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   STRUCTURE EN COUPLAGES INDÉPENDANTS (APPAREIL PAR APPAREIL)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LES TABLETTES (Écrans moyens : iPad, etc.)
+   Tranche : de 601px à 1024px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    #header-anime, .head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 40px !important;
+    }
+    .title {
+        margin-bottom: 20px !important;
+    }
+    .stats-container {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 25px !important; /* <--- Ajuste l'espace ici pour la tablette */
+    }
+    .search-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 50px !important;
+        z-index: 100 !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. LES GRANDS TÉLÉPHONES (Ex: Samsung Galaxy S20 Ultra - Écran long/large)
+   Tranche : de 400px à 600px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    #header-anime, .head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 90px !important;
+    }
+    .title {
+        margin-bottom: 15px !important;
+    }
+    .stats-container {
+        display: flex !important;
+        justify-content: center !important;
+        
+        /* Pour le S20, si tu veux remonter la recherche, baisse cette valeur ou mets du négatif */
+        margin-bottom: -10px !important; 
+    }
+    .search-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        
+        /* C'est ici que tu gères la hauteur de ta barre de recherche sur grand tel */
+        margin-top: 0px !important; 
+        margin-top: -250px !important;
+        z-index: 100 !important;
+    }
+    .search {
+        width: 85% !important;
+    }
+
+    .icon{
+        margin-left: -30px ;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. LES PETITS TÉLÉPHONES (Ex: iPhone X, écrans très étroits)
+   Tranche : moins de 400px
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 399px) {
+    #header-anime, .head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 100px !important;
+    }
+    .title {
+        margin-bottom: 10px !important;
+    }
+    .stats-container {
+        display: flex !important;
+        justify-content: center !important;
+        
+        /* Pour l'iPhone X, ajuste cette valeur pour rapprocher la recherche des stats */
+        margin-top: 20px !important; 
+    }
+    .search-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    
+        margin-top: 0px !important;
+        margin-top: -200px !important;
+        z-index: 100 !important;
+    }
+    .search {
+        width: 90% !important; /* On prend un peu plus de largeur sur petit écran */
+    }
+
+    .search {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        width: 100% !important; /* Rétrécit la barre à 70% de l'écran de l'iPhone */
+        margin: 0 auto !important; /* Centre la barre horizontalement */
+        left: auto !important;
+    }
+
+    #recherche {
+        width: 100% !important;
+        margin: 0 !important; /* Supprime le décalage de -25px */
+        padding-left: 40px !important; /* Laisse de la place pour que le texte ne colle pas la loupe */
+        box-sizing: border-box !important;
+    }
+
+    .icon {
+        position: absolute !important;
+        left: 12px !important; /* Recale la loupe proprement à gauche à l'intérieur de l'input */
+        top: 54% !important;
+        transform: translateY(-50%) !important; /* Centre verticalement l'icône */
+        margin: 0 !important;
     }
 }
