@@ -433,6 +433,7 @@ html, body {
 }
 
 
+
 .game-card {
     background: none;
     border: none;
@@ -1293,17 +1294,60 @@ html, body {
     }
     
 
-    #grid-jeux, .game-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px;
-        padding: 10px;
-    }
 
-   
-    .image-container img {
-        height: 200px !important;
-        width:150px;
-    }
+
+   /* ==========================================================================
+   NETTOYAGE DES GRILLES : ON VIRE LES MARGES TOXIQUES
+   ========================================================================== */
+#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film {
+    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    
+    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    box-sizing: border-box !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    
+}
+
+/* S'applique uniquement aux images de la catégorie jeux (2026, 2025, 2024) */
+#grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
+    width: 150px !important;
+    
+    /* MODIFIE CETTE VALEUR : 
+       Si c'est encore trop allongé, baisse à 200px ou 180px.
+       Si c'est trop écrasé, augmente à 240px ou 250px.
+       Modifie jusqu'à trouver la hauteur parfaite des autres catégories ! */
+    height: 240px !important; 
+    
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
+/* ==========================================================================
+   TON IMAGE CONTAINER ET IMAGE (PARFAIT, ON GARDE)
+   ========================================================================== */
+.image-container {
+    width: 100% !important; /* Passe-le à 100% maintenant que la grille est propre */
+    max-width: 100% !important;
+    position: relative !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin-left: auto !important;
+    margin-right: auto !important; 
+}
+
+.image-container img, .img\.fade-in {
+    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
+    height: auto !important; 
+    aspect-ratio: 2 / 3 !important; 
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
 
   
     #results {
@@ -1460,7 +1504,9 @@ html, body {
 }
 
 
-
+#modal-planete video{
+pointer-events: none;
+}
     body {
         
         background-position: right center !important; 
@@ -1592,7 +1638,7 @@ html, body {
     }
 
         .image-container img {
-        height: 300px !important;
+        height: 100px !important;
         width: 200px;
     }
 
@@ -1773,6 +1819,10 @@ html, body {
         border-radius: 8px;
     }
 
+    #modal-planete video{
+pointer-events: none;
+}
+
     #results div {
         font-size: 1em !important;
         padding: 10px !important;
@@ -1839,6 +1889,11 @@ html, body {
     .stat-label {
     font-size: 1.2rem;
 }
+
+#modal-planete video{
+pointer-events: none;
+}
+
    
 #modal-media-planete img {
     margin-left: 0px;
@@ -1969,7 +2024,7 @@ html, body {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        padding-top: 40px !important;
+        padding-top: 10px !important;
     }
     .title {
         margin-bottom: 20px !important;
@@ -1977,7 +2032,7 @@ html, body {
     .stats-container {
         display: flex !important;
         justify-content: center !important;
-        margin-bottom: 25px !important; /* <--- Ajuste l'espace ici pour la tablette */
+        margin-top: 305px !important; /* <--- Ajuste l'espace ici pour la tablette */
     }
     .search-container {
         display: flex !important;
@@ -1986,7 +2041,17 @@ html, body {
         margin-bottom: 50px !important;
         z-index: 100 !important;
     }
+
+    .icon{
+        margin-left: -5px ;
+    }
+
+    .video-grid{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 }
+
+
 
 /* --------------------------------------------------------------------------
    2. LES GRANDS TÉLÉPHONES (Ex: Samsung Galaxy S20 Ultra - Écran long/large)
@@ -2058,9 +2123,7 @@ html, body {
         margin-top: -200px !important;
         z-index: 100 !important;
     }
-    .search {
-        width: 90% !important; /* On prend un peu plus de largeur sur petit écran */
-    }
+    
 
     .search {
         display: flex !important;
@@ -2085,5 +2148,102 @@ html, body {
         top: 54% !important;
         transform: translateY(-50%) !important; /* Centre verticalement l'icône */
         margin: 0 !important;
+    }
+
+   
+}
+
+/* ==========================================================================
+   CIBLAGE SPÉCIFIQUE POUR L'IPAD PRO DE L'INSPECTEUR (1024px)
+   ========================================================================== */
+@media screen and (min-width: 1023px) and (max-width: 1025px) {
+
+    /* 1. Aligne verticalement tout le bloc du haut */
+    #header-anime, .head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 50px !important;
+        height: auto !important;
+    }
+
+    /* 2. Centre le titre et crée de l'espace en dessous */
+    .title, #text-femi {
+        margin: 0 auto !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* 3. Aligne et espace les compteurs de statistiques */
+    .stats-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 40px !important;
+        margin: 0 auto !important;
+        margin-top: 0 !important; /* Écrase les anciennes marges parasites */
+    }
+
+    /* 4. Centre parfaitement le bloc de recherche */
+    .search-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        margin-top: -300px !important;
+        margin-bottom: 50px !important;
+        width: 100% !important;
+    }
+
+   .category-header{
+    margin-top: 100px ;
+   }
+}
+
+/* ==========================================================================
+   LE PATCH DÉFINITIF POUR TABLETTES (iPad Mini 1024x768 & iPad Pro 1024x1366)
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+
+    /* 1. On force le conteneur parent à empiler les éléments proprement de haut en bas */
+    #header-anime, .head {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 0px !important; /* On réduit pour l'iPad Mini */
+        height: auto !important;
+    }
+
+    /* 2. LE TITRE : En premier, centré, avec une marge basse tranquille */
+    .title, #text-femi {
+        order: 1 !important;
+        margin: 0 auto 15px auto !important; 
+    }
+
+    /* 3. LES STATS : En deuxième, sous le titre */
+    .stats-container {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 30px !important; /* Un poil plus serré pour que ça passe partout */
+        margin: 0 auto 20px auto !important;
+        margin-top: 300px !important; /* Supprime le chevauchement */
+    }
+
+    /* 4. LA RECHERCHE : En troisième, tout en bas du bloc */
+    .search-container {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 0 auto 30px auto !important;
+        margin-top: -300px !important;
+        width: 100% !important;
+    }
+
+    .category-header{
+        margin-top: 100px ;
     }
 }
