@@ -410,7 +410,7 @@ html, body {
 
 .year-title {
     font-family: 'bebas', sans-serif;
-    font-size: 1.9rem;
+    font-size: 2.09rem;
     color: #ffffff;
     margin-bottom: 15px;
     opacity: 0.9;
@@ -419,6 +419,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    margin-left: 35px;
 }
 
 
@@ -927,17 +928,38 @@ html, body {
     font-size:1.4em;
 }
 
+.arrache-title  {
+   margin-top: 60px;
+    margin-left: 110px;
+    font-size:1.4em;
+}
+
 .anime-icon img {
     height: 80px;
     margin-left: 30px;
     margin-bottom: -110px; 
 }
 
+
+
 .film-icon img {
-    height: 75px;
+    height: 70px;
     margin-left: 50px;
-    margin-bottom: -98px; 
+    margin-bottom: -110px; 
 }
+
+.archive-icon img {
+    height: 78px;
+    margin-left: 13px;
+    margin-bottom: -110px; 
+}
+
+.arrache-icon img {
+    height: 90px;
+    margin-left: 20px;
+    margin-bottom: -110px; 
+}
+
 
 #grid-animes {
     
@@ -1118,11 +1140,29 @@ html, body {
     
 }
 
+#episode{
+    margin-left: 30px;
+}
+
+#recap{
+    margin-left: 30px;
+}
+
+#arrache{
+    margin-left: 30px;
+}
+
+#archive{
+    margin-left: 30px;
+}
+
 .footer-credits {
     display: flex;
     flex-direction: column;
     gap: 8px; 
     margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .footer-credits2 {
@@ -1130,6 +1170,7 @@ html, body {
     flex-direction: column;
     gap: 8px; 
     margin-top: -80px;
+    margin-right: 10px;
     
 }
 
@@ -1274,6 +1315,26 @@ html, body {
     
 }
 
+/* On cache les titres ET toutes les grilles au début */
+.category-header, 
+.category-anime, 
+.game-grid, 
+.video-grid {
+    opacity: 0;
+    transform: translateY(25px); /* Un poil plus bas pour les grilles */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+    will-change: opacity, transform;
+}
+
+/* Tout ce qui prend la classe .visible retrouve sa place en fondu */
+.category-header.visible, 
+.category-anime.visible, 
+.game-grid.visible, 
+.video-grid.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 @media (max-width: 768px) {
     
     
@@ -1317,14 +1378,9 @@ html, body {
 
 /* S'applique uniquement aux images de la catégorie jeux (2026, 2025, 2024) */
 #grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
-    width: 150px !important;
-    
-    /* MODIFIE CETTE VALEUR : 
-       Si c'est encore trop allongé, baisse à 200px ou 180px.
-       Si c'est trop écrasé, augmente à 240px ou 250px.
-       Modifie jusqu'à trouver la hauteur parfaite des autres catégories ! */
-    height: 240px !important; 
-    
+    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
+    height: 250px !important; 
+    aspect-ratio: 2 / 3 !important; 
     object-fit: cover !important;
     border-radius: 8px !important;
 }
@@ -1332,13 +1388,11 @@ html, body {
    TON IMAGE CONTAINER ET IMAGE (PARFAIT, ON GARDE)
    ========================================================================== */
 .image-container {
-    width: 100% !important; /* Passe-le à 100% maintenant que la grille est propre */
-    max-width: 100% !important;
-    position: relative !important;
+    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
+    height: auto !important; 
+    aspect-ratio: 2 / 3 !important; 
+    object-fit: cover !important;
     border-radius: 8px !important;
-    overflow: hidden !important;
-    margin-left: auto !important;
-    margin-right: auto !important; 
 }
 
 .image-container img, .img\.fade-in {
@@ -1369,9 +1423,15 @@ html, body {
     }
 
     .line-anime {
-    margin-left: 30px;
-    margin-top: -12px;
+    margin-left: 20px;
+    margin-top: -25px;
     width: 65%;
+}
+
+.line-episode {
+    margin-left: -5px;
+    margin-top: -15px;
+    width: 85%;
 }
     
   
@@ -1455,7 +1515,6 @@ html, body {
 }
 .jeux {
     transform: translate(50px, 40px) !important; 
-   
 }
 
 #modal-recherche.modal {
@@ -1594,9 +1653,18 @@ pointer-events: none;
 .anime-icon img {
     height: 80px;
 }
+
+.arrache-icon img {
+    height: 80px;
+    margin-left: 0px;
+}
+.arrache-title {
+    
+    margin-left: 70px;
+    
 }
 
-
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1934,6 +2002,11 @@ pointer-events: none;
 /* écran pc plus petit */
 @media screen and (width: 1500px) {
     
+    
+
+    
+
+
     .stat-number {
        
         margin-top: -280px !important; 
@@ -2213,6 +2286,7 @@ pointer-events: none;
         text-align: center !important;
         padding-top: 0px !important; /* On réduit pour l'iPad Mini */
         height: auto !important;
+        
     }
 
     /* 2. LE TITRE : En premier, centré, avec une marge basse tranquille */
@@ -2229,7 +2303,7 @@ pointer-events: none;
         align-items: center !important;
         gap: 30px !important; /* Un poil plus serré pour que ça passe partout */
         margin: 0 auto 20px auto !important;
-        margin-top: 300px !important; /* Supprime le chevauchement */
+        margin-top: 50px !important; /* Supprime le chevauchement */
     }
 
     /* 4. LA RECHERCHE : En troisième, tout en bas du bloc */
