@@ -87,114 +87,119 @@
  <div id="planete-container" style="width:100%; height:750px;">
     <canvas id="world-3d"></canvas>
 </div>
-  <section id="jeu">
+ <section id="jeu">
     <div class="category-header">
         <div class="jeu-icon">
-          <img src="https://i.postimg.cc/g25BPYMn/df9qfmp-557b5546-a96a-4cf6-ad95-7d579cedbc62.gif" 
-         alt="logo malenia" class="jeu-icon">
-       
-         <div class="jeux"> <h2>JEUX</h2> </div>
+            <img src="https://i.postimg.cc/g25BPYMn/df9qfmp-557b5546-a96a-4cf6-ad95-7d579cedbc62.gif" alt="logo malenia" class="jeu-icon">
+            <div class="jeux"> <h2>JEUX</h2> </div>
         </div>
         <div class="category-line"></div>
     </div>
 
-   <section class="year-section">
-    <h2 class="year-title">2026</h2>
-    <div id="grid-2026" class="game-grid"></div> 
+    <div class="category-anime">
+        <h2 class="year-title">2026</h2>
+        <div id="grid-2026" class="game-grid"></div> 
+    </div>
+
+    <div class="category-anime">
+        <h2 class="year-title">2025</h2>
+        <div id="grid-2025" class="game-grid"></div> 
+    </div>
+
+    <div class="category-anime">
+        <h2 class="year-title">2024</h2>
+        <div id="grid-2024" class="game-grid"></div>
+    </div>
 </section>
 
-<section class="year-section">
-    <h2 class="year-title">2025</h2>
-    <div id="grid-2025" class="game-grid"></div> 
-    <section class="year-section">
-    <h2 class="year-title">2024</h2>
-    <div id="grid-2024" class="game-grid"></div>
-</section>
- </section>
- <section id="anime">
+<section id="anime">
     <div class="category-anime">
         <div class="anime-icon">
-          <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/ezgif-78949b178ed1a7bd_pvjbr0" alt="logo itachi" class="anime-icon">
-          <div class="anime-title"> <h2>animes</h2> </div>
+            <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/ezgif-78949b178ed1a7bd_pvjbr0" alt="logo itachi" class="anime-icon">
+            <div class="anime-title"> <h2>animes</h2> </div>
         </div>
         <div class="line-anime"></div>
     </div>
-
     <div id="grid-animes" class="game-grid"></div> 
 </section>
 
- <section id="film">
+<section id="film">
     <div class="category-anime">
         <div class="film-icon">
-          <img src="https://res.cloudinary.com/dyhcasitx/image/upload/output-onlinegiftools_5_yidtqa" alt="logo darkvador" class="anime-icon">
-          <div class="anime-title"> <h2>FILMS</h2> </div>
+            <img src="https://res.cloudinary.com/dyhcasitx/image/upload/output-onlinegiftools_5_yidtqa" alt="logo darkvador" class="anime-icon">
+            <div class="anime-title"> <h2>FILMS</h2> </div>
         </div>
         <div class="line-anime"></div>
     </div>
-
     <div id="grid-film" class="game-grid"></div> 
 </section>
 
-
-
-<section class="year-section">
+<div class="category-anime">
     <h2 class="year-title">films animations</h2>
     <div id="grid-animation" class="game-grid"></div> 
+</div>
 
-    <section id="serie">
+<section id="serie">
     <div class="category-anime">
         <div class="serie-icon">
-          <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/ezgif-82efefc583bc5c53_bodewm" alt="logo darkvador" class="anime-icon">
-          <div class="serie-title"> <h2>séries</h2> </div>
+            <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/ezgif-82efefc583bc5c53_bodewm" alt="logo darkvador" class="anime-icon">
+            <div class="serie-title"> <h2>séries</h2> </div>
         </div>
         <div class="line-anime"></div>
     </div>
-
     <div id="grid-serie" class="game-grid"></div> 
 </section>
 
 <section id="episode">
     <div class="category-anime">
-          <div class="episode-title"> <h2>épisode 1</h2> </div>
-        </div>
+        <div class="episode-title"> <h2>épisode 1</h2> </div>
         <div class="line-episode"></div>
     </div>
 
     <div id="grid-episode" class="game-grid"></div> 
+    
+    <div class="episode-tabs">
+        <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
+        <button class="tab-btn" onclick="changerCategorie('serie')">SÉRIES</button>
+    </div>
+    <div id="grid-episode-unique" class="game-grid"></div>
+
+    <div class="mini-disclaimer"> <h5> *si ton épisode 1 est nul = ban*</h5></div>
 </section>
-<div class="episode-tabs">
-    <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
-    <button class="tab-btn" onclick="changerCategorie('serie')">SÉRIES</button>
-</div>
-<div id="grid-episode-unique" class="game-grid"></div>
-
-
-  <div class="mini-disclaimer"> <h5> *si ton épisode 1 est nul = ban*</h5></div>
-
   
 <section id="recap">
     <div class="category-anime">
-          <div class="episode-title"> <h2>les récaps</h2> </div>
-        </div>
+        <div class="episode-title"> <h2>les récaps</h2> </div>
         <div class="line-episode"></div>
     </div>
 
     <div id="grid-recaps" class="video-grid"></div> 
 </section>
 
-
 <section id="arrache">
     <div class="category-anime">
-          <div class="episode-title"> <h2>à l'arrache </h2> </div>
+        <div class="arrache-icon">
+            <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Capture_d_écran_2026-04-14_171328_lpjbhj" alt="logo itachi" class="anime-icon">
+            <div class="arrache-title"> <h2>à l'arrache</h2> </div>
         </div>
-        <div class="line-episode"></div>
+        <div class="line-anime"></div>
     </div>
 
     <div id="grid-arrache" class="video-grid"></div> 
+    <div class="mini-disclaimer"> <h4> *podcast*</h4></div>
 </section>
 
- <div class="mini-disclaimer"> <h4> *podcast*</h4></div>
+<section id="archive">
+    <div class="category-anime">
+        <div class="archive-icon">
+            <img src="https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/Capture_d_écran_2026-04-14_171051_z2rj0f" alt="logo ezio" class="anime-icon">
+            <div class="anime-title"> <h2>les archives</h2> </div>
+        </div>
+        <div class="line-anime"></div>
+    </div>
 
+    <div id="grid-archive" class="video-grid"></div> 
+</section>
    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -410,6 +415,14 @@ const listeArrache = [
     
 
     
+];
+
+const listeArchive = [
+    { titre: "recap 2023", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_125606_nz5yat", url: "https://canva.link/ldxuizsn6e39z2k"},
+    { titre: "recap 2024", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_130743_fqsyf9", url: "https://canva.link/8r5ff72b2dt35he"},
+    { titre: "recap 2025 part. 1", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131323_sw499t", url: "https://canva.link/d1af7odzd49mdp1"},
+    { titre: "recap 2025 part. 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131826_g2mnnr", url: "https://canva.link/qbncwkthvctgd9e"},
+
 ];
 let currentTwitch = ""; 
 
@@ -1016,8 +1029,8 @@ function genererGrilleVideo(liste, idConteneur) {
     const grille = document.getElementById(idConteneur);
     if (!grille) return;
 
-
-    const isRecap = idConteneur === 'grid-recaps';
+    // Ajout de 'grid-archive' ici pour masquer les éléments indésirables
+    const isRecap = idConteneur === 'grid-recaps' || idConteneur === 'grid-archive';
 
     grille.innerHTML = liste.map(video => `
         <a href="${video.url}" target="_blank" class="video-card">
@@ -1041,12 +1054,43 @@ function genererGrilleVideo(liste, idConteneur) {
 
 
 
+
+
+    
+
+
 window.addEventListener('DOMContentLoaded', () => {
     
     genererGrilleVideo(listeRecaps, 'grid-recaps');
     
     
     genererGrilleVideo(listeArrache, 'grid-arrache');
+
+    genererGrilleVideo(listeArchive, 'grid-archive');
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // On cible les titres ET les grilles
+    const targets = document.querySelectorAll('.category-header, .category-anime, .game-grid, .video-grid');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.05 // Déclenche dès que le haut du bloc montre le bout de son nez
+    };
+
+    const appearanceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // On arrête d'observer pour que ça ne le fasse qu'une seule fois
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    targets.forEach(target => appearanceObserver.observe(target));
 });
 
 </script>
