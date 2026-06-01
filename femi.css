@@ -10,8 +10,8 @@ html {
 @font-face {  font-family: "lexend"; src: url("./assets/fonts/LexendDeca-VariableFont_wght.ttf");}
 
 header {
-    padding-bottom: 0px !important; 
-    margin-bottom: 10px !important; 
+    padding-bottom: 0px ; 
+    margin-bottom: 10px ; 
 }
 
 html, body {
@@ -62,7 +62,7 @@ html, body {
 .nav-logo a, 
 .nav-logo a:hover,
 .nav-logo a:visited {
-    text-decoration: none !important;
+    text-decoration: none ;
 }
 .nav-logo img { 
     height: 50px; 
@@ -238,7 +238,7 @@ html, body {
 }
 
 .container-recherche-jeu {
-    position: relative !important;
+    position: relative ;
     display: inline-block; 
     margin: 0 auto; 
 }
@@ -264,16 +264,16 @@ html, body {
     text-transform: uppercase;
     font-family: 'lexend', sans-serif;
     background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.4) 50%, transparent 100%);
-    color: #FFFFFF !important; 
-    opacity: 1 !important;
-    font-weight: 900 !important; 
+    color: #FFFFFF ; 
+    opacity: 1 ;
+    font-weight: 900 ; 
     /* NETTETÉ */
     
    
 }
 .result-item:hover {
     transform: scale(1.08);
-    background-color: transparent !important;
+    background-color: transparent ;
 }
 
 .result-item img {
@@ -293,7 +293,7 @@ html, body {
 }
 
 #search-results {
-    display: flex !important;
+    display: flex ;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
@@ -313,14 +313,14 @@ html, body {
 
 
 .stats-container {
-   display: flex !important;
-    justify-content: center !important; 
-    align-items: center !important;   
+   display: flex ;
+    justify-content: center ; 
+    align-items: center ;   
     gap: 140px ;              
-    margin: 45px auto 0 auto !important; 
-    width: 100% !important;
+    margin: 45px auto 0 auto ; 
+    width: 100% ;
     text-decoration: none;
-    transform: translateY(-20px) !important;
+    transform: translateY(-20px) ;
 
 }
 
@@ -335,9 +335,9 @@ html, body {
 }
 .stat-card:hover {
     transform: translateY(-10px);
-    border-color: #bf00ff !important;
+    border-color: #bf00ff ;
     box-shadow: 0 0 20px rgba(191, 0, 255, 0.6), 
-                inset 0 0 10px rgba(191, 0, 255, 0.4) !important;
+                inset 0 0 10px rgba(191, 0, 255, 0.4) ;
 }
 
 
@@ -550,7 +550,7 @@ html, body {
     border: none;
     outline: none;
     background: transparent;
-    height: auto !important; 
+    height: auto ; 
     
 }
 
@@ -623,7 +623,7 @@ html, body {
     pointer-events: auto;
 }
 #modal-planete video {
-    height: 600px !important;
+    height: 600px ;
     border-radius: 15px;
     box-shadow: 0 0 50px rgba(0,0,0,0.5);
     margin-right: 310px;
@@ -640,18 +640,18 @@ html, body {
     margin-top: -20px;
 }
 #modal-titre-recherche {
-    position: absolute !important;
-    left: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
+    position: absolute ;
+    left: 0 ;
+    width: 100% ;
+    text-align: center ;
 
-    top: -5% !important; 
+    top: -5% ; 
     
-    color: white !important;
-    font-family: 'Lexend', sans-serif !important;
-    font-size: 32px !important;
-    z-index: 10005 !important;
-    margin: 0 !important;
+    color: white ;
+    font-family: 'Lexend', sans-serif ;
+    font-size: 32px ;
+    z-index: 10005 ;
+    margin: 0 ;
 }
 
 #loader-wrapper {
@@ -715,7 +715,7 @@ html, body {
     position: relative;
     width: 100%; 
     max-width: 350px; 
-    text-decoration: none !important; 
+    text-decoration: none ; 
     display: block;                 
     color: inherit;
     margin-left: -45px;
@@ -896,9 +896,9 @@ html, body {
 }
 
 #results img, .result-item img {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: block ;
+    opacity: 1 ;
+    visibility: visible ;
 }
 
 .result-item img, .anime-card img { 
@@ -918,7 +918,7 @@ html, body {
 }
 
 .decoding {
-    visibility: visible !important;
+    visibility: visible ;
 }
 
 
@@ -1020,7 +1020,7 @@ html, body {
 
 
 .badge-modal.ban {
-    display: block !important;
+    display: block ;
     background-color: #ff0000;
     color: white;
     padding: 5px 15px;
@@ -1130,13 +1130,13 @@ html, body {
 .episode-tabs {
     display: flex;
     gap: 10px;
-    margin-top: -50px;   
+    margin-top: -10px;   
     margin-bottom: 10px;  
 }
 
 
-#grid-episode-unique {
-    margin-top: 0 !important;
+#grid-episode {
+    margin-top: 0 ;
     
 }
 
@@ -1322,7 +1322,7 @@ html, body {
 .video-grid {
     opacity: 0;
     transform: translateY(25px); /* Un poil plus bas pour les grilles */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out ;
     will-change: opacity, transform;
 }
 
@@ -1331,15 +1331,15 @@ html, body {
 .category-anime.visible, 
 .game-grid.visible, 
 .video-grid.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    opacity: 1 ;
+    transform: translateY(0) ;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
     
     
     .search-container {
-        margin: 20px auto !important; 
+        margin: 20px auto ; 
         width: 90%;
         margin-right: 30px;
     }
@@ -1350,7 +1350,7 @@ html, body {
         
     }
     .title h1 {
-        font-size: 2.8rem !important;
+        font-size: 2.8rem ;
         text-align: center;
     }
     
@@ -1360,47 +1360,47 @@ html, body {
    /* ==========================================================================
    NETTOYAGE DES GRILLES : ON VIRE LES MARGES TOXIQUES
    ========================================================================== */
-#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film {
+#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
     /* On remet les marges à 0 pour recentrer la grille dans l'écran */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-left: 0 ;
+    margin-right: 0 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
     
     /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 15px ;
+    padding-right: 15px ;
 
-    box-sizing: border-box !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    box-sizing: border-box ;
+    grid-template-columns: repeat(2, 1fr) ;
     
 }
 
 /* S'applique uniquement aux images de la catégorie jeux (2026, 2025, 2024) */
 #grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
-    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
-    height: 250px !important; 
-    aspect-ratio: 2 / 3 !important; 
-    object-fit: cover !important;
-    border-radius: 8px !important;
+    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
+    height: 250px ; 
+    aspect-ratio: 2 / 3 ; 
+    object-fit: cover ;
+    border-radius: 8px ;
 }
 /* ==========================================================================
    TON IMAGE CONTAINER ET IMAGE (PARFAIT, ON GARDE)
    ========================================================================== */
 .image-container {
-    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
-    height: auto !important; 
-    aspect-ratio: 2 / 3 !important; 
-    object-fit: cover !important;
-    border-radius: 8px !important;
+    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
+    height: auto ; 
+    aspect-ratio: 2 / 3 ; 
+    object-fit: cover ;
+    border-radius: 8px ;
 }
 
 .image-container img, .img\.fade-in {
-    width: 100% !important; /* Force l'image à faire toute la largeur de la colonne */
-    height: auto !important; 
-    aspect-ratio: 2 / 3 !important; 
-    object-fit: cover !important;
-    border-radius: 8px !important;
+    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
+    height: auto ; 
+    aspect-ratio: 2 / 3 ; 
+    object-fit: cover ;
+    border-radius: 8px ;
 }
 
   
@@ -1410,10 +1410,10 @@ html, body {
         margin-left: 0;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 
     .stats-container {
-        margin-top: -50px !important;
+        margin-top: -50px ;
         gap: 50px;
     }
 
@@ -1448,12 +1448,12 @@ html, body {
     }
 
     .category-header { 
-        margin-top: -450px !important; 
+        margin-top: -450px ; 
     }
 
     .jeux {
-        margin-left: 0 !important; 
-        transform: none !important; 
+        margin-left: 0 ; 
+        transform: none ; 
         position: relative;
         display: block;
     }
@@ -1466,24 +1466,24 @@ html, body {
         margin-bottom: 10px;
     }
     .search {
-        width: 85% !important; 
+        width: 85% ; 
         margin-left: -15px;
     }
     
     .search input {
-        width: 100% !important;
-        font-size: 16px !important; 
+        width: 100% ;
+        font-size: 16px ; 
         padding: 10px;
     }
 
     .search-container {
-    margin-top: -280px !important; 
+    margin-top: -280px ; 
     position: relative;
     z-index: 100; 
 }
 
 #results img {
-    width: 130px !important; 
+    width: 130px ; 
     height: auto;
     border-radius: 8px;
 }
@@ -1491,7 +1491,7 @@ html, body {
 
 #results div {
     
-    padding: 10px !important;
+    padding: 10px ;
     font-weight: 300;
     letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
@@ -1514,43 +1514,43 @@ html, body {
     margin-top: 40px;
 }
 .jeux {
-    transform: translate(50px, 40px) !important; 
+    transform: translate(50px, 40px) ; 
 }
 
 #modal-recherche.modal {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(10px) !important; 
-    z-index: 10000 !important;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    width: 100vw ;
+    height: 100vh ;
+    background-color: rgba(0, 0, 0, 0.8) ;
+    backdrop-filter: blur(10px) ; 
+    z-index: 10000 ;
 }
 
 
 .modal-content {
-    position: absolute !important;
-    top: 50% !important; 
-    left: 42% !important; 
-    transform: translate(-50%, -50%) !important; 
+    position: absolute ;
+    top: 50% ; 
+    left: 42% ; 
+    transform: translate(-50%, -50%) ; 
     
-    width: fit-content !important;
-    height: fit-content !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
+    width: fit-content ;
+    height: fit-content ;
+    margin: 0 ;
+    padding: 0 ;
+    background: transparent ;
+    border: none ;
 }
 
 
 #modal-media-recherche img {
-    display: block !important;
-    max-width: 85vw !important;
-    max-height: 75vh !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
+    display: block ;
+    max-width: 85vw ;
+    max-height: 75vh ;
+    width: auto ;
+    height: auto ;
+    margin: 0 ;
     border-radius: 20px;
 }
 
@@ -1568,11 +1568,11 @@ pointer-events: none;
 }
     body {
         
-        background-position: right center !important; 
+        background-position: right center ; 
     }
     
  #overlay-title {
-        font-size: 1rem !important;
+        font-size: 1rem ;
         margin-left: 14px;
         width:80%;
     }
@@ -1598,32 +1598,32 @@ pointer-events: none;
 
 .overlay-content {
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
     
 
-    width: auto !important;
-    max-width: 90vw !important;
-    position: relative !important;
-    margin: 0 !important;
+    width: auto ;
+    max-width: 90vw ;
+    position: relative ;
+    margin: 0 ;
 }
 
 .overlay-content img {
-    display: block !important;
-    max-height: 80vh !important; 
-    width: 340px !important; 
+    display: block ;
+    max-height: 80vh ; 
+    width: 340px ; 
     
     border-radius: 15px;
     cursor: pointer;
     
 
-    margin: 0 !important;
+    margin: 0 ;
     
 }
 #overlay-title {
-    margin-top: 15px !important;
+    margin-top: 15px ;
     color: white;
    
     width: 100%;
@@ -1667,149 +1667,6 @@ pointer-events: none;
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    
-    .badge-modal{
-    margin-right: 50px;
-    margin-top: -10px;
-    font-size: 20px;
-    
-}
-
-.badge-modal.termine{
-    font-weight: 300; 
-    letter-spacing: 0.5px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    
-}
-  
-
-    .credits-text2 {
-        margin-top:20px;
-    }
-
-    .anime{
-        margin-top:200px;
-    }
-
-    .line-anime { 
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-    .overlay-content img {
-        max-height: 80vh !important; 
-        width: 90% !important;
-        margin-top: 20px !important;
-    }
-
-        .image-container img {
-        height: 100px !important;
-        width: 200px;
-    }
-
-    
-    
-     .social-container {
-        gap: 8px;          /* Moins d'espace entre les boutons */
-        padding: 10px;
-    }
-
-    /* On rend les boutons plus petits */
-    .social-btn {
-        padding: 6px 12px; /* Moins de rembourrage interne */
-        font-size: 0.75rem; /* Écrit plus petit */
-        gap: 6px;          /* Moins d'espace entre l'icône et le texte */
-    }
-
-    /* On rétrécit les icônes SVG */
-    .social-btn svg {
-        width: 14px;
-        height: 14px;
-    }
-    
-    .icon {
-    margin-left:50px;
-}
-
-    .head {
-        padding-top: 10px !important; 
-    }
-
-    .stats-container {
-        margin-top: 150px !important; 
-    }
-
-    #overlay-title {
-        font-size: 1.2rem !important;
-        margin-top: 10px !important;
-        margin-right: 25px !important;
-    }
-
-    
-   .title h1 {
-        margin-top:85px;
-    }
-
-    #modal-titre-planete {
-       margin-left:-100px;
-       font-size: 1.7rem;
-    }
-
-    .game-title {
-    font-size: 1.1rem;
-}
-
-    .category-header {
-        margin-top: -500px ; 
-    }
-
-    .overlay-content img {
-        width:40%;
-    }
-
-    #modal-recherche img {
-        margin-left: 100px;
-        margin-top: 20px;
-    }
-
-    .titre-jeu-recherche {
-        font-size: 1.2rem ;
-        margin-left: 90px;
-        
-    }
-
-    #recherche {
-    width: 550px;
-    padding: 22px 50px; 
-    font-size: 20px;    
-    margin-top: -50px;
-    }
-
-    .icon {
-    margin-top: -9.5px;
-}
-
-    .stat-card {
-        margin-top:-100px; 
-    }
-
-    .stat-label {
-        font-size: 1.2rem;
-    }
-
-   #modal-media-planete img {
-    margin-right: 180px;
-    margin-top: 80px;
-}
-
-#text-wiki {
-    margin-top: 170px;
-}
-}
-
 /* ---  TÉLÉPHONE COUCHÉ  --- */
 @media only screen and (max-height: 500px) and (orientation: landscape) {
 
@@ -1821,68 +1678,59 @@ pointer-events: none;
     }
 
     .head h1, .head .title-wiki { 
-        font-size: 2.5rem !important;
-        margin-top: 5px !important;
-        margin-bottom: 0px !important;
+        font-size: 2.5rem ;
+        margin-top: 5px ;
+        margin-bottom: 0px ;
         text-align: center;
     }
 
     .title {
-        margin-top: 80px !important;
+        margin-top: 80px ;
     }
 
     .category-header { 
-        margin-top: 150px !important; 
+        margin-top: 150px ; 
     }
 
 
     .stats-container {
-        margin-top: 280px !important; 
-        margin-bottom: 10px !important;
-        transform: scale(0.75) !important; 
+        margin-top: 250px ; 
+        margin-bottom: 10px ;
+        transform: scale(0.75) ; 
         text-align: center;
     }
 
     .search-container {
-        margin-top: -220px !important; 
+        margin-top: -220px ; 
         position: relative;
-        z-index: 1000 !important;
+        z-index: 1000 ;
         text-align: center;
     }
 
-    /* 2. RÉTRÉCIT ET CENTRE LA BARRE EN MODE COUCHÉ */
-    .search {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-        
-        width: 90% !important; /* Réduit la barre à la moitié de l'écran large */
-        
-        margin: 0 auto !important; /* Centre parfaitement horizontalement */
-        left: auto !important;
-    }
+    
 
-    /* 3. Recale l'input intérieur */
-    #recherche {
-        width: 100% !important;
-        margin: 0 !important; /* Nettoie les anciens décalages */
-        padding: 15px 15px 20px 40px !important; /* Laisse de l'air pour l'icône à gauche */
-        font-size: 14px !important; /* Évite que le texte soit trop énorme sur écran bas */
-        box-sizing: border-box !important;
-    }
+#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
+    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
+    margin-left: 50px ;
+    margin-right: 50px ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+    
+    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
+    padding-left: 15px ;
+    padding-right: 15px ;
 
-    /* 4. ASSOCIE L'ICÔNE À L'INPUT RÉTRÉCI */
-    .icon {
-        position: absolute !important;
-        left: 15px !important; /* Aligne la loupe au bord gauche de l'input */
-        top: 52% !important;
-        transform: translateY(-50%) !important; /* Centrage vertical parfait */
-        margin: 0 !important;
-    }
+    box-sizing: border-box ;
+    grid-template-columns: repeat(4, 1fr) ;
+    width: 90% ;
+
+}
+    
+
+    
 
     #results img {
-        width: 150px !important;
+        width: 150px ;
         height: auto;
         border-radius: 8px;
     }
@@ -1892,86 +1740,77 @@ pointer-events: none;
 }
 
     #results div {
-        font-size: 1em !important;
-        padding: 10px !important;
+        font-size: 1em ;
+        padding: 10px ;
         z-index: 99999;
     }
 
-    #planete-container {
-        height: 300px !important;
-    }
+    
 
    
     .modal-container {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 20px !important;
+        display: flex ;
+        align-items: center ;
+        justify-content: center ;
+        padding: 20px ;
     }
 
     .card-zoom-image, .modal-content img {
-        max-width: 90vw !important;
-        max-height: 70vh !important;
-        width: auto !important;
-        height: auto !important;
-        object-fit: contain !important;
-        display: block !important;
-        border-radius: 10px !important;
+        max-width: 90vw ;
+        max-height: 70vh ;
+        width: auto ;
+        height: auto ;
+        object-fit: contain ;
+        display: block ;
+        border-radius: 10px ;
     }
 
    
 
 
     .overlay-content {
-        max-width: 80% !important;
-        width: auto !important;
+        max-width: 80% ;
+        width: auto ;
     }
 
     .overlay-content img { 
-        max-width: 100% !important;
-        max-height: 77vh !important; 
-        margin-top: 75px !important;
-        object-fit: contain !important;
-        border-radius: 10px !important;
+        max-width: 100% ;
+        max-height: 77vh ; 
+        margin-top: 75px ;
+        object-fit: contain ;
+        border-radius: 10px ;
         transition: transform 0.3s ease;
     }
 
     .overlay-content h2 {
-        font-size: 1.2rem !important;
-        margin-top: 5px !important;
+        font-size: 1.2rem ;
+        margin-top: 5px ;
     }
 
     #overlay-title {
-        font-size: 1.1rem !important;
+        font-size: 1.1rem ;
         margin-left: -15px;
     }
 
-    #recherche {
-        margin-top:-500px;
-    }
 
-    .icon {
-    margin-top: -4px;
-}
+    
 
     .stat-label {
     font-size: 1.2rem;
 }
 
-#modal-planete video{
-pointer-events: none;
-}
+
 
    
 #modal-media-planete img {
     margin-left: 0px;
     margin-right: 170px;
-   margin-top: 20px;
+   margin-top: 10px;
    
 }
 
 #modal-titre-planete{
-    margin-left: -70px;
+    margin-left: -80px;
     margin-top: 5px;
 
 
@@ -1991,13 +1830,12 @@ pointer-events: none;
     margin-right: 30px;
     margin-top: -15px;
 }
+
+#jeu {
+    margin-top: -500px ;
 }
 
-    .image-container img {
-        height: 250px !important;
-        width: 180px;
-    }
-
+}
 
 /* écran pc plus petit */
 @media screen and (width: 1500px) {
@@ -2009,17 +1847,17 @@ pointer-events: none;
 
     .stat-number {
        
-        margin-top: -280px !important; 
-        font-size: 2.2rem !important; 
+        margin-top: -280px ; 
+        font-size: 2.2rem ; 
     }
 
     .stats-container {
-        gap: 80px !important;
-        margin-top: 150px !important;
+        gap: 80px ;
+        margin-top: 150px ;
     }
     
     .stat-label {
-        font-size: 0.8rem !important;
+        font-size: 0.8rem ;
     }
 
     .category-header{
@@ -2035,30 +1873,30 @@ pointer-events: none;
 /* Le patch de secours pour tous les téléphones et tablettes */
 @media (max-width: 1024px) {
     #footer, .site-footer {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        padding: 20px 10px !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        gap: 15px ;
+        padding: 20px 10px ;
     }
 
     .social-container {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
+        display: flex ;
+        flex-wrap: wrap ;
+        justify-content: center ;
+        gap: 10px ;
     }
 
     /* On force les boutons à rétrécir un bon coup */
     .social-btn {
-        padding: 6px 12px !important;
-        font-size: 12px !important;
+        padding: 6px 12px ;
+        font-size: 12px ;
     }
 
     /* Le coup de balai final sur les marges qui font chier */
     .footer-credits,  [class*="credits"] {
-        margin: 0 !important;
-        margin-top: 0 !important;
+        margin: 0 ;
+        margin-top: 0 ;
         text-align: center;
     }
     
@@ -2068,20 +1906,20 @@ pointer-events: none;
     }
 
     .footer-credits2, [class*="credits"] {
-        margin: 0 !important;
-        margin-top: 10px !important;
+        margin: 0 ;
+        margin-top: 10px ;
         text-align: center;
     }
 }
 
 .video.overlay {
-    display: grid !important;
+    display: grid ;
     /* RÈGLAGE CLÉ : Chaque colonne fera au moins 180px, et prendra tout l'espace s'il y a de la place */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
-    gap: 15px !important; /* Espace entre les cartes */
-    width: 100% !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) ; 
+    gap: 15px ; /* Espace entre les cartes */
+    width: 100% ;
+    padding: 0 10px ;
+    box-sizing: border-box ;
 }
 
 /* ==========================================================================
@@ -2092,27 +1930,27 @@ pointer-events: none;
    1. LES TABLETTES (Écrans moyens : iPad, etc.)
    Tranche : de 601px à 1024px
    -------------------------------------------------------------------------- */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) and (min-height: 500px){
     #header-anime, .head {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding-top: 10px !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        padding-top: 10px ;
     }
     .title {
-        margin-bottom: 20px !important;
+        margin-bottom: 20px ;
     }
     .stats-container {
-        display: flex !important;
-        justify-content: center !important;
-        margin-top: 305px !important; /* <--- Ajuste l'espace ici pour la tablette */
+        display: flex ;
+        justify-content: center ;
+        margin-top: 305px ; /* <--- Ajuste l'espace ici pour la tablette */
     }
     .search-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin-bottom: 50px !important;
-        z-index: 100 !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        margin-bottom: 50px ;
+        z-index: 100 ;
     }
 
     .icon{
@@ -2120,7 +1958,7 @@ pointer-events: none;
     }
 
     .video-grid{
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) ;
     }
 }
 
@@ -2130,40 +1968,46 @@ pointer-events: none;
    2. LES GRANDS TÉLÉPHONES (Ex: Samsung Galaxy S20 Ultra - Écran long/large)
    Tranche : de 400px à 600px
    -------------------------------------------------------------------------- */
-@media screen and (min-width: 400px) and (max-width: 600px) {
+@media screen and (min-width: 400px) and (max-width: 600px) and (orientation: portrait) {
     #header-anime, .head {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding-top: 90px !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        padding-top: 130px ;
     }
     .title {
-        margin-bottom: 15px !important;
+        margin-bottom: 15px ;
     }
     .stats-container {
-        display: flex !important;
-        justify-content: center !important;
+        display: flex ;
+        justify-content: center ;
         
         /* Pour le S20, si tu veux remonter la recherche, baisse cette valeur ou mets du négatif */
-        margin-bottom: -10px !important; 
+        margin-bottom: -10px ; 
+        
     }
     .search-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        
-        /* C'est ici que tu gères la hauteur de ta barre de recherche sur grand tel */
-        margin-top: 0px !important; 
-        margin-top: -250px !important;
-        z-index: 100 !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        margin-left: 40px ;
+        margin-top: 0px ;
+        z-index: 100 ;
+        max-width: 85%;
     }
     .search {
-        width: 85% !important;
+        margin-top: -220px ;
     }
 
     .icon{
         margin-left: -30px ;
     }
+
+    #planete-container {
+        margin-top: -80px ;
+    }
+
+    
 }
 
 /* --------------------------------------------------------------------------
@@ -2172,100 +2016,124 @@ pointer-events: none;
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 399px) {
     #header-anime, .head {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding-top: 100px !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        padding-top: 100px ;
     }
     .title {
-        margin-bottom: 10px !important;
+        margin-bottom: 10px ;
     }
     .stats-container {
-        display: flex !important;
-        justify-content: center !important;
+        display: flex ;
+        justify-content: center ;
         
         /* Pour l'iPhone X, ajuste cette valeur pour rapprocher la recherche des stats */
-        margin-top: 20px !important; 
+        margin-top: 20px ; 
     }
     .search-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        width: 100% ;
     
-        margin-top: 0px !important;
-        margin-top: -200px !important;
-        z-index: 100 !important;
+        margin-top: 0px ;
+        margin-top: -210px ;
+        z-index: 100 ;
     }
     
 
     .search {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-        width: 100% !important; /* Rétrécit la barre à 70% de l'écran de l'iPhone */
-        margin: 0 auto !important; /* Centre la barre horizontalement */
-        left: auto !important;
+        display: flex ;
+        align-items: center ;
+        justify-content: center ;
+        position: relative ;
+        width: 100% ; /* Rétrécit la barre à 70% de l'écran de l'iPhone */
+        margin: 0 auto ; /* Centre la barre horizontalement */
+        left: auto ;
     }
 
     #recherche {
-        width: 100% !important;
-        margin: 0 !important; /* Supprime le décalage de -25px */
-        padding-left: 40px !important; /* Laisse de la place pour que le texte ne colle pas la loupe */
-        box-sizing: border-box !important;
+        width: 100% ;
+        margin: 0 ; /* Supprime le décalage de -25px */
+        padding-left: 40px ; /* Laisse de la place pour que le texte ne colle pas la loupe */
+        box-sizing: border-box ;
     }
 
     .icon {
-        position: absolute !important;
-        left: 12px !important; /* Recale la loupe proprement à gauche à l'intérieur de l'input */
-        top: 54% !important;
-        transform: translateY(-50%) !important; /* Centre verticalement l'icône */
-        margin: 0 !important;
+        position: absolute ;
+        left: 12px ; /* Recale la loupe proprement à gauche à l'intérieur de l'input */
+        top: 54% ;
+        transform: translateY(-50%) ; /* Centre verticalement l'icône */
+        margin: 0 ;
     }
 
    
 }
 
+@media screen and (max-width: 376px) and (max-height: 670px) {
+    .stats-container {
+        margin-top: 90px ; 
+    }
+
+    .overlay-content{
+       max-width: 70vw;
+       max-height: 65vh;
+    }
+
+    .badge-modal {
+        margin-top: -15px;
+        margin-right: 17px;
+        max-width: fit-content;
+    }
+
+   
+   
+}
+
+
+    
+
 /* ==========================================================================
    CIBLAGE SPÉCIFIQUE POUR L'IPAD PRO DE L'INSPECTEUR (1024px)
    ========================================================================== */
-@media screen and (min-width: 1023px) and (max-width: 1025px) {
+@media screen and (min-width: 1023px) and (max-width: 1025px) and (min-height: 500px) {
 
     /* 1. Aligne verticalement tout le bloc du haut */
     #header-anime, .head {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-top: 50px !important;
-        height: auto !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        text-align: center ;
+        padding-top: 50px ;
+        height: auto ;
     }
 
     /* 2. Centre le titre et crée de l'espace en dessous */
     .title, #text-femi {
-        margin: 0 auto !important;
-        margin-bottom: 30px !important;
+        margin: 0 auto ;
+        margin-bottom: 30px ;
     }
 
     /* 3. Aligne et espace les compteurs de statistiques */
     .stats-container {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 40px !important;
-        margin: 0 auto !important;
-        margin-top: 0 !important; /* Écrase les anciennes marges parasites */
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        gap: 40px ;
+        margin: 0 auto ;
+        margin-top: 0 ; /* Écrase les anciennes marges parasites */
     }
 
     /* 4. Centre parfaitement le bloc de recherche */
     .search-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin: 0 auto !important;
-        margin-top: -300px !important;
-        margin-bottom: 50px !important;
-        width: 100% !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        margin: 0 auto ;
+        margin-top: -300px ;
+        margin-bottom: 50px ;
+        width: 100% ;
     }
 
    .category-header{
@@ -2276,48 +2144,100 @@ pointer-events: none;
 /* ==========================================================================
    LE PATCH DÉFINITIF POUR TABLETTES (iPad Mini 1024x768 & iPad Pro 1024x1366)
    ========================================================================== */
-@media screen and (min-width: 768px) and (max-width: 1025px) {
+@media screen and (min-width: 768px) and (max-width: 1025px) and (min-height: 500px){
 
     /* 1. On force le conteneur parent à empiler les éléments proprement de haut en bas */
     #header-anime, .head {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-top: 0px !important; /* On réduit pour l'iPad Mini */
-        height: auto !important;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        text-align: center ;
+        padding-top: 0px ; /* On réduit pour l'iPad Mini */
+        height: auto ;
         
     }
 
     /* 2. LE TITRE : En premier, centré, avec une marge basse tranquille */
     .title, #text-femi {
-        order: 1 !important;
-        margin: 0 auto 15px auto !important; 
+        order: 1 ;
+        margin: 0 auto 15px auto ; 
     }
 
     /* 3. LES STATS : En deuxième, sous le titre */
     .stats-container {
-        order: 2 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 30px !important; /* Un poil plus serré pour que ça passe partout */
-        margin: 0 auto 20px auto !important;
-        margin-top: 50px !important; /* Supprime le chevauchement */
+        order: 2 ;
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        gap: 30px ; /* Un poil plus serré pour que ça passe partout */
+        margin: 0 auto 20px auto ;
+        margin-top: 50px ; /* Supprime le chevauchement */
     }
 
     /* 4. LA RECHERCHE : En troisième, tout en bas du bloc */
     .search-container {
-        order: 3 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin: 0 auto 30px auto !important;
-        margin-top: -300px !important;
-        width: 100% !important;
+        order: 3 ;
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        margin: 0 auto 30px auto ;
+        margin-top: -300px ;
+        width: 100% ;
     }
 
     .category-header{
         margin-top: 100px ;
     }
 }
+
+
+
+@media screen and (max-width: 420px) and (min-height: 700px) {
+    /* On donne de l'air au début de la section épisode pour éviter l'effet "coupé" */
+    section#episode {
+        padding-top: 40px;
+    }
+    
+    /* On s'assure que la grille se cale bien par rapport aux bords */
+    section#episode .game-grid {
+        
+        
+        
+        width: 100%;
+        height: auto;
+    }
+
+    
+
+    section#episode .game-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90vh;
+        margin-left: -15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* ==========================================================================
+   NICHE SPÉCIFIQUE : NOKIA N9 (ÉCRANS LARGES MAIS PLUS COURTS : 480px x 854px)
+   ========================================================================== */
+@media screen and (min-width: 420px) and (max-width: 485px) and (max-height: 860px) {
+
+ section#episode .game-grid {
+        max-width: 80vh;
+        margin-left: -15px
+    }
+
+           #grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
+       
+      height: auto;
+    }
+
+    
+
+    
+}
+
+
+
