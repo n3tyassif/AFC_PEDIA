@@ -134,6 +134,7 @@
     <div id="grid-film" class="game-grid"></div> 
 </section>
 
+
 <div class="category-anime">
     <h2 class="year-title">films animations</h2>
     <div id="grid-animation" class="game-grid"></div> 
@@ -154,15 +155,14 @@
     <div class="category-anime">
         <div class="episode-title"> <h2>épisode 1</h2> </div>
         <div class="line-episode"></div>
+        
+        <div class="episode-tabs">
+            <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
+            <button class="tab-btn" onclick="changerCategorie('serie')">SÉRIES</button>
+        </div>
     </div>
 
     <div id="grid-episode" class="game-grid"></div> 
-    
-    <div class="episode-tabs">
-        <button class="tab-btn active" onclick="changerCategorie('anime')">ANIMES</button>
-        <button class="tab-btn" onclick="changerCategorie('serie')">SÉRIES</button>
-    </div>
-    <div id="grid-episode-unique" class="game-grid"></div>
 
     <div class="mini-disclaimer"> <h5> *si ton épisode 1 est nul = ban*</h5></div>
 </section>
@@ -385,7 +385,7 @@ const episodeAnime = [
 
 const episodeSerie = [
    { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "" },
-    { nom: "Le Choc des toques", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/dXaSWfISSbivyNy9X6zkOnxD9Gp_fwy6s1", twitch: "https://www.patreon.com/collection/2041706" },
+   { nom: "Le Choc des toques", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/dXaSWfISSbivyNy9X6zkOnxD9Gp_fwy6s1", twitch: "https://www.patreon.com/collection/2041706" },
    { nom: "sweet home", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/zcugNxDg59YwIf3dUHsrHmO7pc1_hkfhqz", twitch: "https://www.patreon.com/collection/2041716" },
    { nom: "slasher", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/A4j6zNyypLbsn0vJfrajlgNazc5_sngjp2", twitch: "" , statut: "ban"},
    { nom: "vampire diaries", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/xKltipwfXRgvyD2u79FUnXAZ09F_tio45y", twitch: "" },
@@ -412,16 +412,14 @@ const listeArrache = [
     { id: 7, titre: "MADEMOISELLE SOSO NOUS DIT LA VERITE SUR SES PLUS GROSSES SAUCES !", img: "https://img.youtube.com/vi/-bSnegEFPng/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=-bSnegEFPng&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "mademoiselle soso" },
     { id: 8, titre: "JOSPLAY NOUS PARLE SANS FILTRE ET C'EST EXCEPTIONNEL !", img: "https://img.youtube.com/vi/ZRhG8nxO4io/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=ZRhG8nxO4io&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "josplay" },
     { id: 9, titre: "XABAB NOUS LIVRE LE SECRET DE SON PLUS GROS DRAMA  !", img: "https://img.youtube.com/vi/mYpe4jVW030/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=mYpe4jVW030&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "xabab" },
+    { id: 10, titre: "DE CANCRE A STREAMER : LE PARCOURS FOU DE SHINI !", img: "https://img.youtube.com/vi/2mD4Tt70a0M/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=2mD4Tt70a0M&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "shini" },
     
 
     
 ];
 
 const listeArchive = [
-    { titre: "recap 2023", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_125606_nz5yat", url: "https://canva.link/ldxuizsn6e39z2k"},
-    { titre: "recap 2024", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_130743_fqsyf9", url: "https://canva.link/8r5ff72b2dt35he"},
-    { titre: "recap 2025 part. 1", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131323_sw499t", url: "https://canva.link/d1af7odzd49mdp1"},
-    { titre: "recap 2025 part. 2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-05-11_131826_g2mnnr", url: "https://canva.link/qbncwkthvctgd9e"},
+    
 
 ];
 let currentTwitch = ""; 
@@ -510,7 +508,7 @@ remplirGrille(animesList, 'grid-animes');
 remplirGrille(filmList, 'grid-film');
 remplirGrille(serieList, 'grid-serie');
 remplirGrille(animationList, 'grid-animation');
-remplirGrille(episodeAnime, 'grid-episode-unique');
+remplirGrille(episodeAnime, 'grid-episode');
 
 
 const toutesLesListes = [...jeux2026, ...jeux2025, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
@@ -526,7 +524,7 @@ function changerCategorie(type) {
     const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
     
     // ICI : On utilise l'ID de la grille commune
-    remplirGrille(listeChoisie, 'grid-episode-unique');
+    remplirGrille(listeChoisie, 'grid-episode');
 
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     event.currentTarget.classList.add('active');
