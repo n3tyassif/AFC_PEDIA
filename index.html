@@ -805,7 +805,6 @@ document.querySelector('#overlay-img').onclick = function(event) {
         window.open(lienFinal, "_blank");
     }
 };
-
 remplirGrille(jeux2026, 'grid-2026');
 remplirGrille(jeux2025, 'grid-2025');
 remplirGrille(jeux2024, 'grid-2024');
@@ -819,15 +818,7 @@ remplirGrille(serieList, 'grid-serie');
 remplirGrille(animationList, 'grid-animation');
 remplirGrille(episodeAnime, 'grid-episode');
 
-
-const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020,   ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
-
-
-const fuse = new Fuse(toutesLesListes, {
-    keys: ['nom'],
-    threshold: 0.3,
-    distance: 100
-});
+const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
 
 function changerCategorie(type) {
     const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
@@ -836,84 +827,89 @@ function changerCategorie(type) {
     remplirGrille(listeChoisie, 'grid-episode');
 
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
+    }
 }
+
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
 
-// On initialise le timer du debounce en haut
-let debounceTimer;
+// SÉCURITÉ : On initialise le timer de recherche ici
+let rechercheTimer;
 
 if (inputRecherche && resultsDiv) {
     inputRecherche.addEventListener('input', (e) => {
-        const value = e.target.value.toLowerCase();
+        const texteRecherche = e.target.value.toLowerCase().trim();
 
-        // 1. On efface le timer précédent à chaque fois que l'utilisateur tape une touche
-        clearTimeout(debounceTimer);
+        // On annule le déclenchement précédent tant que l'utilisateur écrit
+        clearTimeout(rechercheTimer);
 
-        if (value.length > 0) {
-            // 2. On lance la recherche seulement s'il s'écoule 250ms sans tapoter au clavier
-            debounceTimer = setTimeout(() => {
-                const hits = fuse.search(value);
-                if (hits.length > 0) {
-                    
-                    resultsDiv.innerHTML = hits.slice(0, 6).map((hit) => {
-                        const item = hit.item;
-                        const safeNom = item.nom.replace(/'/g, "\\'");
-
-                        // DÉTECTION DU TYPE 
-                        let typeTexte = "Jeu"; 
-
-                        if (animesList.includes(item)) {
-                            typeTexte = "Anime";
-                        } 
-                        else if ((typeof filmList !== 'undefined' && filmList.includes(item)) || 
-                                 (typeof animationList !== 'undefined' && animationList.includes(item))) {
-                            typeTexte = "Film"; 
-                        } 
-                        else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
-                            typeTexte = "Serie";
-                        }
-                        else if (typeof episodeSerie !== 'undefined' && episodeSerie.includes(item)) {
-                            typeTexte = "épisode 1 ";
-                        }
-                        else if (typeof episodeAnime !== 'undefined' && episodeAnime.includes(item)) {
-                            typeTexte = "épisode 1";
-                        }
-
-                        return `
-                            <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
-                                <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
-                                <div class="res-info">
-                                    <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
-                                    <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                    
-                    resultsDiv.style.display = 'block';
-                } else {
-                    resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat</div>';
-                    resultsDiv.style.display = 'block';
-                }
-            }, 250); // Le temps d'attente magique (250 millisecondes)
-
-        } else {
+        // Si la barre est vide, on cache les résultats immédiatement
+        if (texteRecherche === "") {
             resultsDiv.style.display = 'none';
+            return;
         }
+
+        // On attend 200ms de pause dans la frappe avant de lancer les calculs lourds
+        rechercheTimer = setTimeout(() => {
+            // Recherche native ultra rapide
+            const resultats = toutesLesListes.filter(item => 
+                item.nom && item.nom.toLowerCase().includes(texteRecherche)
+            ).slice(0, 6); // Limite stricte aux 6 premiers
+
+            // Génération du HTML
+            if (resultats.length > 0) {
+                resultsDiv.innerHTML = resultats.map(item => {
+                    const safeNom = item.nom.replace(/'/g, "\\'");
+                    
+                    // DÉTECTION DU TYPE
+                    let typeTexte = "Jeu"; 
+                    if (typeof animesList !== 'undefined' && animesList.includes(item)) {
+                        typeTexte = "Anime";
+                    } else if ((typeof filmList !== 'undefined' && filmList.includes(item)) || 
+                               (typeof animationList !== 'undefined' && animationList.includes(item))) {
+                        typeTexte = "Film"; 
+                    } else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
+                        typeTexte = "Serie";
+                    } else if (typeof episodeSerie !== 'undefined' && episodeSerie.includes(item)) {
+                        typeTexte = "épisode 1 ";
+                    } else if (typeof episodeAnime !== 'undefined' && episodeAnime.includes(item)) {
+                        typeTexte = "épisode 1";
+                    }
+
+                    return `
+                        <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
+                            <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
+                            <div class="res-info">
+                                <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
+                                <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                resultsDiv.style.display = 'block';
+            } else {
+                resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat</div>';
+                resultsDiv.style.display = 'block';
+            }
+        }, 200); // 200ms d'attente anti-crash
     });
 }
 
+// Fermer les résultats si on clique en dehors
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-container')) {
-        resultsDiv.style.display = 'none';
+        if (resultsDiv) resultsDiv.style.display = 'none';
     }
 });
 
+// Ta fonction de clic sur un résultat (mise en sécurité)
 window.showFromSearchDirect = (nomDuJeu) => {
-    const toutesLesDonnees = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList, ...filmList, ...animationList, ...serieList]; 
-    const item = toutesLesDonnees.find(j => j.nom === nomDuJeu);
+    if (typeof toutesLesListes === 'undefined') return;
+    
+    const item = toutesLesListes.find(j => j.nom === nomDuJeu);
 
     if (item) {
         const modal = document.getElementById("modal-recherche");
@@ -933,11 +929,8 @@ window.showFromSearchDirect = (nomDuJeu) => {
             modal.style.display = "flex";
         }
 
-        const resultsDiv = document.getElementById('results');
         if (resultsDiv) resultsDiv.style.display = 'none';
-        
-        const barre = document.getElementById('recherche');
-        if (barre) barre.value = '';
+        if (inputRecherche) inputRecherche.value = '';
     }
 };
 
