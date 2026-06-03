@@ -817,7 +817,6 @@ remplirGrille(filmList, 'grid-film');
 remplirGrille(serieList, 'grid-serie');
 remplirGrille(animationList, 'grid-animation');
 remplirGrille(episodeAnime, 'grid-episode');
-
 const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
 
 function changerCategorie(type) {
@@ -831,39 +830,48 @@ function changerCategorie(type) {
         window.event.currentTarget.classList.add('active');
     }
 }
-
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
-
-// SÉCURITÉ : On initialise le timer de recherche ici
 let rechercheTimer;
 
 if (inputRecherche && resultsDiv) {
     inputRecherche.addEventListener('input', (e) => {
         const texteRecherche = e.target.value.toLowerCase().trim();
 
-        // On annule le déclenchement précédent tant que l'utilisateur écrit
         clearTimeout(rechercheTimer);
 
-        // Si la barre est vide, on cache les résultats immédiatement
         if (texteRecherche === "") {
             resultsDiv.style.display = 'none';
             return;
         }
 
-        // On attend 200ms de pause dans la frappe avant de lancer les calculs lourds
         rechercheTimer = setTimeout(() => {
-            // Recherche native ultra rapide
-            const resultats = toutesLesListes.filter(item => 
-                item.nom && item.nom.toLowerCase().includes(texteRecherche)
-            ).slice(0, 6); // Limite stricte aux 6 premiers
+            // RECOUPEMENT DYNAMIQUE : On fusionne les listes ICI, quand elles sont bien remplies
+            const listesMisesAJour = [
+                ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
+                ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
+                ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
+                ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
+                ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
+                ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
+                ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
+                ...(typeof animesList !== 'undefined' ? animesList : []),
+                ...(typeof filmList !== 'undefined' ? filmList : []),
+                ...(typeof animationList !== 'undefined' ? animationList : []),
+                ...(typeof serieList !== 'undefined' ? serieList : []),
+                ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
+                ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
+            ];
 
-            // Génération du HTML
+            // Filtrage ultra-rapide sur les données fraîches
+            const resultats = listesMisesAJour.filter(item => 
+                item && item.nom && item.nom.toLowerCase().includes(texteRecherche)
+            ).slice(0, 6);
+
             if (resultats.length > 0) {
                 resultsDiv.innerHTML = resultats.map(item => {
                     const safeNom = item.nom.replace(/'/g, "\\'");
                     
-                    // DÉTECTION DU TYPE
                     let typeTexte = "Jeu"; 
                     if (typeof animesList !== 'undefined' && animesList.includes(item)) {
                         typeTexte = "Anime";
@@ -878,9 +886,10 @@ if (inputRecherche && resultsDiv) {
                         typeTexte = "épisode 1";
                     }
 
+                    // Version avec le onerror SVG sécurisé pour éviter les erreurs de console
                     return `
                         <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
-                            <img src="${item.img}" onerror="this.src='https://via.placeholder.com/50x70?text=?'">
+                            <img src="${item.img}" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2270%22 style=%22background:%23333%22><text x=%2250%%22 y=%2250%%22 font-size=%2220%22 fill=%22%23666%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>?</text></svg>'">
                             <div class="res-info">
                                 <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
                                 <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
@@ -894,7 +903,7 @@ if (inputRecherche && resultsDiv) {
                 resultsDiv.innerHTML = '<div style="padding: 20px; color: #888; text-align: center;">Aucun résultat</div>';
                 resultsDiv.style.display = 'block';
             }
-        }, 200); // 200ms d'attente anti-crash
+        }, 200);
     });
 }
 
@@ -905,11 +914,25 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Ta fonction de clic sur un résultat (mise en sécurité)
+// Fonction au clic unique et optimisée (le doublon a été supprimé)
 window.showFromSearchDirect = (nomDuJeu) => {
-    if (typeof toutesLesListes === 'undefined') return;
-    
-    const item = toutesLesListes.find(j => j.nom === nomDuJeu);
+    const listesMisesAJour = [
+        ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
+        ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
+        ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
+        ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
+        ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
+        ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
+        ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
+        ...(typeof animesList !== 'undefined' ? animesList : []),
+        ...(typeof filmList !== 'undefined' ? filmList : []),
+        ...(typeof animationList !== 'undefined' ? animationList : []),
+        ...(typeof serieList !== 'undefined' ? serieList : []),
+        ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
+        ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
+    ];
+
+    const item = listesMisesAJour.find(j => j && j.nom === nomDuJeu);
 
     if (item) {
         const modal = document.getElementById("modal-recherche");
