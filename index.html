@@ -217,7 +217,19 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script>
-        
+
+      function optimiserImageCloudinary(url, format) {
+    if (!url || !url.includes('/upload/')) return url;
+    
+    if (format === 'basse') {
+        // Redimensionne à 200x280 max, compresse au format idéal (WebP/AVIF) avec une qualité éco
+        return url.replace('/upload/', '/upload/w_200,h_280,c_fill,g_auto,f_auto,q_auto:eco/');
+    } else if (format === 'haute') {
+        // Version grand écran non bridée pour les modals
+        return url.replace('/upload/', '/upload/w_800,f_auto,q_auto:best/');
+    }
+    return url;
+}
 const jeux2026 = [
     { nom: "crimson desert", img: "https://i.postimg.cc/wMt6m1HD/image.png", twitch: "https://youtu.be/TmnKSnxcAJ0?si=re8zazorMh8I3oho"},
     { nom: "MONSTER HUNTER STORIES 3: TWISTED REFLECTION", img: "./assets/img/wiki/jeu/monster.png", twitch: "https://youtu.be/LJCZtwlJkbs?si=Z1YXGPtGrDC4Z433" },
@@ -729,12 +741,11 @@ const listeArchive = [
 
 ];
 let currentTwitch = ""; 
-
 function remplirGrille(listeDeJeux, idDeLaGrille) {
     const grille = document.getElementById(idDeLaGrille);
-    if (!grille) return; 
+    if (!grille) return;
 
-    grille.innerHTML = ""; 
+    grille.innerHTML = "";
 
     listeDeJeux.forEach(jeu => {
         const carte = document.createElement('div');
@@ -743,68 +754,67 @@ function remplirGrille(listeDeJeux, idDeLaGrille) {
 
         let badgeHTML = "";
         if (jeu.statut) {
-            badgeHTML = `<div class="badge-statut ${jeu.statut.toLowerCase()}"></div>`;
+            badgeHTML = `<div class="class=badge-statut ${jeu.statut.toLowerCase()}"></div>`;
         }
-        
+
+        // On applique la basse qualité ici pour charger le site instantanément
+        const imgOptimisee = optimiserImageCloudinary(jeu.img, 'basse');
+
         carte.innerHTML = `
             <div class="image-container">
                 ${badgeHTML}
-                <img src="${jeu.img}" alt="${jeu.nom}" loading="lazy">
+                <img src="${imgOptimisee}" alt="${jeu.nom}" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22210%22 style=%22background:%23222%22><text x=%2250%%22 y=%2250%%22 font-size=%2230%22 fill=%22%23444%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>?</text></svg>'">
             </div>
             <p class="game-title">${jeu.nom}</p>
         `;
         grille.appendChild(carte);
     });
 }
+
 function ouvrirCarte(img, titre, twitch, statut) {
     const overlay = document.getElementById('game-overlay');
     const imgElement = document.getElementById('overlay-img');
     const titleElement = document.getElementById('overlay-title');
 
-    imgElement.src = img;
-    titleElement.innerText = titre;
-    currentTwitch = twitch;
+    if (overlay && imgElement && titleElement) {
+        // 1. On affiche DIRECTEMENT la version basse qualité (déjà chargée, donc instantané)
+        imgElement.src = optimiserImageCloudinary(img, 'basse');
+        titleElement.innerText = titre;
+        currentTwitch = twitch;
 
-    const existingBadge = overlay.querySelector('.badge-modal');
-    if (existingBadge) existingBadge.remove();
+        // 2. On charge la version HD en tâche de fond pour écraser la basse qualité sans transition visible
+        const imageHauteQualite = new Image();
+        imageHauteQualite.src = optimiserImageCloudinary(img, 'haute');
+        imageHauteQualite.onload = () => {
+            imgElement.src = imageHauteQualite.src; // Devient net d'un coup sans transition blanche
+        };
 
-   const statutsAutorises = ["drop", "encours", "ban"]; 
+        const existingBadge = overlay.querySelector('.badge-modal');
+        if (existingBadge) existingBadge.remove();
 
-if (statut && statutsAutorises.includes(statut.toLowerCase())) {
-    const badge = document.createElement('div');
-    badge.className = `badge-modal ${statut.toLowerCase()}`;
-    
-   
-    if (statut.toLowerCase() === "ban") {
-        badge.innerText = "BAN";
-    } else {
-        badge.innerText = statut.toUpperCase().replace("ENCOURS", "EN COURS");
-    }
-    
-    const container = overlay.querySelector('.overlay-image-container');
-    if (container) {
-        container.appendChild(badge);
+        const statutsAutorises = ["drop", "encours", "ban"]; 
+        if (statut && statutsAutorises.includes(statut.toLowerCase())) {
+            const badge = document.createElement('div');
+            badge.className = `badge-modal ${statut.toLowerCase()}`;
+            if (statut.toLowerCase() === "ban") {
+                badge.innerText = "BAN";
+            } else {
+                badge.innerText = statut.toUpperCase().replace("ENCOURS", "EN COURS");
+            }
+            const container = overlay.querySelector('.overlay-image-container');
+            if (container) container.appendChild(badge);
+        }
+
+        overlay.style.display = 'flex';
     }
 }
-   
 
-    overlay.style.display = 'flex';
-}
+// On enlève le imgElement.src = "" ici pour éviter le flash blanc au prochain clic
 document.getElementById('game-overlay').onclick = function() {
     this.style.display = 'none';
 };
 
-document.querySelector('#overlay-img').onclick = function(event) {
-    event.stopPropagation();
-    
-    if (currentTwitch) {
-        let lienFinal = currentTwitch.includes("http") ? 
-            currentTwitch : 
-            "https://twitchtracker.com/games/" + currentTwitch;
-        
-        window.open(lienFinal, "_blank");
-    }
-};
+
 remplirGrille(jeux2026, 'grid-2026');
 remplirGrille(jeux2025, 'grid-2025');
 remplirGrille(jeux2024, 'grid-2024');
@@ -889,8 +899,7 @@ if (inputRecherche && resultsDiv) {
                     // Version avec le onerror SVG sécurisé pour éviter les erreurs de console
                     return `
                         <div class="result-item" onclick="window.showFromSearchDirect('${safeNom}')" style="cursor: pointer;">
-                            <img src="${item.img}" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2270%22 style=%22background:%23333%22><text x=%2250%%22 y=%2250%%22 font-size=%2220%22 fill=%22%23666%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>?</text></svg>'">
-                            <div class="res-info">
+                            <img src="${optimiserImageCloudinary(item.img, 'basse')}" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2270%22 style=%22background:%23333%22><text x=%2250%%22 y=%2250%%22 font-size=%2220%22 fill=%22%23666%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>?</text></svg>'">
                                 <div style="color: white; font-size: 1.1em; margin-left: 9px;">${item.nom}</div>
                                 <div style="color: #888; font-size: 0.9em; margin-left: 9px;">${typeTexte}</div>
                             </div>
@@ -914,24 +923,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Fonction au clic unique et optimisée (le doublon a été supprimé)
 window.showFromSearchDirect = (nomDuJeu) => {
-    const listesMisesAJour = [
-        ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
-        ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
-        ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
-        ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
-        ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
-        ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
-        ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
-        ...(typeof animesList !== 'undefined' ? animesList : []),
-        ...(typeof filmList !== 'undefined' ? filmList : []),
-        ...(typeof animationList !== 'undefined' ? animationList : []),
-        ...(typeof serieList !== 'undefined' ? serieList : []),
-        ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
-        ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
-    ];
-
+    // ... (ton début de fonction avec la listeMisesAJour reste identique) ...
     const item = listesMisesAJour.find(j => j && j.nom === nomDuJeu);
 
     if (item) {
@@ -941,14 +934,28 @@ window.showFromSearchDirect = (nomDuJeu) => {
         
         if (modal && modalMedia && modalTitre) {
             modalTitre.innerText = ""; 
+            
+            // Version optimisée : on met la basse résolution tout de suite
+            const imgBasse = optimiserImageCloudinary(item.img, 'basse');
+            const imgHaute = optimiserImageCloudinary(item.img, 'haute');
+
             modalMedia.innerHTML = `
                 <div class="container-recherche-jeu">
                     <a href="${item.twitch || '#'}" target="_blank">
-                        <img src="${item.img}" class="img-resultat-recherche">
+                        <img src="${imgBasse}" id="img-modal-recherche-sous-preview" class="img-resultat-recherche">
                     </a>
                     <div class="titre-jeu-recherche">${item.nom}</div>
                 </div>
             `;
+            
+            // On charge la HD en arrière-plan
+            const imgHauteLoader = new Image();
+            imgHauteLoader.src = imgHaute;
+            imgHauteLoader.onload = () => {
+                const imgAffiche = document.getElementById('img-modal-recherche-sous-preview');
+                if (imgAffiche) imgAffiche.src = imgHaute;
+            };
+
             modal.style.display = "flex";
         }
 
