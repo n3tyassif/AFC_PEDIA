@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AFC_PEDIA</title>
     <link rel="stylesheet" href="femi.css">
     <link rel="shortcut icon" href="./assets/img/wiki/logofemi.png">
@@ -50,40 +50,36 @@
         </ul>
     </nav>
 <header class="head" id="header-anime">
-    <div class="main">
-        <div class="title">
-            <h1 id="text-wiki" class="decode-text">LE WIKI</h1> 
-            <h2 id="text-femi" class="decode-text">
-                de <span class="femimarss"><a href="https://www.twitch.tv/femimarss" target="_blank">femimarss</a></span>
-            </h2>
+    <div class="title">
+        <h1 id="text-wiki" class="decode-text">LE WIKI</h1> 
+        <h2 id="text-femi" class="decode-text">
+            de <span class="femimarss"><a href="https://www.twitch.tv/femimarss" target="_blank">femimarss</a></span>
+        </h2>
+    </div>
+          
+    <div class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number"><a href="#anime" style="text-decoration: none; color: inherit;" data-target="38">0</a></span>
+            <span class="stat-label"><a href="#anime" style="text-decoration: none; color: inherit;">ANIMÉS</a></span>
         </div>
+        <div class="stat-card">
+            <span class="stat-number"><a href="#jeu" style="text-decoration: none; color: inherit;" data-target="303">0</a></span>
+            <span class="stat-label"><a href="#jeu" style="text-decoration: none; color: inherit;">JEUX</a></span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number"><a href="#film" style="text-decoration: none; color: inherit;" data-target="53">0</a></span>
+            <span class="stat-label"><a href="#film" style="text-decoration: none; color: inherit;">films</a></span>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search">
+            <input type="text" id="recherche" placeholder="rechercher un anime, film, jeux..." size="60">
+            <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+        </div>
+        <div id="results"></div> 
     </div>
 </header>
-          
-<div class="stats-container">
-    <div class="stat-card">
-        <span class="stat-number"><a href="#anime" style="text-decoration: none; color: inherit;" data-target="38">0</a></span>
-        <span class="stat-label"><a href="#anime" style="text-decoration: none; color: inherit;">ANIMÉS</a></span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-number"><a href="#jeu" style="text-decoration: none; color: inherit;" data-target="303">0</a></span>
-        <span class="stat-label"><a href="#jeu" style="text-decoration: none; color: inherit;">JEUX</a></span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-number"><a href="#film" style="text-decoration: none; color: inherit;" data-target="53">0</a></span>
-        <span class="stat-label"><a href="#film" style="text-decoration: none; color: inherit;">films</a></span>
-    </div>
-</div>
-
-            <div class="search-container">
-    <div class="search">
-        <input type="text" id="recherche" placeholder="rechercher un anime, film, jeux..." size="60">
-        <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-    </div>
-    <div id="results"></div> 
-</div>
-        </div>
-    </header>
  <div id="planete-container" style="width:100%; height:750px;">
     <canvas id="world-3d"></canvas>
 </div>
