@@ -1858,6 +1858,22 @@ html, body {
     }
 }
 
+@media (min-width: 600px) and (max-width: 740px) {
+   #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+       
+        box-sizing: border-box;
+        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
+        
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* écran pc plus petit */
 @media screen and (width: 1500px) {
     
@@ -1891,58 +1907,64 @@ html, body {
     
 }
 
-/* Le patch de secours pour tous les téléphones et tablettes */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    /* ==========================================================================
+       STYLES EXCLUSIFS TABLETTE
+       ========================================================================== */
     #footer, .site-footer {
-        display: flex ;
-        flex-direction: column ;
-        align-items: center ;
-        gap: 15px ;
-        padding: 20px 10px ;
+        display: flex;
+        flex-direction: column;
+        
+        gap: 15px;
+        padding: 20px 10px;
     }
 
-    .social-container {
-        display: flex ;
-        flex-wrap: wrap ;
-        justify-content: center ;
-        gap: 10px ;
-    }
-
-    /* On force les boutons à rétrécir un bon coup */
+    /* Tes boutons sur tablette peuvent rester un poil plus grands que sur mobile */
     .social-btn {
-        padding: 6px 12px ;
-        font-size: 12px ;
+        margin-bottom: 15px;
+        padding: 8px 16px; 
+        font-size: 14px;
     }
 
-    /* Le coup de balai final sur les marges qui font chier */
-    .footer-credits,  [class*="credits"] {
-        margin: 0 ;
-        margin-top: 0 ;
-        text-align: center;
+    .video.overlay {
+        display: grid;
+        /* Sur tablette, on peut afficher plus de colonnes (min 200px) */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 15px;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+
+     #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+       
+        box-sizing: border-box;
+        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
+        
     }
     
-    .footer-line {
-        width: 80% ;
-        margin-top: -10px;
-    }
-
-    .footer-credits2, [class*="credits"] {
-        margin: 0 ;
-        margin-top: 10px ;
-        text-align: center;
-    }
 
 
-.video.overlay {
-    display: grid ;
-    /* RÈGLAGE CLÉ : Chaque colonne fera au moins 180px, et prendra tout l'espace s'il y a de la place */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) ; 
-    gap: 15px ; /* Espace entre les cartes */
-    width: 100% ;
-    padding: 0 10px ;
-    box-sizing: border-box ;
+   
 }
 
+/* Ciblage spécifique pour l'iPad Mini et les écrans similaires */
+@media (min-width: 740px) and (max-width: 768px) {
+     #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+       
+        box-sizing: border-box;
+        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
+        
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-
-
