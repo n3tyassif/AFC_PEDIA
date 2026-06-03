@@ -1,4 +1,5 @@
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -152,7 +153,8 @@ html, body {
     position: relative;
     width: auto;
     max-width: 600px;
-    margin: -260px auto 0 auto; 
+   
+    
      z-index: 999
      
 }
@@ -210,7 +212,7 @@ html, body {
 
 
 #results {
-    position: absolute;
+    position:flex;
     top: 100%;
     left: 0;
     right: 0;
@@ -320,7 +322,7 @@ html, body {
     margin: 45px auto 0 auto ; 
     width: 100% ;
     text-decoration: none;
-    transform: translateY(-20px) ;
+    
 
 }
 
@@ -356,7 +358,7 @@ html, body {
     font-size: 2.5rem; color: #bf00ff;
     text-shadow: 0 0 15px rgba(174, 0, 255, 0.577);
     font-family: 'Arial Black', sans-serif;
-    margin-top: -340px;
+    
     text-decoration: none;
 }
 .stat-label { font-size: 1rem; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; text-decoration: none; }
@@ -1334,507 +1336,516 @@ html, body {
     opacity: 1 ;
     transform: translateY(0) ;
 }
-
 @media (max-width: 768px) and (orientation: portrait) {
-    
-    
-    .search-container {
-        margin: 20px auto ; 
-        width: 90%;
-        margin-right: 30px;
+
+    /* ==========================================================================
+       1. RESET ABSOLU & RECONSTRUCTION FLUIDE (POUR MOBILE)
+       ========================================================================== */
+    body {
+        background: 
+            radial-gradient(circle, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.85) 90%),
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("./assets/img/wiki/femi.png");
+        background-position: right center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
 
-   
+    /* On détruit le 'height: 60vh' du PC et on active le Flexbox vertical */
+    .head {
+        display: flex ;
+        flex-direction: column ;
+        align-items: center ;
+        text-align: center ;
+        
+        /* C'EST ICI QUE TU CHOISIS L'ÉCART : 
+           2vh ou 3vh calculera un espace parfait entre titre, stats et recherche */
+        gap: 2.5vh ; 
+        
+        width: 100% ;
+        height: auto ;       /* Libère la hauteur bloquée à 60vh */
+        position: relative ;   /* Annule le comportement foireux */
+        padding-top: 10vh ;    /* Descend tout le bloc sous ta navbar */
+        margin: 0 ;
+    }
+
+    /* On neutralise la div de transition */
+    .main {
+        display: contents ; 
+    }
+
+    /* RESET DU TITRE : On vire le 'top: 15%' et l'absolute */
+    .title {
+        position: relative ;
+        top: auto ;
+        left: auto ;
+        transform: none ;
+        width: 100% ;
+        margin: 0 ;
+        padding: 0 ;
+    }
+
+    .title h1 {
+        font-size: 2.6rem ;
+        text-align: center ;
+        margin: 0 ;
+        line-height: 1.1 ;
+    }
+
+    
+
+    /* RESET DES STATS : On vire le 'top: 40%' et l'absolute */
+    .stats-container {
+        display: flex ;
+        justify-content: center ;
+        gap: 25px ;            /* Écart entre tes 3 compteurs violets */
+        
+        position: relative ;
+        top: auto ;
+        left: auto ;
+        transform: none ;
+        width: 100% ;
+        margin: 0 ;
+        padding: 0 ;
+    }
+
+    /* ==========================================================================
+       RECHERCHE & RÉSULTATS CORRIGÉS
+       ========================================================================== */
+    .search-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        
+        position: relative;
+        left: auto;
+        transform: none;
+
+        width: 100%; /* On le laisse prendre toute la largeur pour centrer */
+        margin: 0 auto; 
+        z-index: 1000;
+        top: 30vh; /* Garde ton positionnement vertical actuel */
+    }
+
+    /* TRÈS IMPORTANT : C'est la barre violette qui devient le repère absolu */
+    .search {
+        width: 85%; 
+        margin-left: 0; 
+        position: relative; /* <--- AJOUT SÉCURITÉ : #results va se baser sur CETTE boîte désormais */
+    }
+
     .icon {
         left: 0px;
-        
     }
-    .title h1 {
-        font-size: 2.8rem ;
-        text-align: center;
+
+    
+#results {
+    position:flex;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 15, 0.98);
+    border: 1px solid #444;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    z-index: 9999;
+    display: none; 
+    max-height: 450px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-left: -10px;
+}
+
+    /* FORCE L'AFFICHAGE DES BLOCS INTERNES POUR ÉVITER LE RATATINEMENT */
+    #results div {
+        display: flex !important; /* Force un alignement propre pour l'image et le texte */
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
-    
 
+    #results img {
+        width: 30%; /* Réduit un peu pour le mobile (130px c'est trop gros dans l'encadré) */
+        height: auto;
+        border-radius: 8px;
+        flex-shrink: 0; /* Empêche l'image de s'écraser si le texte est long */
+    }
 
+    .res-info{
+        font-size: 1.2rem;
+    }
 
-   /* ==========================================================================
-   NETTOYAGE DES GRILLES : ON VIRE LES MARGES TOXIQUES
-   ========================================================================== */
-#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
-    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
-    margin-left: 0 ;
-    margin-right: 0 ;
-    margin-top: 0 ;
-    margin-bottom: 0 ;
-    
-    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
-    padding-left: 15px ;
-    padding-right: 15px ;
+    .search {
+        width: 85% ; 
+        margin-left: 0 ; 
+    }
 
-    box-sizing: border-box ;
-    grid-template-columns: repeat(2, 1fr) ;
-    
-}
+    .icon {
+        left: 0px ;
+    }
 
-/* S'applique uniquement aux images de la catégorie jeux (2026, 2025, 2024) */
-#grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
-    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
-    height: 250px ; 
-    aspect-ratio: 2 / 3 ; 
-    object-fit: cover ;
-    border-radius: 8px ;
-}
-/* ==========================================================================
-   TON IMAGE CONTAINER ET IMAGE (PARFAIT, ON GARDE)
-   ========================================================================== */
-.image-container {
-    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
-    height: auto ; 
-    aspect-ratio: 2 / 3 ; 
-    object-fit: cover ;
-    border-radius: 8px ;
-}
+    /* ==========================================================================
+       2. LE RESTE DE TON CODE (GRILLES, RECH, MODALES) - INCHANGÉ
+       ========================================================================== */
+    #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
+        margin: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.image-container img, .img\.fade-in {
-    width: 100% ; /* Force l'image à faire toute la largeur de la colonne */
-    height: auto ; 
-    aspect-ratio: 2 / 3 ; 
-    object-fit: cover ;
-    border-radius: 8px ;
-}
-
-  
-    #results {
+    #grid-jeux img, #grid-2026 img, #grid-2025 img, #grid-2024 img {
         width: 100%;
-        left: 0;
-        margin-left: 0;
-    }
-}
-@media (max-width: 768px) and (orientation: portrait) {
-
-    .stats-container {
-        margin-top: -50px ;
-        gap: 50px;
+        height: 250px; 
+        aspect-ratio: 2 / 3; 
+        object-fit: cover;
+        border-radius: 8px;
     }
 
-  
-    .episode-tabs{
+    .image-container, .image-container img, .img\.fade-in {
+        width: 100%;
+        height: auto; 
+        aspect-ratio: 2 / 3; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .episode-tabs {
         margin-top: -20px;
     }
 
-    .line-anime {
-    margin-left: 20px;
-    margin-top: -25px;
-    width: 65%;
-}
-
-.line-episode {
-    margin-left: -5px;
-    margin-top: -15px;
-    width: 85%;
-}
-    
-  
-    .video-card{
+    .video-card {
         margin-left: 0px;
     }
 
-    .head {
+    .jeux {
+        position: relative;
+        display: block;
+        margin-left: 0; 
+        transform: translate(50px, 40px); 
+    }
+
+    .jeu-icon img {
+        height: 75px;
+        margin-left: -10px;
+        margin-top: 40px;
+        margin-bottom: -100px; 
+        display: block;
+    }
+
+    .anime-icon img, .arrache-icon img {
+        height: 80px;
+    }
+
+    .arrache-icon img {
+        margin-left: 0px;
+    }
+
+    .arrache-title {
+        margin-left: 70px;
+    }
+
+    .line-anime {
+        margin-left: 20px;
+        margin-top: -25px;
+        width: 65%;
+    }
+
+    .line-episode {
+        margin-left: -5px;
+        margin-top: -15px;
+        width: 85%;
+    }
+
+    .category-line {
+        width: 95%; 
+        height: 2px; 
+        background: linear-gradient(90deg, #00fbff, transparent); 
+        margin-top: 120px;
+        margin-left: -135px;
+    }
+
+
+    #modal-recherche.modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px); 
+        z-index: 10000;
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 50%; 
+        left: 42%; 
+        transform: translate(-50%, -50%); 
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: none;
+    }
+
+    #modal-media-recherche img {
+        display: block;
+        max-width: 85vw;
+        max-height: 75vh;
+        width: auto;
+        height: auto;
+        margin: 0;
+        border-radius: 20px;
+    }
+
+    .titre-jeu-recherche {
+        font-size: 17px;
+        width: 90%;
+    }
+
+    #modal-planete video {
+        pointer-events: none;
+    }
+
+    .overlay {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .badge-modal {
+        margin-top: -45px;
+        margin-right: -10px;
+    }
+
+    .overlay-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        gap: 20px; 
-    }
-
-    .category-header { 
-        margin-top: -450px ; 
-    }
-
-    .jeux {
-        margin-left: 0 ; 
-        transform: none ; 
+        justify-content: center;
+        width: auto;
+        max-width: 90vw;
         position: relative;
+        margin: 0;
+    }
+
+    .overlay-content img {
         display: block;
+        max-height: 80vh; 
+        width: 300px; 
+        border-radius: 15px;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    #overlay-title {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-left: -10px;
+        width: 100%;
+        color: white;
+    }
+
+    #modal-media-planete img {
+        max-width: 320px;
+        object-fit: contain;
+        border-radius: 20px;
+        align-items: center;
+        margin-top: -20px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #modal-titre-planete {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: -120px;
     }
 
    
-    .jeu-icon img {
-        height: 60px;
-        margin: 0 auto;
-        display: block;
-        margin-bottom: 10px;
-    }
-    .search {
-        width: 85% ; 
-        margin-left: -15px;
-    }
-    
-    .search input {
-        width: 100% ;
-        font-size: 16px ; 
-        padding: 10px;
-    }
-
-    .search-container {
-    margin-top: -280px ; 
-    position: relative;
-    z-index: 100; 
-}
-
-#results img {
-    width: 130px ; 
-    height: auto;
-    border-radius: 8px;
 }
 
 
-#results div {
-    
-    padding: 10px ;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    
-}
-.category-line{
-  width: 95%; 
-    height: 2px; 
-    background: linear-gradient(90deg, #00fbff, transparent); 
-    margin-top: 120px;
-    margin-left: -135px;
-}
-
-.jeu-icon img {
-    height: 75px;
-    margin-left: -10px;
-    margin-bottom: -100px; 
-    margin-top: 40px;
-}
-.jeux {
-    transform: translate(50px, 40px) ; 
-}
-
-#modal-recherche.modal {
-    position: fixed ;
-    top: 0 ;
-    left: 0 ;
-    width: 100vw ;
-    height: 100vh ;
-    background-color: rgba(0, 0, 0, 0.8) ;
-    backdrop-filter: blur(10px) ; 
-    z-index: 10000 ;
-}
 
 
-.modal-content {
-    position: absolute ;
-    top: 50% ; 
-    left: 42% ; 
-    transform: translate(-50%, -50%) ; 
-    
-    width: fit-content ;
-    height: fit-content ;
-    margin: 0 ;
-    padding: 0 ;
-    background: transparent ;
-    border: none ;
-}
-
-
-#modal-media-recherche img {
-    display: block ;
-    max-width: 85vw ;
-    max-height: 75vh ;
-    width: auto ;
-    height: auto ;
-    margin: 0 ;
-    border-radius: 20px;
-}
-
-
-.titre-jeu-recherche{
-    font-size:17px;
-    width: 90%;
-    
-   
-}
-
-
-#modal-planete video{
-pointer-events: none;
-}
-    body {
-        
-        background-position: right center ; 
-    }
-    
- #overlay-title {
-        font-size: 1rem ;
-        margin-left: 14px;
-        width:80%;
-    }
-
-.overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
-    
-    justify-content: center;
-    align-items: center;
-}
-
-.badge-modal{
-    margin-top: -45px;
-    margin-right: -18px;
-}
-
-.overlay-content {
-
-    display: flex ;
-    flex-direction: column ;
-    align-items: center ;
-    justify-content: center ;
-    
-
-    width: auto ;
-    max-width: 90vw ;
-    position: relative ;
-    margin: 0 ;
-}
-
-.overlay-content img {
-    display: block ;
-    max-height: 80vh ; 
-    width: 340px ; 
-    
-    border-radius: 15px;
-    cursor: pointer;
-    
-
-    margin: 0 ;
-    
-}
-#overlay-title {
-    margin-top: 15px ;
-    color: white;
-   
-    width: 100%;
-    margin-left: -10px;
-}
-
-#modal-media-planete img {
-    max-width: 320px;
-    object-fit: contain;
-    border-radius: 20px;
-    align-items: center;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: -20px;
-}
-
-#modal-titre-planete{
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: -120px;
-}
-
-#anime{
-    margin-top: 500px;
-}
-
-.anime-icon img {
-    height: 80px;
-}
-
-.arrache-icon img {
-    height: 80px;
-    margin-left: 0px;
-}
-.arrache-title {
-    
-    margin-left: 70px;
-    
-}
-
-}
-
-
-/* ---  TÉLÉPHONE COUCHÉ  --- */
+/* ---  TÉLÉPHONE COUCHÉ (ORIENTATION PAYSAGE)  --- */
 @media only screen and (max-height: 500px) and (orientation: landscape) {
 
-  
+    /* ==========================================================================
+       1. EN-TÊTE, TITRES & SECTIONS GLOBAL
+       ========================================================================== */
     .head {
-        min-height: auto ;
+        min-height: auto;
         padding-top: 10px; 
-        padding-bottom: 40px ;
+        padding-bottom: 40px;
     }
 
     .head h1, .head .title-wiki { 
-        font-size: 2.5rem ;
-        margin-top: 5px ;
-        margin-bottom: 0px ;
+        font-size: 2.5rem;
+        margin-top: 5px;
+        margin-bottom: 0px;
         text-align: center;
     }
 
     .title {
-        margin-top: 80px ;
+        margin-top: 80px;
     }
 
     .category-header { 
-        margin-top: 150px ; 
+        margin-top: 150px; 
     }
 
+    #jeu {
+        margin-top: -500px;
+    }
+
+    /* ==========================================================================
+       2. CONTENEURS DE RECHERCHE & DE STATISTIQUES
+       ========================================================================== */
+    .search-container {
+        margin-top: 0px; 
+        position: relative;
+        z-index: 1000;
+        text-align: center;
+    }
 
     .stats-container {
-        margin-top: 250px ; 
-        margin-bottom: 10px ;
-        transform: scale(0.75) ; 
+        margin-top: 0px; 
+        margin-bottom: 10px;
+        transform: scale(0.75); 
         text-align: center;
     }
 
-    .search-container {
-        margin-top: -220px ; 
-        position: relative;
-        z-index: 1000 ;
-        text-align: center;
+    .stat-label {
+        font-size: 1.2rem;
     }
 
-    
+    /* ==========================================================================
+       3. SYSTÈME DE GRILLES (AFFICHAGE 4 COLONNES EN PAYSAGE)
+       ========================================================================== */
+    #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
+        width: 90%;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
+        
+    }
 
-#grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
-    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
-    margin-left: 50px ;
-    margin-right: 50px ;
-    margin-top: 0 ;
-    margin-bottom: 0 ;
-    
-    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
-    padding-left: 15px ;
-    padding-right: 15px ;
-
-    box-sizing: border-box ;
-    grid-template-columns: repeat(4, 1fr) ;
-    width: 90% ;
-
-}
-    
-
-    
-
+    /* ==========================================================================
+       4. COMPOSANTS DE RECHERCHE RAPIDE & RÉSULTATS
+       ========================================================================== */
     #results img {
-        width: 150px ;
+        width: 150px;
         height: auto;
         border-radius: 8px;
     }
 
-    #modal-planete video{
-pointer-events: none;
-}
-
     #results div {
-        font-size: 1em ;
-        padding: 10px ;
+        font-size: 1em;
+        padding: 10px;
         z-index: 99999;
     }
 
-    
-
-   
-    .modal-container {
-        display: flex ;
-        align-items: center ;
-        justify-content: center ;
-        padding: 20px ;
-    }
-
-    .card-zoom-image, .modal-content img {
-        max-width: 90vw ;
-        max-height: 70vh ;
-        width: auto ;
-        height: auto ;
-        object-fit: contain ;
-        display: block ;
-        border-radius: 10px ;
-    }
-
-   
-
-
-    .overlay-content {
-        max-width: 80% ;
-        width: auto ;
-    }
-
-    .overlay-content img { 
-        max-width: 100% ;
-        max-height: 77vh ; 
-        margin-top: 75px ;
-        object-fit: contain ;
-        border-radius: 10px ;
-        transition: transform 0.3s ease;
-    }
-
-    .overlay-content h2 {
-        font-size: 1.2rem ;
-        margin-top: 5px ;
-    }
-
-    #overlay-title {
-        font-size: 1.1rem ;
-        margin-left: -15px;
-    }
-
-
-    
-
-    .stat-label {
-    font-size: 1.2rem;
-}
-
-
-
-   
-#modal-media-planete img {
-    margin-left: 0px;
-    margin-right: 170px;
-   margin-top: 10px;
-   
-}
-
-#modal-titre-planete{
-    margin-left: -80px;
-    margin-top: 5px;
-
-
-}
-    #modal-recherche img {
-    align-items: center;
-    margin-top: -5px;
-    
-}
     .titre-jeu-recherche {
         font-size: 0.9rem;
         margin-left: 88px;
     }
 
+    /* ==========================================================================
+       5. MODALES, OVERLAYS & CONTENUS ZOOMS (PLANÈTE / JEUX)
+       ========================================================================== */
+    .modal-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 
-.badge-modal{
-    margin-right: 30px;
-    margin-top: -15px;
-}
+    .card-zoom-image, .modal-content img {
+        max-width: 90vw;
+        max-height: 70vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border-radius: 10px;
+    }
 
-#jeu {
-    margin-top: -500px ;
-}
+    #modal-planete video {
+        pointer-events: none;
+    }
 
+    #modal-recherche img {
+        margin-top: -5px;
+    }
+
+    #modal-media-planete img {
+        margin-left: 0px;
+        margin-right: 170px;
+    }
+
+    #modal-titre-planete {
+        margin-top: 5px;
+        margin-left: -80px;
+    }
+
+    .badge-modal {
+        margin-top: 22px;
+        margin-right: -15px;
+    }
+
+    /* Structures d'affichage plein écran (Overlays) */
+    .overlay-content {
+        width: auto;
+        max-width: 80%;
+    }
+
+    .overlay-content img { 
+        width: auto;
+        max-width: 100%;
+        max-height: 77vh; 
+        margin-top: 75px;
+        object-fit: contain;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .overlay-content h2 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+
+    #overlay-title {
+        font-size: 0.9rem;
+        margin-left: -15px;
+    }
 }
 
 /* écran pc plus petit */
@@ -1957,9 +1968,7 @@ pointer-events: none;
         margin-left: -5px ;
     }
 
-    .video-grid{
-        grid-template-columns: repeat(2, 1fr) ;
-    }
+   
 }
 
 
@@ -2024,13 +2033,7 @@ pointer-events: none;
     .title {
         margin-bottom: 10px ;
     }
-    .stats-container {
-        display: flex ;
-        justify-content: center ;
-        
-        /* Pour l'iPhone X, ajuste cette valeur pour rapprocher la recherche des stats */
-        margin-top: 20px ; 
-    }
+    
     .search-container {
         display: flex ;
         flex-direction: column ;
@@ -2152,7 +2155,7 @@ pointer-events: none;
         flex-direction: column ;
         align-items: center ;
         text-align: center ;
-        padding-top: 0px ; /* On réduit pour l'iPad Mini */
+        padding-top: 200px ; /* On réduit pour l'iPad Mini */
         height: auto ;
         
     }
@@ -2161,6 +2164,7 @@ pointer-events: none;
     .title, #text-femi {
         order: 1 ;
         margin: 0 auto 15px auto ; 
+        
     }
 
     /* 3. LES STATS : En deuxième, sous le titre */
@@ -2240,4 +2244,166 @@ pointer-events: none;
 }
 
 
+
+
+
+/* ==========================================================================
+   NICHE STRICTE : IPAD MINI EN PORTRAIT (768px x 1024px)
+   ========================================================================== */
+@media screen and (min-width: 765px) and (max-width: 775px) and (min-height: 1020px) and (max-height: 1030px) and (orientation: portrait) {
+
+  
+
+    /* 2. On aligne proprement les compteurs (38, 303, 53) */
+    .stats-container, .stats-flex {
+        display: flex;
+        justify-content: center;
+        gap: 40px; /* Espace équilibré sur la largeur de la tablette */
+        margin-bottom: 30px;
+    }
+
+
+    .stats-container{
+        margin-top: -100px;
+    }
+
+    /* 3. Ajustement de la barre de recherche pour qu'elle soit bien large et centrée */
+    .search-container {
+        width: 80%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .icon{
+        margin-left: -35px;
+    }
+
+    #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
+    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
+    margin-left: 50px ;
+    margin-right: 50px ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+    
+    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
+    padding-left: 15px ;
+    padding-right: 15px ;
+
+    box-sizing: border-box ;
+    grid-template-columns: repeat(4, 1fr) ;
+    width: 90% ;
+
+}
+
+    
+}
+
+/* ==========================================================================
+   NICHE STRICTE : IPAD AIR EN PORTRAIT (820px x 1180px)
+   ========================================================================== */
+@media screen and (min-width: 815px) and (max-width: 825px) and (min-height: 1170px) and (max-height: 1190px) and (orientation: portrait) {
+
+  
+   
+
+
+
+    /* 4. Centrage de la barre de recherche sur ce grand écran */
+    .stats-container {
+        margin-top: -150px;
+        
+    }
+
+     #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
+    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
+    margin-left: 50px ;
+    margin-right: 50px ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+    
+    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
+    padding-left: 15px ;
+    padding-right: 15px ;
+
+    box-sizing: border-box ;
+    grid-template-columns: repeat(4, 1fr) ;
+    width: 90% ;
+
+}
+}
+
+/* ==========================================================================
+   NICHE STRICTE : IPAD PRO EN PORTRAIT (1024px x 1366px)
+   ========================================================================== */
+@media screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1350px) and (max-height: 1380px) and (orientation: portrait) {
+
+    /* 1. Un peu de confort pour le bloc titre principal */
+    #header-anime .main {
+        padding-top: 0px;
+        padding-bottom: 40px;
+    }
+
+   .stats-container {
+        margin-top: -250px;
+        gap: 50px;
+    }
+
+      #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film , section#episode .game-grid {
+    /* On remet les marges à 0 pour recentrer la grille dans l'écran */
+    margin-left: 50px ;
+    margin-right: 50px ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+    
+    /* LA BRÈCHE DE SÉCURITÉ : C'est ce padding global qui gère l'écart gauche/droite */
+    padding-left: 15px ;
+    padding-right: 15px ;
+
+    box-sizing: border-box ;
+    grid-template-columns: repeat(4, 1fr) ;
+    width: 90% ;
+
+}
+
+/* 1. Le titre reste en haut tranquillement */
+    #modal-title-planete {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    /* 2. La boîte de l'image DEVIENT un Flexbox ultra-strict et étanche */
+    #modal-media-planete {
+        display: flex ;
+        justify-content: center ; /* Centre horizontalement l'image */
+        align-items: center ;     /* Centre verticalement l'image */
+        
+        width: 100% ;
+        max-width: 600px ;
+        height: 500px ;           /* La zone de centrage fait exactement 500px */
+        margin: 0 auto ;          /* Centre le bloc noir sur l'écran */
+        
+    
+    }
+
+    /* 3. L'image obéit aux 500px du parent sans tricher */
+    #modal-media-planete img {
+        max-width: 100% ;
+        max-height: 100% ;        /* Interdiction de dépasser les 500px du parent */
+        object-fit: contain ;     /* Conserve les proportions sans déformer */
+        display: block ;
+        margin-top: 650px;
+    }
+
+    #modal-titre-planete
+
+ {
+    margin-top: 300px;
+    font-size: 2rem;
+}
+
+
+
+}
 
