@@ -282,7 +282,7 @@ html, body {
     margin: 0;
     padding: 60px 20px 20px 20px;
     color: white;
-    font-size: 1.09rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     font-family: 'lexend', sans-serif;
     background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.4) 50%, transparent 100%);
@@ -1911,6 +1911,22 @@ html, body {
     /* ==========================================================================
        STYLES EXCLUSIFS TABLETTE
        ========================================================================== */
+
+          body {
+        background: 
+            radial-gradient(circle, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.85) 90%),
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("./assets/img/wiki/femi.png");
+        background-position: right center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    
     #footer, .site-footer {
         display: flex;
         flex-direction: column;
