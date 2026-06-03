@@ -20,6 +20,8 @@ html, body {
     padding: 0;
     min-height: 100vh;
     font-family: "bebas", sans-serif;
+    
+    /* On garde la base identique */
     background: 
         radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -1694,7 +1696,9 @@ html, body {
         margin-top: -120px;
     }
 
-   
+   html, body {
+        background-attachment: scroll !important;
+    }
 }
 
 
@@ -1856,6 +1860,10 @@ html, body {
         font-size: 0.9rem;
         margin-left: -15px;
     }
+
+    html, body {
+        background-attachment: scroll !important;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 740px) {
@@ -1871,6 +1879,10 @@ html, body {
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    html, body {
+        background-attachment: scroll !important;
     }
 }
 
@@ -1926,7 +1938,7 @@ html, body {
         padding: 0;
     }
 
-    
+
     #footer, .site-footer {
         display: flex;
         flex-direction: column;
@@ -1962,7 +1974,10 @@ html, body {
         grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
         
     }
-    
+
+    html, body {
+        background-attachment: scroll !important;
+    }
 
 
    
@@ -1980,7 +1995,12 @@ html, body {
         
     }
 
+    html, body {
+        background-attachment: scroll !important;
+    }
+
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
