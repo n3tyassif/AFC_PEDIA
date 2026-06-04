@@ -613,14 +613,14 @@ html, body {
    text-align: center;
     position: absolute;
     width: 100%;
-    top: 60px;
+    top: 50px;
     left: 0; 
     margin: 0; 
     font-family: "lexend", sans-serif;
     color: white;
     z-index: 102; 
     margin-left: -148px;
-    margin-top: 20px;
+    
 
 }
 
@@ -1374,14 +1374,11 @@ html, body {
        1. RESET ABSOLU & RECONSTRUCTION FLUIDE (POUR MOBILE)
        ========================================================================== */
     body {
+        /* CORRIGÉ : Lien Cloudinary net, sans voile noir écrasant et en mode scroll */
         background: 
-            radial-gradient(circle, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.85) 90%),
-            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-            url("./assets/img/wiki/femi.png");
-        background-position: right center; 
-        background-repeat: no-repeat;
+            radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%),
+            url("https://res.cloudinary.com/dbymxvjo1/image/upload/f_auto,q_auto:best/fond-wiki.png") no-repeat center center scroll;
         background-size: cover;
-        background-attachment: fixed;
         overflow-x: hidden;
         margin: 0;
         padding: 0;
@@ -1393,24 +1390,18 @@ html, body {
         flex-direction: column ;
         align-items: center ;
         text-align: center ;
-        
-        /* C'EST ICI QUE TU CHOISIS L'ÉCART : 
-           2vh ou 3vh calculera un espace parfait entre titre, stats et recherche */
         gap: 2.5vh ; 
-        
         width: 100% ;
-        height: auto ;       /* Libère la hauteur bloquée à 60vh */
-        position: relative ;   /* Annule le comportement foireux */
-        padding-top: 10vh ;    /* Descend tout le bloc sous ta navbar */
+        height: auto ;
+        position: relative ;
+        padding-top: 10vh ;
         margin: 0 ;
     }
 
-    /* On neutralise la div de transition */
     .main {
         display: contents ; 
     }
 
-    /* RESET DU TITRE : On vire le 'top: 15%' et l'absolute */
     .title {
         position: relative ;
         top: auto ;
@@ -1428,14 +1419,10 @@ html, body {
         line-height: 1.1 ;
     }
 
-    
-
-    /* RESET DES STATS : On vire le 'top: 40%' et l'absolute */
     .stats-container {
         display: flex ;
         justify-content: center ;
-        gap: 25px ;            /* Écart entre tes 3 compteurs violets */
-        
+        gap: 25px ;
         position: relative ;
         top: auto ;
         left: auto ;
@@ -1453,44 +1440,38 @@ html, body {
         display: flex;
         flex-direction: column; 
         align-items: center;
-        
         position: relative;
         left: auto;
         transform: none;
-
-        /* LE FIX MAGIQUE POUR TOUS LES ÉCRANS (IPHONE, GALAXY, ETC.) */
-        width: 85%;         /* Prend 85% de la largeur de n'importe quel téléphone */
-        max-width: 500px ;   /* Sécurité pour pas que ça devienne immense */
-        margin: 0 auto ;     /* Centre automatiquement le bloc entier */
+        width: 85%;
+        max-width: 500px ;
+        margin: 0 auto ;
         z-index: 1000 ;
-        
     }
 
     #recherche{
         padding: 20px 50px 21px 60px;
     }
 
-    
-#results {
-    position:flex;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(15, 15, 15, 0.98);
-    border: 1px solid #444;
-    border-top: none;
-    border-radius: 0 0 15px 15px;
-    z-index: 9999;
-    display: none; 
-    max-height: 450px;
-    overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-left: -10px;
-}
+    #results {
+        position:flex;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 15, 0.98);
+        border: 1px solid #444;
+        border-top: none;
+        border-radius: 0 0 15px 15px;
+        z-index: 9999;
+        display: none; 
+        max-height: 450px;
+        overflow-y: auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        margin-left: -10px;
+    }
 
-    /* FORCE L'AFFICHAGE DES BLOCS INTERNES POUR ÉVITER LE RATATINEMENT */
     #results div {
-        display: flex !important; /* Force un alignement propre pour l'image et le texte */
+        display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         gap: 15px !important;
@@ -1505,17 +1486,15 @@ html, body {
     }
 
     #results img {
-        width: 30%; /* Réduit un peu pour le mobile (130px c'est trop gros dans l'encadré) */
+        width: 30%;
         height: auto;
         border-radius: 8px;
-        flex-shrink: 0; /* Empêche l'image de s'écraser si le texte est long */
+        flex-shrink: 0;
     }
 
     .res-info{
         font-size: 1.2rem;
     }
-
-    
 
     /* ==========================================================================
        2. LE RESTE DE TON CODE (GRILLES, RECH, MODALES) - INCHANGÉ
@@ -1598,7 +1577,6 @@ html, body {
         margin-top: 120px;
         margin-left: -135px;
     }
-
 
     #modal-recherche.modal {
         position: fixed;
@@ -1704,19 +1682,10 @@ html, body {
         margin-right: 0px;
         margin-top: -120px;
     }
-
-   
 }
-
-
-
 
 /* ---  TÉLÉPHONE COUCHÉ (ORIENTATION PAYSAGE)  --- */
 @media only screen and (max-height: 500px) and (orientation: landscape) {
-
-    /* ==========================================================================
-       1. EN-TÊTE, TITRES & SECTIONS GLOBAL
-       ========================================================================== */
     .head {
         min-height: auto;
         padding-top: 10px; 
@@ -1742,9 +1711,6 @@ html, body {
         margin-top: -500px;
     }
 
-    /* ==========================================================================
-       2. CONTENEURS DE RECHERCHE & DE STATISTIQUES
-       ========================================================================== */
     .search-container {
         margin-top: 0px; 
         position: relative;
@@ -1763,9 +1729,6 @@ html, body {
         font-size: 1.2rem;
     }
 
-    /* ==========================================================================
-       3. SYSTÈME DE GRILLES (AFFICHAGE 4 COLONNES EN PAYSAGE)
-       ========================================================================== */
     #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
         width: 90%;
         margin-top: 0;
@@ -1775,13 +1738,9 @@ html, body {
         padding-left: 15px;
         padding-right: 15px;
         box-sizing: border-box;
-        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
-        
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    /* ==========================================================================
-       4. COMPOSANTS DE RECHERCHE RAPIDE & RÉSULTATS
-       ========================================================================== */
     #results img {
         width: 150px;
         height: auto;
@@ -1799,9 +1758,6 @@ html, body {
         margin-left: 88px;
     }
 
-    /* ==========================================================================
-       5. MODALES, OVERLAYS & CONTENUS ZOOMS (PLANÈTE / JEUX)
-       ========================================================================== */
     .modal-container {
         display: flex;
         align-items: center;
@@ -1842,7 +1798,6 @@ html, body {
         margin-right: -15px;
     }
 
-    /* Structures d'affichage plein écran (Overlays) */
     .overlay-content {
         width: auto;
         max-width: 80%;
@@ -1878,29 +1833,18 @@ html, body {
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
-       
         box-sizing: border-box;
-        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
-        
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    
 }
 
 /* écran pc plus petit */
 @media screen and (width: 1500px) {
-    
-    
-
-    
-
-
     .stat-number {
-       
         margin-top: -280px ; 
         font-size: 2.2rem ; 
     }
@@ -1921,38 +1865,27 @@ html, body {
     #jeu {
         margin-top: 450px;
     }
-    
 }
 
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
     /* ==========================================================================
        STYLES EXCLUSIFS TABLETTE
        ========================================================================== */
-
-          body {
-        background: 
-            radial-gradient(circle, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.85) 90%),
-            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-            url("./assets/img/wiki/femi.png");
-        background-position: right center; 
-        background-repeat: no-repeat;
+    body {
+       
         background-size: cover;
-        background-attachment: fixed;
         overflow-x: hidden;
         margin: 0;
         padding: 0;
     }
 
-
     #footer, .site-footer {
         display: flex;
         flex-direction: column;
-        
         gap: 15px;
         padding: 20px 10px;
     }
 
-    /* Tes boutons sur tablette peuvent rester un poil plus grands que sur mobile */
     .social-btn {
         margin-bottom: 15px;
         padding: 8px 16px; 
@@ -1961,7 +1894,6 @@ html, body {
 
     .video.overlay {
         display: grid;
-        /* Sur tablette, on peut afficher plus de colonnes (min 200px) */
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
         gap: 15px;
         width: 100%;
@@ -1969,37 +1901,31 @@ html, body {
         box-sizing: border-box;
     }
 
-
      #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
-       
         box-sizing: border-box;
-        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
-        
+        grid-template-columns: repeat(4, 1fr);
     }
 
+    
 
-   
+    
+
 }
 
-/* Ciblage spécifique pour l'iPad Mini et les écrans similaires */
+/* Ciblage spécifique pour l'iPad Mini */
 @media (min-width: 740px) and (max-width: 768px) {
      #grid-jeux, .game-grid, #grid-2026, #grid-2025, #grid-2024, #grid-animes, #grid-film, section#episode .game-grid {
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
-       
         box-sizing: border-box;
-        grid-template-columns: repeat(4, 1fr); /* Écran large = 4 éléments par ligne */
-        
+        grid-template-columns: repeat(4, 1fr);
     }
-
-    
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
