@@ -20,17 +20,26 @@ html, body {
     padding: 0;
     min-height: 100vh;
     font-family: "bebas", sans-serif;
-    
-    /* On garde la base identique */
-    background: 
-        radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.9) 100%),
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("./assets/img/wiki/femi.png") no-repeat center center ;
-    background-size: cover;
     color: white;
     overflow-x: hidden;
     position: relative;
     width: 100%;
+
+    /* Le linear-gradient est calé à 0.3 pour assombrir juste ce qu'il faut */
+    background: 
+        radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%),
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("https://res.cloudinary.com/dbymxvjo1/image/upload/f_auto,q_auto:best/v123456/Capture_d_écran_2026-06-04_111137_wukjlc") no-repeat center center fixed;
+    
+    background-size: cover;
+}
+
+/* Le correctif pour l'iPad avec le même niveau d'assombrissement */
+@media (max-width: 1024px) or (hover: none) or (pointer: coarse) {
+    html, body {
+      
+        background-size: cover !important;
+    }
 }
 
 .navbar {
@@ -1696,9 +1705,7 @@ html, body {
         margin-top: -120px;
     }
 
-   html, body {
-        background-attachment: scroll !important;
-    }
+   
 }
 
 
@@ -1881,9 +1888,7 @@ html, body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    html, body {
-        background-attachment: scroll !important;
-    }
+    
 }
 
 /* écran pc plus petit */
@@ -1975,10 +1980,6 @@ html, body {
         
     }
 
-    html, body {
-        background-attachment: scroll !important;
-    }
-
 
    
 }
@@ -1995,9 +1996,7 @@ html, body {
         
     }
 
-    html, body {
-        background-attachment: scroll !important;
-    }
+    
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
