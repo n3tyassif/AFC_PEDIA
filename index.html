@@ -222,15 +222,21 @@
     if (!url || !url.includes('/upload/')) return url;
     
     if (format === 'basse') {
-        // Redimensionne à 200x280 max, compresse au format idéal (WebP/AVIF) avec une qualité éco
+        
         return url.replace('/upload/', '/upload/w_200,h_280,c_fill,g_auto,f_auto,q_auto:eco/');
     } else if (format === 'haute') {
-        // Version grand écran non bridée pour les modals
+      
         return url.replace('/upload/', '/upload/w_800,f_auto,q_auto:best/');
     }
     return url;
 }
 const jeux2026 = [
+    { nom: "directive 8020", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/dbeae5ea95e461872c819969fa8f47c4_fkahjr", twitch: "https://twitchtracker.com/femimarss/games/1977278621"  , statut: "drop"},
+    { nom: "tomodachi life living your dreams", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/e4efc746696d9f37472de81cbad04179_rbfals", twitch: "https://twitchtracker.com/femimarss/games/1099705332" },
+    { nom: "my voice zoo", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/119c7226962c95086bb26fd0ae59c29e_svkqgd", twitch: "https://twitchtracker.com/femimarss/games/1356530436" },
+    
+    { nom: "trees hate you", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/f1e252da269c86120afc3d75e109af15_agnjf2", twitch: "https://twitchtracker.com/femimarss/games/795788384" },
+    
     { nom: "crimson desert", img: "https://i.postimg.cc/wMt6m1HD/image.png", twitch: "https://youtu.be/TmnKSnxcAJ0?si=re8zazorMh8I3oho"},
     { nom: "MONSTER HUNTER STORIES 3: TWISTED REFLECTION", img: "./assets/img/wiki/jeu/monster.png", twitch: "https://youtu.be/LJCZtwlJkbs?si=Z1YXGPtGrDC4Z433" },
     { nom: "pokopia", img: "./assets/img/jeux/pokopia.png", twitch: "https://youtu.be/fFn9sVc6YAU?si=JUnFJR1XBOmiEXeW" },
@@ -652,10 +658,10 @@ const episodeAnime = [
    { nom: "17 26", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/tMdwHwA0mcXRoKTE40nqN9bgRpj_akx5hm", twitch: "https://www.youtube.com/watch?v=-WyMP6hjIFs" },
    { nom: "violet evergarden", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/61EwFPqc0r1uJo6la49J55F8bQ8_juhsed", twitch: "https://www.youtube.com/watch?v=z1ojBinRY5Y" },
    { nom: "rooster fighter", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/iCtbr0sIdaKZjhQH3Wr7hW6A1IU_jqsfn3", twitch: "https://www.youtube.com/watch?v=z1ojBinRY5Y" },
-   { nom: "frieren", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/4ITbCMbUWn1aNdI9mjeIB1XxyoI_chhlbg", twitch: "https://discord.com/channels/1204907415498137691/1511488538384793641" },
-   { nom: "8 mort 6 blessé", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/96mUvRlJBYOMBdbn30wtoh7QrpY_l9lo9x", twitch: "https://discord.com/channels/1204907415498137691/1511488538384793641"  , statut: "ban"},
-   { nom: "saga of tana the evil", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/5nwiHomKZBBF9DLrolfZapi3fDm_mkebqk", twitch: "https://discord.com/channels/1204907415498137691/1511488538384793641" },
-   { nom: "trigun stampede", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/nF98arp4oOo7qOEUjXfXq0V5ovl_se0uh0", twitch: "https://discord.com/channels/1204907415498137691/1511488538384793641" },
+   { nom: "frieren", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/4ITbCMbUWn1aNdI9mjeIB1XxyoI_chhlbg", twitch: "https://www.youtube.com/watch?v=XETKLmCfwk8" },
+   { nom: "8 mort 6 blessé", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/96mUvRlJBYOMBdbn30wtoh7QrpY_l9lo9x", twitch: "https://www.youtube.com/watch?v=XETKLmCfwk8"  , statut: "ban"},
+   { nom: "saga of tana the evil", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/5nwiHomKZBBF9DLrolfZapi3fDm_mkebqk", twitch: "https://www.youtube.com/watch?v=XETKLmCfwk8" },
+   { nom: "trigun stampede", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/nF98arp4oOo7qOEUjXfXq0V5ovl_se0uh0", twitch: "https://www.youtube.com/watch?v=XETKLmCfwk8" },
    { nom: "bungo stray dogs", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/6AQmGhkYwAqW2OevjXbsh7tZnNO_g9fzcc", twitch: "https://www.youtube.com/watch?v=WfPD7MbY3yY" },
    { nom: "tomodachi game", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/l9wfsCpH5Zot8PSskCShqiQc9I4_eujtxs", twitch: "https://www.youtube.com/watch?v=WfPD7MbY3yY" },
    { nom: "monster", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/n5XNKXnoXpoXyfiCtXHOf8q8PFM_bsnml6", twitch: "https://www.youtube.com/watch?v=WfPD7MbY3yY" },
@@ -725,7 +731,7 @@ const listeArchive = [
     
     { titre: "Comment le sergent Femi boit de l'eau", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-06-04_172231_ng8qwm", url: "https://www.twitch.tv/femimarss/clip/BlindingCovertDillBudBlast"},
     { titre: "1....2.....3.....SOLEIL!!!!", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-06-04_173122_hvix5e", url: "https://www.twitch.tv/femimarss/clip/PatientBenevolentReubenTTours-ucaT3zkZAtn5fwPp"},
-    { titre: "hooo", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/", url: "https://www.twitch.tv/femimarss/clip/RoundFitLarkEagleEye"},
+    { titre: "hooo", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/Capture_d_écran_2026-06-04_173444_hy4wod", url: "https://www.twitch.tv/femimarss/clip/RoundFitLarkEagleEye"},
     { titre: "", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/", url: ""},
     { titre: "", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/", url: ""},
     { titre: "", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/", url: ""},
@@ -753,7 +759,7 @@ function remplirGrille(listeDeJeux, idDeLaGrille) {
             badgeHTML = `<div class="class=badge-statut ${jeu.statut.toLowerCase()}"></div>`;
         }
 
-        // On applique la basse qualité ici pour charger le site instantanément
+       
         const imgOptimisee = optimiserImageCloudinary(jeu.img, 'moyenne');
 
         carte.innerHTML = `
@@ -773,16 +779,16 @@ function ouvrirCarte(img, titre, twitch, statut) {
     const titleElement = document.getElementById('overlay-title');
 
     if (overlay && imgElement && titleElement) {
-        // 1. On affiche DIRECTEMENT la version basse qualité (déjà chargée, donc instantané)
+       
         imgElement.src = optimiserImageCloudinary(img, 'moyenne');
         titleElement.innerText = titre;
         currentTwitch = twitch;
 
-        // 2. On charge la version HD en tâche de fond pour écraser la basse qualité sans transition visible
+     
         const imageHauteQualite = new Image();
         imageHauteQualite.src = optimiserImageCloudinary(img, 'haute');
         imageHauteQualite.onload = () => {
-            imgElement.src = imageHauteQualite.src; // Devient net d'un coup sans transition blanche
+            imgElement.src = imageHauteQualite.src; 
         };
 
         const existingBadge = overlay.querySelector('.badge-modal');
@@ -805,18 +811,16 @@ function ouvrirCarte(img, titre, twitch, statut) {
     }
 }
 
-// 1. Clic à côté de l'affiche (sur le fond ou le titre) -> On sort !
+
 document.getElementById('game-overlay').onclick = function(e) {
-    // Si l'élément cliqué est l'image, on ne fait rien ici (c'est géré en dessous)
+   
     if (e.target.id === 'overlay-img') return;
     
-    // Pour tout le reste (fond noir, titre, conteneur), on ferme la modale !
     this.style.display = 'none';
 };
 
-// 2. Clic sur l'affiche -> On va sur le lien direct (Twitch Tracker / Patreon)
 document.getElementById('overlay-img').onclick = function(e) {
-    e.stopPropagation(); // Sécurité pour pas que ça déclenche la fermeture du dessus
+    e.stopPropagation(); 
     if (typeof currentTwitch !== 'undefined' && currentTwitch) {
         window.open(currentTwitch, '_blank');
     }
@@ -842,7 +846,6 @@ const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...j
 function changerCategorie(type) {
     const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
     
-    // ICI : On utilise l'ID de la grille commune
     remplirGrille(listeChoisie, 'grid-episode');
 
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -850,9 +853,7 @@ function changerCategorie(type) {
         window.event.currentTarget.classList.add('active');
     }
 }
-// ==========================================================================
-// BLOC RECHERCHE & OUVERTURE DIRECTE (AVEC CLASSES POUR TON CSS)
-// ==========================================================================
+
 
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
@@ -1146,18 +1147,15 @@ window.ouvrirOverlay3D = (d) => {
     modal.style.display = "block";
 };
 
-// ÉCOUTEUR MOVE PRINCIPAL : Bloqué si la planète n'est pas visible
 window.addEventListener('mousemove', (e) => {
-    if (!isVisible) return; // SÉCURITÉ : Bloque le calcul des coordonnées si on est loin
+    if (!isVisible) return; 
 
     const rect = canvas.getBoundingClientRect();
     mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 });
 
-// ÉCOUTEUR CLIC : Bloqué si la planète n'est pas visible
 window.addEventListener('click', (event) => {
-    // Si l'utilisateur clique sur une modale ouverte pour la fermer, on laisse passer le clic
     if (event.target.classList.contains('modal')) {
         const modPlanete = document.getElementById("modal-planete");
         const modRecherche = document.getElementById("modal-recherche");
@@ -1170,7 +1168,7 @@ window.addEventListener('click', (event) => {
         return;
     }
 
-    if (!isVisible) return; // SÉCURITÉ : Empêche le Raycaster de s'activer si la planète est invisible ou loin !
+    if (!isVisible) return; 
 
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(group.children);
@@ -1193,7 +1191,7 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Nettoyage si la souris quitte le document
+
 document.addEventListener('mouseleave', () => {
     mouse.x = -1000;
     mouse.y = -1000;
@@ -1210,7 +1208,7 @@ let isVisible = true;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         isVisible = entry.isIntersecting; 
-        // Si la planète redevient invisible, on réinitialise le curseur par sécurité
+        
         if (!isVisible && canvas) {
             canvas.style.cursor = 'default';
             hoveredObject = null;
@@ -1218,7 +1216,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-// Gestion dynamique du redimensionnement (PC, Tablettes, Mobiles)
+
 window.addEventListener('resize', () => {
     const containerActuel = document.getElementById('planete-container');
     if (!containerActuel) return;
@@ -1255,7 +1253,6 @@ function animate() {
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(group.children);
 
-    // Gestion du curseur simplifiée
     if (intersects.length > 0) {
         if (hoveredObject !== intersects[0].object) {
             canvas.style.cursor = 'pointer';
@@ -1405,7 +1402,6 @@ function genererGrilleVideo(liste, idConteneur) {
     const grille = document.getElementById(idConteneur);
     if (!grille) return;
 
-    // Ajout de 'grid-archive' ici pour masquer les éléments indésirables
     const isRecap = idConteneur === 'grid-recaps' || idConteneur === 'grid-archive';
 
     grille.innerHTML = liste.map(video => `
@@ -1447,20 +1443,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // On cible les titres ET les grilles
     const targets = document.querySelectorAll('.category-header, .category-anime, .game-grid, .video-grid');
 
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.05 // Déclenche dès que le haut du bloc montre le bout de son nez
+        threshold: 0.05 
     };
 
     const appearanceObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // On arrête d'observer pour que ça ne le fasse qu'une seule fois
                 observer.unobserve(entry.target);
             }
         });
@@ -1486,6 +1480,8 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </body>
 <footer>
+
+     <div class="mini-disclaimer"> <h5> *les archives sont en cours de recherche...*</h5></div>
     <section id="footer">
         <div class="footer-line"> </div>
 
