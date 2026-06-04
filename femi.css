@@ -28,19 +28,12 @@ html, body {
     /* Le linear-gradient est calé à 0.3 pour assombrir juste ce qu'il faut */
     background: 
         radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%),
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("https://res.cloudinary.com/dbymxvjo1/image/upload/f_auto,q_auto:best/v123456/Capture_d_écran_2026-06-04_111137_wukjlc") no-repeat center center fixed;
     
     background-size: cover;
 }
 
-/* Le correctif pour l'iPad avec le même niveau d'assombrissement */
-@media (max-width: 1024px) or (hover: none) or (pointer: coarse) {
-    html, body {
-      
-        background-size: cover !important;
-    }
-}
 
 .navbar {
     display: flex;
@@ -268,6 +261,35 @@ html, body {
     cursor: pointer;
     width: 200px;
     text-align: center;
+
+    
+}
+
+/* Gère l'alignement et l'éloignement entre l'affiche et le texte */
+.result-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important; /* Augmente cette valeur (ex: 25px ou 30px) si tu veux éloigner encore plus */
+    padding: 8px !important;
+}
+
+/* Le bloc qui contient tes textes */
+.result-text-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+/* Couleur du NOM de l'item */
+.result-item-name {
+    color: #ffffff !important; /* Reste blanc */
+    font-size: 1.1em !important;
+}
+
+/* Couleur du TYPE (Jeu, Anime, Serie...) */
+.result-item-type {
+    color: #777777 !important; /* METS LA COULEUR QUE TU VEUX ICI */
+    font-size: 0.9em !important;
 }
 
 .container-recherche-jeu {
@@ -613,7 +635,7 @@ html, body {
    text-align: center;
     position: absolute;
     width: 100%;
-    top: 50px;
+    top: 35px;
     left: 0; 
     margin: 0; 
     font-family: "lexend", sans-serif;
@@ -1370,20 +1392,7 @@ html, body {
 }
 @media (max-width: 768px) and (orientation: portrait) {
 
-    /* ==========================================================================
-       1. RESET ABSOLU & RECONSTRUCTION FLUIDE (POUR MOBILE)
-       ========================================================================== */
-    body {
-        /* CORRIGÉ : Lien Cloudinary net, sans voile noir écrasant et en mode scroll */
-        background: 
-            radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%),
-            url("https://res.cloudinary.com/dbymxvjo1/image/upload/f_auto,q_auto:best/fond-wiki.png") no-repeat center center scroll;
-        background-size: cover;
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
-
+   
     /* On détruit le 'height: 60vh' du PC et on active le Flexbox vertical */
     .head {
         display: flex ;
@@ -1823,9 +1832,7 @@ html, body {
         margin-left: -15px;
     }
 
-    html, body {
-        background-attachment: scroll !important;
-    }
+ 
 }
 
 @media (min-width: 600px) and (max-width: 740px) {
@@ -1868,22 +1875,17 @@ html, body {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-    /* ==========================================================================
-       STYLES EXCLUSIFS TABLETTE
-       ========================================================================== */
-    body {
-       
-        background-size: cover;
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
+    
 
     #footer, .site-footer {
         display: flex;
         flex-direction: column;
         gap: 15px;
         padding: 20px 10px;
+    }
+
+    .footer-line{
+        max-width: 60%;
     }
 
     .social-btn {
@@ -1927,5 +1929,81 @@ html, body {
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================================
+   LE RETOUR DU FOOTER ET DES BOUTONS QUI MARCHENT (MAX 1024PX)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    #footer, .site-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding: 20px 10px !important;
+        margin-top: 50px !important; /* Donne de l'espace pour pas que ça colle */
+    }
+
+    .social-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    /* On force les boutons à rétrécir un bon coup */
+    .social-btn {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+    }
+
+    /* Le coup de balai final sur les marges */
+    .footer-credits, [class*="credits"] {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    
+    .footer-line {
+        width: 60% !important;
+        margin-top: -10px !important;
+    }
+
+    /* LA SÉCURITÉ : On extermine le -80px qui faisait chevaucher le texte sur les boutons */
+    .footer-credits2 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 15px !important; /* Descend proprement sous les boutons */
+        margin-right: 0 !important;
+        gap: 5px !important;
+    }
+}
+
+@media (max-width: 768px) {
+   
+        
+       /* 1. LE FOND : Cadré à droite, sans répétition et sans zoom buggé */
+    html, body {
+       
+        background-position: right center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        
+    }
+}
+
+/* ==========================================================================
+   2. CORRECTIF POUR IPAD / TABLETTE (PORTRAIT) - IMAGE À GAUCHE
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+      /* 1. LE FOND : Cadré à droite, sans répétition et sans zoom buggé */
+    html, body {
+       
+        background-position: right center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        
     }
 }
