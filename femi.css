@@ -86,6 +86,7 @@ html, body {
 }
 
 
+
 .nav-logo:hover span {
     color: #b7d4e2d3 ;
     text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff; 
@@ -303,7 +304,7 @@ html, body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     margin: 0;
     padding: 60px 20px 20px 20px;
     color: white;
@@ -314,7 +315,10 @@ html, body {
     color: #FFFFFF ; 
     opacity: 1 ;
     font-weight: 900 ; 
-
+    white-space: nowrap;        /* Force le texte à rester sur une seule ligne */
+    overflow: hidden;           /* Cache tout ce qui dépasse de la zone */
+    text-overflow: ellipsis;
+    
     
    
 }
