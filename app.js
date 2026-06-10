@@ -58,7 +58,7 @@ const jeux2025 = [
     { nom: "no, im not a human", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/no-im-not-a-human_fmbh.600_cxucy7", twitch: "https://youtu.be/PeJc-WWTQAY?si=UQE95CdEbcugMlXL" },
     { nom: "open front", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/01bdc60d66843a2224e61623cc622774_mlrrcj", twitch: "https://twitchtracker.com/femimarss/games/1896092709" },
     { nom: "peak", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/MV5BY2NkZTAxNTQtNDg0YS00ZDdhLTk4OTgtZWQyMzJmODJlYmVkXkEyXkFqcGc._V1_FMjpg_UX1000__zlf8kq", twitch: "https://twitchtracker.com/femimarss/streams/323618633209" },
-    { nom: "Pokémon Legends: Z-A", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pokemon-z-a-cover-art-1_uujeuz", twitch: "https://youtu.be/q7FZ7baPvIE?si=ZrSXcp7kwa4VgUhZ" },
+    { nom: "Pokemon Legends: Z-A", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pokemon-z-a-cover-art-1_uujeuz", twitch: "https://youtu.be/q7FZ7baPvIE?si=ZrSXcp7kwa4VgUhZ" },
     { nom: "Pushing It! Together: Sisyphus Co-Op", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/co9n5i_g4hnrc", twitch: "https://twitchtracker.com/femimarss/games/1592726071" },
     { nom: "r.e.p.o", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/il_fullxfull.6872768834_rws0_cc4sy7", twitch: "https://youtu.be/5-ILrjsicOU?si=prosRcFEAKvjHLWe" },
     { nom: "rematch", img: "https://i.postimg.cc/zBb0xsSn/image.png", twitch: "https://youtube.com/playlist?list=PLZDvlSwiTr99eVZWzjiUDZ-qzH0N3BE3j&si=bs5OczyjJawrKU-q" },
@@ -117,7 +117,7 @@ const jeux2024 = [
     { nom: "Palworld", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/39c2dad1ac130d2789d4cb6055eb78e8_eeeuov", twitch: "https://www.youtube.com/watch?v=ACKEi_3hI6Q" },
     { nom: "Party Animals", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/2c988d909901eaa063825d711e9bbdcb_ja4jno", twitch: "https://www.youtube.com/watch?v=MmGzCSNb9Sw" },
     { nom: "PICO PARK", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/Screenshot_20260603_162037_X_vgles1", twitch: "https://twitchtracker.com/femimarss/games/513056" },
-    { nom: "Pokémon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv" },
+    { nom: "Pokemon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv" },
     { nom: "Parasocial", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/f67e8d5d1185242f0bf5ff4a4e2f84cf_jutdr8", twitch: "https://twitchtracker.com/femimarss/games/143662140" },
     { nom: "roblox", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,c_fill,g_auto,f_auto,q_auto:good/4d3767318b2f7769ae8413ac4c145f57_c7ysyf", twitch: "https://youtu.be/XUoVeWZ9htQ?si=zmgdJvs5ejbd1Aed" },
     { nom: "Sea of Thieves", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,c_fill,g_auto,f_auto,q_auto:good/622f2ce74f071eb5f0f49ce89c3ab522_i0iqjb", twitch: "https://twitchtracker.com/femimarss/games/490377" },
@@ -152,14 +152,14 @@ const jeux2023 = [
     { nom: "lethal company", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/3716f4fee7a631796f256ea172f79a68_zvhlag", twitch: "https://www.youtube.com/watch?v=-omww7fUZks" },
     { nom: "Lycans", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_jp4txf", twitch: "https://twitchtracker.com/femimarss/games/1494074023" },
     { nom: "MAD WAY", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_q1arbt", twitch: "https://twitchtracker.com/femimarss/games/27264154" },
-    { nom: "Marvel's Spider-Man 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4b94d5168bb2ab4311076369169cc441_tb97fn", twitch: "https://twitchtracker.com/femimarss/games/1967084783", statut: "drop" },
-    { nom: "Marvel's Spider-Man Remastered", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/87d8e1bb73566a11ed0c618f5510aff2_xjvjqo", twitch: "https://twitchtracker.com/femimarss/games/1262047844" },
-    { nom: "Marvel's Spider-Man: Miles Morales", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4e4032bbad41a71531fcde01411c82d1_vhkt9d", twitch: "https://twitchtracker.com/femimarss/games/518007" },
+    { nom: "Marvel's SpiderMan 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4b94d5168bb2ab4311076369169cc441_tb97fn", twitch: "https://twitchtracker.com/femimarss/games/1967084783", statut: "drop" },
+    { nom: "Marvel's SpiderMan Remastered", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/87d8e1bb73566a11ed0c618f5510aff2_xjvjqo", twitch: "https://twitchtracker.com/femimarss/games/1262047844" },
+    { nom: "Marvel's SpiderMan: Miles Morales", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4e4032bbad41a71531fcde01411c82d1_vhkt9d", twitch: "https://twitchtracker.com/femimarss/games/518007" },
     { nom: "Only Climb: Better Together", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_p7wdsu", twitch: "https://twitchtracker.com/femimarss/games/1976909017" },
     { nom: "Only Up!", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_wdckbi", twitch: "https://twitchtracker.com/femimarss/games/245018539" },
     { nom: "Only Up 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_d8pvc9", twitch: "https://twitchtracker.com/femimarss/games/1776781258" },
-    { nom: "Pokémon Ruby", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4f24337eea45f3f9408400215512ed74_g6t0ip", twitch: "https://twitchtracker.com/femimarss/games/9287" },
-    { nom: "Pokémon Scarlet/Violet", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/181426fbde5526374ea654b59c16577e_b0n4av", twitch: "https://twitchtracker.com/femimarss/games/670867987" },
+    { nom: "Pokemon Ruby", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/4f24337eea45f3f9408400215512ed74_g6t0ip", twitch: "https://twitchtracker.com/femimarss/games/9287" },
+    { nom: "Pokemon Scarlet/Violet", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/181426fbde5526374ea654b59c16577e_b0n4av", twitch: "https://twitchtracker.com/femimarss/games/670867987" },
     { nom: "Rocket League", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/5fe5b01f95f050c99c170481f6dc88fb_vynuah", twitch: "https://twitchtracker.com/femimarss/games/30921" },
     { nom: "Suika Game", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/f68a2bf3e35f63a3a02b8cf3a0e5201a_iynnlp", twitch: "https://twitchtracker.com/femimarss/games/1702559244" },
     { nom: "The Dark Pictures Anthology: The Devil in Me", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/499160e2767b11465c385e6c4ef56520_iqw3d7", twitch: "https://twitchtracker.com/femimarss/games/654543582" },
@@ -205,9 +205,9 @@ const jeux2022 = [
     { nom: "OVERKILL's The Walking Dead", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/c3a7eb7c994a6475994948502df99fe4_ur4fhn", twitch: "https://twitchtracker.com/femimarss/games/509389" },
     { nom: "Overwatch", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/f8b146b1264be1257e65f518de82a372_wx951d", twitch: "https://twitchtracker.com/femimarss/games/515025" },
     { nom: "Peepo Island", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_sk9fxm", twitch: "https://twitchtracker.com/femimarss/games/22643600" },
-    { nom: "Pokémon Legends: Arceus", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/ce098cf158927e2cea10919e1e2b36a3_n2hepg", twitch: "https://twitchtracker.com/femimarss/games/561013832" },
-    { nom: "Pokémon perle étincellant", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/c407d9c89231a07642371a57e350d6c4_sgt5bw", twitch: "https://twitchtracker.com/femimarss/games/1584745140" },
-    { nom: "Pokémon rouge feu", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/efe2c0e92e3a5755acf5296b5983d87e_x1gliy", twitch: "https://twitchtracker.com/femimarss/games/13332" },
+    { nom: "Pokemon Legends: Arceus", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/ce098cf158927e2cea10919e1e2b36a3_n2hepg", twitch: "https://twitchtracker.com/femimarss/games/561013832" },
+    { nom: "Pokemon perle étincellant", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/c407d9c89231a07642371a57e350d6c4_sgt5bw", twitch: "https://twitchtracker.com/femimarss/games/1584745140" },
+    { nom: "Pokemon rouge feu", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/efe2c0e92e3a5755acf5296b5983d87e_x1gliy", twitch: "https://twitchtracker.com/femimarss/games/13332" },
     { nom: "Pro Soccer Online", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/library_600x900_2x_jby6bs", twitch: "https://twitchtracker.com/femimarss/games/1286420756" },
     { nom: "Riders Republic", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/7cdbf5770f3c502e662a1465639d0c61_r8b9pg", twitch: "https://twitchtracker.com/femimarss/games/633127529" },
     { nom: "Summer of '58", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_550,c_fill,g_auto,f_auto,q_auto:good/449b1890e6fc69aeab7cbcc2de2f8298_nuvs7i", twitch: "https://twitchtracker.com/femimarss/games/2080474707" },
@@ -625,21 +625,44 @@ remplirGrille(animationList, 'grid-animation');
 remplirGrille(episodeAnime, 'grid-episode');
 const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
 
-function changerCategorie(type) {
+function changerCategorie(type, boutonClique) {
+    // 1. Sélectionne la bonne liste (episodeAnime ou episodeSerie)
     const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
     
+    // 2. Remplit ta grille avec tes cartes
     remplirGrille(listeChoisie, 'grid-episode');
 
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    if (window.event && window.event.currentTarget) {
-        window.event.currentTarget.classList.add('active');
+    // 3. Aligne la classe active sur les boutons
+    if (boutonClique) {
+        document.querySelectorAll('#episode .tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        boutonClique.classList.add('active');
     }
 }
-
 
 const inputRecherche = document.getElementById('recherche'); 
 const resultsDiv = document.getElementById('results');
 let rechercheTimer;
+
+// 🌟 OPTIMISATION 1 : Centralisation des listes pour éviter les doublons de code
+function fusionnerToutesLesListes() {
+    return [
+        ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
+        ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
+        ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
+        ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
+        ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
+        ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
+        ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
+        ...(typeof animesList !== 'undefined' ? animesList : []),
+        ...(typeof filmList !== 'undefined' ? filmList : []),
+        ...(typeof animationList !== 'undefined' ? animationList : []),
+        ...(typeof serieList !== 'undefined' ? serieList : []),
+        ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
+        ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
+    ];
+}
 
 if (inputRecherche && resultsDiv) {
     inputRecherche.addEventListener('input', (e) => {
@@ -653,25 +676,29 @@ if (inputRecherche && resultsDiv) {
         }
 
         rechercheTimer = setTimeout(() => {
-            const listesMisesAJour = [
-                ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
-                ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
-                ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
-                ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
-                ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
-                ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
-                ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
-                ...(typeof animesList !== 'undefined' ? animesList : []),
-                ...(typeof filmList !== 'undefined' ? filmList : []),
-                ...(typeof animationList !== 'undefined' ? animationList : []),
-                ...(typeof serieList !== 'undefined' ? serieList : []),
-                ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
-                ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
-            ];
+            const listesMisesAJour = fusionnerToutesLesListes();
 
-            const resultats = listesMisesAJour.filter(item => 
-                item && item.nom && item.nom.toLowerCase().includes(texteRecherche)
-            ).slice(0, 6);
+            // 🌟 OPTIMISATION 2 : Filtrage ET tri par pertinence (Recherche exacte d'abord)
+            const resultats = listesMisesAJour
+                .filter(item => item && item.nom && item.nom.toLowerCase().includes(texteRecherche))
+                .sort((a, b) => {
+                    const nomA = a.nom.toLowerCase();
+                    const nomB = b.nom.toLowerCase();
+
+                    // 1. Correspondance exacte
+                    if (nomA === texteRecherche && nomB !== texteRecherche) return -1;
+                    if (nomB === texteRecherche && nomA !== texteRecherche) return 1;
+
+                    // 2. Commence par le mot recherché
+                    const commenceA = nomA.startsWith(texteRecherche);
+                    const commenceB = nomB.startsWith(texteRecherche);
+                    if (commenceA && !commenceB) return -1;
+                    if (commenceB && !commenceA) return 1;
+
+                    // 3. Sinon, tri alphabétique classique pour garder un ordre propre
+                    return nomA.localeCompare(nomB);
+                })
+                .slice(0, 6); // On garde les 6 meilleurs après le tri
 
             if (resultats.length > 0) {
                 resultsDiv.innerHTML = resultats.map(item => {
@@ -686,7 +713,7 @@ if (inputRecherche && resultsDiv) {
                     } else if (typeof serieList !== 'undefined' && serieList.includes(item)) {
                         typeTexte = "Serie";
                     } else if (typeof episodeSerie !== 'undefined' && episodeSerie.includes(item)) {
-                        typeTexte = "épisode 1 ";
+                        typeTexte = "épisode 1";
                     } else if (typeof episodeAnime !== 'undefined' && episodeAnime.includes(item)) {
                         typeTexte = "épisode 1";
                     }
@@ -702,10 +729,10 @@ if (inputRecherche && resultsDiv) {
                     `;
                 }).join('');
                 
-                resultsDiv.style.display = 'block';
+                resultsDiv.style.display = 'flex'; // Aligné sur ton CSS sans absolute
             } else {
-                resultsDiv.innerHTML = '<div class="no-result">Aucun résultat</div>';
-                resultsDiv.style.display = 'block';
+                resultsDiv.innerHTML = '<div class="no-result" style="padding: 20px; color: #777; text-align: center;">Aucun résultat</div>';
+                resultsDiv.style.display = 'flex';
             }
         }, 200);
     });
@@ -718,23 +745,10 @@ document.addEventListener('click', (e) => {
 });
 
 window.showFromSearchDirect = (nomDuJeu) => {
-    const listesMisesAJour = [
-        ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
-        ...(typeof jeux2025 !== 'undefined' ? jeux2025 : []),
-        ...(typeof jeux2024 !== 'undefined' ? jeux2024 : []),
-        ...(typeof jeux2023 !== 'undefined' ? jeux2023 : []),
-        ...(typeof jeux2022 !== 'undefined' ? jeux2022 : []),
-        ...(typeof jeux2021 !== 'undefined' ? jeux2021 : []),
-        ...(typeof jeux2020 !== 'undefined' ? jeux2020 : []),
-        ...(typeof animesList !== 'undefined' ? animesList : []),
-        ...(typeof filmList !== 'undefined' ? filmList : []),
-        ...(typeof animationList !== 'undefined' ? animationList : []),
-        ...(typeof serieList !== 'undefined' ? serieList : []),
-        ...(typeof episodeAnime !== 'undefined' ? episodeAnime : []),
-        ...(typeof episodeSerie !== 'undefined' ? episodeSerie : [])
-    ];
-
-    const item = listesMisesAJour.find(j => j && j.nom === nomDuJeu);
+    const listesMisesAJour = fusionnerToutesLesListes();
+    
+    // CORRECTION 1 : Nettoyage mutuel pour éviter les échecs de comparaison à cause des apostrophes échappées
+    const item = listesMisesAJour.find(j => j && j.nom && j.nom.trim() === nomDuJeu.replace(/\\'/g, "'").trim());
 
     if (item) {
         const modal = document.getElementById("modal-recherche");
@@ -747,9 +761,14 @@ window.showFromSearchDirect = (nomDuJeu) => {
             const imgBasse = optimiserImageCloudinary(item.img, 'basse');
             const imgHaute = optimiserImageCloudinary(item.img, 'haute');
 
+            // CORRECTION 2 : Gestion stricte du lien (évite le href="" si la chaîne est vide)
+            const lienCliquable = (item.twitch && item.twitch.trim() !== "") ? item.twitch : "#";
+            // Empêche le comportement par défaut si c'est juste un hashtag
+            const attributTarget = lienCliquable !== "#" ? 'target="_blank"' : 'onclick="event.preventDefault()"';
+
             modalMedia.innerHTML = `
                 <div class="container-recherche-jeu">
-                    <a href="${item.twitch || '#'}" target="_blank">
+                    <a href="${lienCliquable}" ${attributTarget}>
                         <img src="${imgBasse}" id="img-modal-recherche-sous-preview" class="img-resultat-recherche">
                     </a>
                     <div class="titre-jeu-recherche">${item.nom}</div>
@@ -770,7 +789,6 @@ window.showFromSearchDirect = (nomDuJeu) => {
         if (inputRecherche) inputRecherche.value = '';
     }
 };
-
 
 
 function decodeEffect(elementId, targetText, speed = 1) {
