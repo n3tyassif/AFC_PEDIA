@@ -1,0 +1,25 @@
+{
+  "name": "afc_pedia",
+  "version": "1.0.0",
+  "description": "AFC_PEDIA - Le Wiki de femimarss",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx serve .",
+    "build": "echo \"Static HTML project - no build needed\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n3tyassif/AFC_PEDIA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n3tyassif/AFC_PEDIA/issues"
+  },
+  "homepage": "https://github.com/n3tyassif/AFC_PEDIA#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
