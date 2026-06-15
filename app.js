@@ -521,7 +521,7 @@ const listeArrache = [
     { id: 9, titre: "XABAB NOUS LIVRE LE SECRET DE SON PLUS GROS DRAMA  !", img: "https://img.youtube.com/vi/mYpe4jVW030/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=mYpe4jVW030&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "xabab" },
     { id: 10, titre: "DE CANCRE A STREAMER : LE PARCOURS FOU DE SHINI !", img: "https://img.youtube.com/vi/2mD4Tt70a0M/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=2mD4Tt70a0M&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "shini" },
     { id: 11, titre: "LEMED ETAIT SUR LE POINT DE TOUT STOP… PUIS CE VOYAGE A TOUT CHANGE  !", img: "https://img.youtube.com/vi/eLQxMKwV_LY/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=eLQxMKwV_LY&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "lemed" },
-    
+    { id: 12, titre: "REGELEGORILA révèle son secret le plus sombre…", img: "https://img.youtube.com/vi/GLNA1eOWKFs/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=GLNA1eOWKFs&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "regelegorilla" },
 
     
 ];
