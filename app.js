@@ -541,15 +541,26 @@ const listeArchive = [
     { titre: "LE PANIER INCROYABLE", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/thumb-0000000000-1280x720_di0lnq", url: "https://www.twitch.tv/femimarss/clip/PoisedWanderingToothMoreCowbell-CV6oRh7Jg3Jt-Mot"},
     { titre: "la fin du commencement...", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/thumb-0000000000-1920x1080_jt4lkj", url: "https://www.twitch.tv/femimarss/clip/FairPatientQuailTooSpicy-sVgNr33YKqD84ijI"},
     { titre: "femi??????", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/thumb-0000000000-1920x1080_pt0luf", url: "https://www.twitch.tv/femimarss/clip/TastyTenderGrasshopperDoubleRainbow-JuSijyPK__NF_uox"},
-    
+    { titre: "1500 balle en 20 seconde", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/thumb-0000000000-480x272_vta0gl", url: "https://clips.twitch.tv/CharmingTacitAlligatorImGlitch-oEIkUWiGQ8xgJqcU?tt_content=url&tt_medium=clips_api"},
+
 
 ];
 let currentTwitch = ""; 
+
+function afficherMessageIndisponible() {
+    const toast = document.getElementById('notification-toast');
+    if (toast) {
+        toast.style.bottom = '20px'; // Fait monter l'encadré
+        
+        setTimeout(() => {
+            toast.style.bottom = '-100px'; // Le fait redescendre après 3s
+        }, 3000);
+    }
+}
+
 function remplirGrille(listeDeJeux, idDeLaGrille) {
     const grille = document.getElementById(idDeLaGrille);
     if (!grille) return;
-
-    
 
     grille.innerHTML = "";
 
@@ -563,7 +574,6 @@ function remplirGrille(listeDeJeux, idDeLaGrille) {
             badgeHTML = `<div class="class=badge-statut ${jeu.statut.toLowerCase()}"></div>`;
         }
 
-       
         const imgOptimisee = optimiserImageCloudinary(jeu.img, 'moyenne');
 
         carte.innerHTML = `
@@ -583,12 +593,10 @@ function ouvrirCarte(img, titre, twitch, statut) {
     const titleElement = document.getElementById('overlay-title');
 
     if (overlay && imgElement && titleElement) {
-       
         imgElement.src = optimiserImageCloudinary(img, 'basse');
         titleElement.innerText = titre;
         currentTwitch = twitch;
 
-     
         const imageHauteQualite = new Image();
         imageHauteQualite.src = optimiserImageCloudinary(img, 'haute');
         imageHauteQualite.onload = () => {
@@ -615,23 +623,25 @@ function ouvrirCarte(img, titre, twitch, statut) {
     }
 }
 
-
 document.getElementById('game-overlay').onclick = function(e) {
-   
     if (e.target.id === 'overlay-img') return;
-    
     this.style.display = 'none';
 };
 
+// ==========================================
+// 2. DETECTION DU LIEN VIDE SUR L'AFFICHE DE L'OVERLAY
+// ==========================================
 document.getElementById('overlay-img').onclick = function(e) {
     e.stopPropagation(); 
-    if (typeof currentTwitch !== 'undefined' && currentTwitch) {
+    
+    // Si la variable currentTwitch est vide ou n'existe pas
+    if (!currentTwitch || currentTwitch === "") {
+        afficherMessageIndisponible();
+    } else {
+        // Si elle contient un lien, on l'ouvre
         window.open(currentTwitch, '_blank');
     }
 };
-
-
-
 
 remplirGrille(jeux2026, 'grid-2026');
 remplirGrille(jeux2025, 'grid-2025');
@@ -645,16 +655,15 @@ remplirGrille(filmList, 'grid-film');
 remplirGrille(serieList, 'grid-serie');
 remplirGrille(animationList, 'grid-animation');
 remplirGrille(episodeAnime, 'grid-episode');
-const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
 
+const toutesLesListes = [...jeux2026, ...jeux2025, ...jeux2024,...jeux2023, ...jeux2022, ...jeux2021, ...jeux2020, ...animesList,...filmList, ...animationList, ...serieList, ...episodeAnime, ...episodeSerie];
 function changerCategorie(type, boutonClique) {
-    // 1. Sélectionne la bonne liste (episodeAnime ou episodeSerie)
+
     const listeChoisie = (type === 'anime') ? episodeAnime : episodeSerie;
     
-    // 2. Remplit ta grille avec tes cartes
+
     remplirGrille(listeChoisie, 'grid-episode');
 
-    // 3. Aligne la classe active sur les boutons
     if (boutonClique) {
         document.querySelectorAll('#episode .tab-btn').forEach(btn => {
             btn.classList.remove('active');
@@ -667,7 +676,6 @@ const inputRecherche = document.getElementById('recherche');
 const resultsDiv = document.getElementById('results');
 let rechercheTimer;
 
-// 🌟 OPTIMISATION 1 : Centralisation des listes pour éviter les doublons de code
 function fusionnerToutesLesListes() {
     return [
         ...(typeof jeux2026 !== 'undefined' ? jeux2026 : []),
@@ -974,3 +982,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     targets.forEach(target => appearanceObserver.observe(target));
 });
+
+
