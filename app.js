@@ -988,3 +988,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+window.changerCategorie = changerCategorie;
