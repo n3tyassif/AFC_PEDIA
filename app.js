@@ -401,7 +401,7 @@ const animationList = [
 const serieList = [
     { nom: "100% physique", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/1rR4vSxM0R1qlIp5AbgB2ap1zxm_tdv5gu", twitch: "https://www.patreon.com/collection/1632117?view=expanded" },
     { nom: "alice in borderlands", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Ac8ruycRXzgcsndTZFK6ouGA0FA_k6coj8", twitch: "https://www.patreon.com/collection/1998609?view=expanded" },
-    { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "https://www.patreon.com/collection/2217370?view=expanded" , statut: "encours" },
+    { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "https://www.patreon.com/collection/2217370?view=expanded" },
     { nom: "la traque dans le sang", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/932h4WSwKmVz387hDfBfq4ryIFD_hhi7fn", twitch: "https://www.patreon.com/collection/2187247?view=expanded" },
     { nom: "one piece live action", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/yEtSBgugED8XyhqjcKgF6j2zDMf_pll1sq", twitch: "https://www.patreon.com/collection/1845001" },
     { nom: "sauve qui pecho", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/h6Twsz6h5CAcguCzJkgnYZ6vkhb_yrp1y2", twitch: "https://www.patreon.com/collection/1404560?view=expanded" },
