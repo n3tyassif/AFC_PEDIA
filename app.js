@@ -405,6 +405,7 @@ const serieList = [
     { nom: "la traque dans le sang", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/932h4WSwKmVz387hDfBfq4ryIFD_hhi7fn", twitch: "https://www.patreon.com/collection/2187247?view=expanded" },
     { nom: "one piece live action", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/yEtSBgugED8XyhqjcKgF6j2zDMf_pll1sq", twitch: "https://www.patreon.com/collection/1845001" },
     { nom: "sauve qui pecho", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/h6Twsz6h5CAcguCzJkgnYZ6vkhb_yrp1y2", twitch: "https://www.patreon.com/collection/1404560?view=expanded" },
+    { nom: "teach you a lesson", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/gN7Tq35raryabkPGcKlb4ZKeutm_tfmojk", twitch: "https://www.patreon.com/collection/2267589?view=expanded" },
     { nom: "weak hero class", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/o6s8oIqXhXAZ05F6V1bR230n9zq_xlo89e", twitch: "https://www.patreon.com/collection/2174803?view=expanded" },
     { nom: "YOU", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_800,f_auto,q_auto/sMF0G96CdgTNrVy52BJnux5pNB5_fja49i", twitch: "https://www.patreon.com/collection/2041969?view=expanded" }
 ];
