@@ -493,7 +493,6 @@ const episodeAnime = [
 ];
 
 const episodeSerie = [
-    { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "https://www.youtube.com/watch?v=ghKHtETNteY" },
     { nom: "dexter", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/uQwpPjM3gScW914MYYOx7li8sN3_cowwru", twitch: "https://www.youtube.com/watch?v=0FtDK5TFEiE" },
     { nom: "Le Choc des toques", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/dXaSWfISSbivyNy9X6zkOnxD9Gp_fwy6s1", twitch: "https://www.patreon.com/collection/2041706" },
     { nom: "lucifer (L sheytan)", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/ekZobS8isE6mA53RAiGDG93hBxL_bjphnt", twitch: "https://www.youtube.com/watch?v=0FtDK5TFEiE" },
