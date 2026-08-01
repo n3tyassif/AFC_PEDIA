@@ -11,13 +11,19 @@
     return url;
 }
 const jeux2026 = [
+    { nom: "Bombanana!", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/07199e7bac8e4e6317d85f528c5fa80c_pjlhcx", twitch: "https://youtu.be/Aqo_PbZpAr8?si=GCdlGG6D_ILcq3_B" },
+
     { nom: "crimson desert", img: "https://i.postimg.cc/wMt6m1HD/image.png", twitch: "https://youtu.be/TmnKSnxcAJ0?si=re8zazorMh8I3oho" },
     { nom: "directive 8020", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/dbeae5ea95e461872c819969fa8f47c4_fkahjr", twitch: "https://twitchtracker.com/femimarss/games/1977278621", statut: "drop" },
     { nom: "Five Hearts Under One Roof 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/4c87373b6affe20b20459ad5b80158cc_yxtwvy", twitch: "https://www.youtube.com/watch?v=3tPZDh1KU5Q" }, 
+    { nom: "funnel runners", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/library_capsule_2x_zkss8u", twitch: "https://youtu.be/QEOEpL4BhVg?si=JR4W6U5Awnmb756S" },
+
     { nom: "hytale", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/78a59ca45dcf25e610701df40b776789_wgmtqh", twitch: "https://twitchtracker.com/femimarss/streams/315784254180" },
     { nom: "league of legends", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/cf29ee336b07c0572c810f62f5543525_zt7opw", twitch: "https://twitchtracker.com/femimarss/games/21779" },
     { nom: "MONSTER HUNTER STORIES 3: TWISTED REFLECTION", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/7331f24f2ecb1a42588a460129ccc214_jsrjur", twitch: "https://youtu.be/LJCZtwlJkbs?si=Z1YXGPtGrDC4Z433" },
     { nom: "my voice zoo", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/119c7226962c95086bb26fd0ae59c29e_svkqgd", twitch: "https://www.youtube.com/watch?v=3GuuogBGlR4" },
+    { nom: "Palworld", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/39c2dad1ac130d2789d4cb6055eb78e8_eeeuov", twitch: "https://twitchtracker.com/femimarss/games/1036710512" },
+    
     { nom: "pokemon heartgold", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/757f9ee3d9bef456453825b48c2808b2_hmhsgx", twitch: "https://www.youtube.com/watch?v=TiD_LqcZFo8" },
 
     { nom: "pokopia", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/0f78d889461190857b379ce9b2e063a7_nzvdfm", twitch: "https://youtu.be/fFn9sVc6YAU?si=JUnFJR1XBOmiEXeW" },
@@ -117,6 +123,7 @@ const jeux2024 = [
     { nom: "MiSide", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/09bce7a3bab0d71e3e2e66df9b13dac1_cqa1ka", twitch: "https://twitchtracker.com/femimarss/games/1196356222" },
     { nom: "Naruto x Boruto: Ultimate Ninja Storm Connections", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/f46a8c34bdb48e06a89fdccaea9ed072_ox20bq", twitch: "https://www.youtube.com/watch?v=p-CCJvC4jcg" },
     { nom: "Palworld", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/39c2dad1ac130d2789d4cb6055eb78e8_eeeuov", twitch: "https://www.youtube.com/watch?v=ACKEi_3hI6Q" },
+    
     { nom: "Party Animals", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/2c988d909901eaa063825d711e9bbdcb_ja4jno", twitch: "https://www.youtube.com/watch?v=MmGzCSNb9Sw" },
     { nom: "PICO PARK", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/Screenshot_20260603_162037_X_vgles1", twitch: "https://twitchtracker.com/femimarss/games/513056" },
     { nom: "Pokemon Trading Card Game Pocket", img: "https://i.postimg.cc/x8sGYgP7/image.png", twitch: "https://youtu.be/65d1fLgY3Wo?si=0Of9gZvEmIHjoouv" },
@@ -401,6 +408,7 @@ const animationList = [
 const serieList = [
     { nom: "100% physique", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/1rR4vSxM0R1qlIp5AbgB2ap1zxm_tdv5gu", twitch: "https://www.patreon.com/collection/1632117?view=expanded" },
     { nom: "alice in borderlands", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/Ac8ruycRXzgcsndTZFK6ouGA0FA_k6coj8", twitch: "https://www.patreon.com/collection/1998609?view=expanded" },
+    { nom: "Agent kim", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/mxa7YxVln3Rwnd2Va82PoclTznj_auzrbn", twitch: "https://www.patreon.com/collection/2290703?view=expanded", statut: "encours" },
     { nom: "all of us are dead", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/pTEFqAjLd5YTsMD6NSUxV6Dq7A6_l78ypl", twitch: "https://www.patreon.com/collection/2217370?view=expanded" },
     { nom: "la traque dans le sang", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/932h4WSwKmVz387hDfBfq4ryIFD_hhi7fn", twitch: "https://www.patreon.com/collection/2187247?view=expanded" },
     { nom: "one piece live action", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/yEtSBgugED8XyhqjcKgF6j2zDMf_pll1sq", twitch: "https://www.patreon.com/collection/1845001" },
@@ -415,6 +423,8 @@ const episodeAnime = [
     { nom: "4koa", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/6SWVJvCIC9B16u6wASZ8FEaNssz_cwidve", twitch: "https://www.youtube.com/watch?v=-WyMP6hjIFs" },
     { nom: "8 mort 6 blessé", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/96mUvRlJBYOMBdbn30wtoh7QrpY_l9lo9x", twitch: "https://www.youtube.com/watch?v=XETKLmCfwk8", statut: "ban" },
     { nom: "ao ashi", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/iN1thFI3XFeKAf2pZSd8IkZexE5_t6t9lw", twitch: "" },
+    { nom: "atelier des sorciers (harry potter)", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/dH1ZLuGubotqtQbRSCSvYswb3HP_eh2gld", twitch: "https://www.patreon.com/collection/2299785?view=expanded" },
+
     { nom: "akatsuki no yona", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/870d33e73fce20592c3097fd43894afa_zhyfzo", twitch: "" },
     { nom: "bakuman", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/4ixcJVoPuAoMcxgoNiGtHr2rwq8_psllpz", twitch: "https://www.youtube.com/watch?v=28HcTbePI7E" },
     { nom: "ballroom", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/iGf49kruXI3mMpfBD43ZtxXE7MC_fkuhcp", twitch: "https://www.youtube.com/watch?v=ApO78dmkt0A" },
@@ -457,12 +467,16 @@ const episodeAnime = [
     { nom: "le prisme de l'amour", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/sPLatQFX8z74hioTSJallcAswd7_a0202p", twitch: "https://www.youtube.com/watch?v=z1ojBinRY5Y" },
     { nom: "lord of mysteries", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/c8fHePq3yTn3WvZd4hupkHwsjm5_i3g00o", twitch: "https://www.youtube.com/watch?v=-WyMP6hjIFs" },
     { nom: "made in abyss", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/f6U3odfIb3pCXMGKRTQGGF9o1Qg_ayz4bs", twitch: "https://www.youtube.com/watch?v=6a4-DohiJ6o" },
+    { nom: "magi", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/vshFBPrMazfyjFNbWoRJRbnBhZg_vj8bbs", twitch: "" },
+
     { nom: "mermaid melody", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/jwDEHBO48GK8bL6pkHoQfgNyzHk_ajtdvp", twitch: "https://www.youtube.com/watch?v=vJY9wElTxwA" },
     { nom: "moi quand je me réincarne en slime", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/5a5fff58bd7abbfcf4ae400537f2f917_cv9coc", twitch: "" },
     { nom: "mob psycho 100", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/oUh3wIqiJ573vWY1ZpVxEYUdg5g_lum1f0", twitch: "" },
     { nom: "monster", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/n5XNKXnoXpoXyfiCtXHOf8q8PFM_bsnml6", twitch: "https://www.youtube.com/watch?v=WfPD7MbY3yY" },
     { nom: "mushoku tensei", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/84480169596d9ce5fc8087a015c8a21d_cpikai", twitch: "https://www.youtube.com/watch?v=28HcTbePI7E" },
     { nom: "nana", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/egEROVWFVUupRhK03Bj5IVGAEGu_lnqg3e", twitch: "https://www.youtube.com/watch?v=-WyMP6hjIFs" },
+    { nom: "Nippon sengoku ", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/byPdyAyljuMDyJ7rTE77351o0zF_qqrocr", twitch: "https://www.patreon.com/collection/2299780?view=expanded" },
+
     { nom: "orange", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/6GGkAhfjZy9rOvUD7K927vnltZA_z0lhve", twitch: "https://www.youtube.com/watch?v=28HcTbePI7E" },
     { nom: "overlord", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_610,c_fill,g_auto,f_auto,q_auto:good/K8ZUjxaj9F0t3AwJDz8ypzBynM_j7h3ky", twitch: "" },
     { nom: "oshi no ko", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/rFp74PFpz14AHrtlVPrLyrSng47_nbi7my", twitch: "https://www.youtube.com/watch?v=ApO78dmkt0A", statut: "ban" },
@@ -477,6 +491,7 @@ const episodeAnime = [
     { nom: "sailor moon crystal", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/mVXlsNJw4fxD2UWNzaUh2TFfI5c_ukzuom", twitch: "" },
     { nom: "scissor seven", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/mSLSrOndwNoompAARPHBaxF2E6E_eeaeqx", twitch: "https://www.youtube.com/watch?v=ApO78dmkt0A" },
     { nom: "shangri la frontier", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/aCGdpgNkgz66R1winFkTFsMAhlC_qljucq", twitch: "https://www.youtube.com/watch?v=1kMB7T8MQv8" },
+    { nom: "slugterra", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/hbAHSGKr0aJStev8w5ebWWZboh1_f4cjll", twitch: "" },
     { nom: "soul eater", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/hAszc4fYfKU4SexxiSIigS3z2WU_tsygxa", twitch: "https://www.youtube.com/watch?v=6a4-DohiJ6o" },
     { nom: "summer time rendering", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/9qFqCxPr1ebHbOmZ1vEmPAHLIM4_lxbjpl", twitch: "https://www.youtube.com/watch?v=z1ojBinRY5Y" },
     { nom: "the apothecary dhiarée", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/bd7c59b08a68126baaff7cb3844c6096_yycafo", twitch: "https://www.youtube.com/watch?v=0YPlIj0-xFM" },
@@ -493,10 +508,14 @@ const episodeAnime = [
 ];
 
 const episodeSerie = [
+    { nom: "cobra kai", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/agZNSJ7EsF3sWEhtKCdGNx9cusj_y6q8ze", twitch: "https://www.patreon.com/collection/2299792?view=expanded" },
     { nom: "dexter", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/uQwpPjM3gScW914MYYOx7li8sN3_cowwru", twitch: "https://www.youtube.com/watch?v=0FtDK5TFEiE" },
+    { nom: "house of the dragon", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/89wrNte1w8q4TPMoW5O2E6XWCPM_niorfa", twitch: "" , statut: "ban"},
+
     { nom: "Le Choc des toques", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/dXaSWfISSbivyNy9X6zkOnxD9Gp_fwy6s1", twitch: "https://www.patreon.com/collection/2041706" },
     { nom: "lucifer (L sheytan)", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/ekZobS8isE6mA53RAiGDG93hBxL_bjphnt", twitch: "https://www.youtube.com/watch?v=0FtDK5TFEiE" },
     { nom: "lupin", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_600,f_auto,q_auto/sOUWRai0215iUSMackrZx3Y1j05_ydvwpb", twitch: "https://www.youtube.com/watch?v=mFe9t6BPa5w" },
+    { nom: "snowpiercer", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/vxj9S0z00ZLNk3yYR91jR1MFaoM_atjyqx", twitch: "https://www.patreon.com/collection/2299801?view=expanded" },
     { nom: "slasher", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/A4j6zNyypLbsn0vJfrajlgNazc5_sngjp2", twitch: "", statut: "ban" },
     { nom: "sweet home", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/zcugNxDg59YwIf3dUHsrHmO7pc1_hkfhqz", twitch: "https://www.patreon.com/collection/2041716" },
     { nom: "the 8 show", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/3LcyKtMmDWwgK4T5d4cf8quHWOa_tuh7rh", twitch: "https://www.youtube.com/watch?v=ghKHtETNteY" },
@@ -526,6 +545,7 @@ const listeArrache = [
     { id: 11, titre: "LEMED ETAIT SUR LE POINT DE TOUT STOP… PUIS CE VOYAGE A TOUT CHANGE  !", img: "https://img.youtube.com/vi/eLQxMKwV_LY/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=eLQxMKwV_LY&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "lemed" },
     { id: 12, titre: "REGELEGORILA révèle son secret le plus sombre…", img: "https://img.youtube.com/vi/GLNA1eOWKFs/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=GLNA1eOWKFs&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "regelegorilla" },
     { id: 13, titre: "SOFIAN LE GEEK & YEKAIS BALANCENT TOUT SUR LA COMMUNAUTÉ DOKKAN !" , img: "https://img.youtube.com/vi/sW3iq1WfhvI/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=sW3iq1WfhvI&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "sofian & yekais" },
+    { id: 14, titre: "JE NE M'ATTENDAIS PAS À CETTE DISCUSSION AVEC JULGANE !" , img: "https://img.youtube.com/vi/RfzzA0daN20/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=RfzzA0daN20&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "julgane" },
 
     
 ];
