@@ -17,6 +17,7 @@ const jeux2026 = [
     { nom: "directive 8020", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/dbeae5ea95e461872c819969fa8f47c4_fkahjr", twitch: "https://twitchtracker.com/femimarss/games/1977278621", statut: "drop" },
     { nom: "Five Hearts Under One Roof 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/4c87373b6affe20b20459ad5b80158cc_yxtwvy", twitch: "https://www.youtube.com/watch?v=3tPZDh1KU5Q" }, 
     { nom: "funnel runners", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/library_capsule_2x_zkss8u", twitch: "https://youtu.be/QEOEpL4BhVg?si=JR4W6U5Awnmb756S" },
+    { nom: "how to fish", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/ff59d38eb32f4eb4b983cb76301b2a63_o4o6pt", twitch: "https://twitchtracker.com/femimarss/games/1898040946" },
 
     { nom: "hytale", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/78a59ca45dcf25e610701df40b776789_wgmtqh", twitch: "https://twitchtracker.com/femimarss/streams/315784254180" },
     { nom: "league of legends", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/cf29ee336b07c0572c810f62f5543525_zt7opw", twitch: "https://twitchtracker.com/femimarss/games/21779" },
@@ -353,6 +354,16 @@ const filmList = [
     { nom: "Harry Potter et le Prince de sang-mêlé ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/d9264098974539ca3ca9721485c60ec1a9dca39a3a8e0ae30856c92cb1828910_cvjk7i", twitch: "https://www.patreon.com/posts/harry-potter-6-138313366?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
     { nom: "Harry Potter et les Reliques de la Mort part.1", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/f62be0c0-a7df-445c-83a9-61f9ddd9a268_fz9oib", twitch: "https://www.patreon.com/posts/harry-potter-7-138316431?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
     { nom: "Harry Potter et les Reliques de la Mort part.2", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/19762436_ypzdlq", twitch: "https://www.patreon.com/posts/harry-potter-8-138316682?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
+    { nom: "heredite", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/r6rM8EALX42oHDXylI4pP1DJbnS_izysmk", twitch: "" },
+    { nom: "high school musical", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/1DGmWZjUJPeKGFRHGCA6VPFUBML_gyflqn", twitch: "" },
+    { nom: "high school musical 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/la2kiVWDm2vuB4APZDgCCmuBh4K_po836c", twitch: "" },
+    { nom: "High School Musical 3: Nos années lycée ", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/2XJZeToQpxA0phMrC8Ez1mIrvjv_xauehw", twitch: "" },
+    { nom: "hunger games", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/jvEsjOszBuPNrR5pEkXRFkSNZLF_d5usfe", twitch: "" },
+    { nom: "hunger games 2: catching fire", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/yojV8yxaRaW066DgIwhbEgSrMns_dy8yf1", twitch: "" },
+    { nom: "Hunger Games: La Révolte - Partie 1", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/1CMHQqpZtvDsKJYsZJIR070Xr6e_ryzzqf", twitch: "" },
+    { nom: "Hunger Games: La Révolte - Partie 2", img: "https://res.cloudinary.com/dbymxvjo1/image/upload/w_400,h_600,c_fill,g_auto,f_auto,q_auto:good/6lcGEkoppKEgf1WA0AFB2IoOUjm_emt0gd", twitch: "" },
+
+
     { nom: "le crocodile du botswanga", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/03a00e19fac1370beb9bc4d5a54633712e2dd1fc1736c314a96b25277f720e74_eis7m3", twitch: "https://www.patreon.com/posts/case-depart-x-du-102859340?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
     { nom: "Le Bus : Les Bleus en grève ", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/xy5oC3dWw2OuSUHXIBPm6XQLk8n_qu9rd7", twitch: "https://www.patreon.com/posts/158899767?collection=2176996" },
     { nom: "le diner de cons", img: "https://res.cloudinary.com/dyhcasitx/image/upload/w_600,f_auto,q_auto/9782213727769-001-X_ie0zh0", twitch: "https://www.patreon.com/posts/le-diner-de-con-103902605?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_fan&utm_content=web_share" },
@@ -549,8 +560,9 @@ const listeArrache = [
     { id: 13, titre: "SOFIAN LE GEEK & YEKAIS BALANCENT TOUT SUR LA COMMUNAUTÉ DOKKAN !" , img: "https://img.youtube.com/vi/sW3iq1WfhvI/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=sW3iq1WfhvI&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "sofian & yekais" },
     { id: 14, titre: "JE NE M'ATTENDAIS PAS À CETTE DISCUSSION AVEC JULGANE !" , img: "https://img.youtube.com/vi/RfzzA0daN20/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=RfzzA0daN20&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "julgane" },
     { id: 15, titre: "J'AI DÉCOUVERT LA VRAIE KHALAMITE ET C'ÉTAIT EXCEPTIONNEL !" , img: "https://img.youtube.com/vi/kt8NVRUSOVo/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=kt8NVRUSOVo&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=2", invites: "khalamite" },
-
     { id: 16, titre: "IL A DU QUITTER LA FRANCE A CAUSE D’UN DRAMA !" , img: "https://img.youtube.com/vi/NRsbPpoJP4g/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=NRsbPpoJP4g&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd", invites: "punisher" },
+    { id: 17, titre: "IL A BLOQUE 17000 COMPTE TWITTER A CAUSE DU FOOT !" , img: "https://img.youtube.com/vi/VGry0GJqi90/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=VGry0GJqi90&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=2", invites: "KYONO" },
+    { id: 18, titre: "LA VÉRITÉ DERRIÈRE LE SUCCÉS DE KHALGALERE !" , img: "https://img.youtube.com/vi/ZVHqfIboKkU/maxresdefault.jpg", url: "https://www.youtube.com/watch?v=ZVHqfIboKkU&list=PLZDvlSwiTr9_1H0ciay6t1blGaFlR0rmd&index=1", invites: "KHALGALERE" },
     
     
 ];
